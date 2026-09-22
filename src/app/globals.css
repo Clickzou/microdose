@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+/*
+  Design system BIEN Microdose.
+
+  Identité volontairement distincte de bien.health (recommandation de l'audit
+  du 18/09/2026 : isoler les deux marques). Elle reprend l'univers visuel
+  propre au site microdose — le ciel, les dégradés pastel du coffret, la photo
+  argentique — plutôt que la charte « Brand Refresh V2 » de bien.health.
+
+  Couleurs
+    ink     texte, boutons, aplats sombres
+    paper   fond de page, légèrement chaud
+    sky     bleu du ciel des photos
+    haze    lilas, transition du dégradé du coffret
+    blush   rose du bas du coffret
+    earth   brun de la truffe — accents discrets uniquement
+    signal  vert profond pour les validations (panier, stock)
+
+  Contrastes vérifiés : ink sur paper 17:1, ink sur sky 11:1, ink sur blush 12:1,
+  paper sur ink 17:1. Sky/haze/blush ne portent jamais de texte clair.
+*/
+@theme {
+  --color-ink: #15131a;
+  --color-ink-soft: #3b3742;
+  --color-paper: #f7f5f1;
+  --color-sky: #bcd6f1;
+  --color-sky-deep: #8fb6e3;
+  --color-haze: #d9d0f0;
+  --color-blush: #f3ccd9;
+  --color-earth: #6b4f3a;
+  --color-signal: #1f6b4a;
+  --color-line: #e3dfd8;
+  --color-muted: #6b6672;
+
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-bricolage), var(--font-inter), system-ui, sans-serif;
+  --font-serif: var(--font-instrument), Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: clip;
+  }
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.02;
+  }
+  h4 {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.75rem;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 3px;
+  }
+}
+
+/* Dégradé du coffret : ciel → lilas → rose. */
+@utility bg-coffret {
+  background: linear-gradient(160deg, var(--color-sky) 0%, var(--color-haze) 52%, var(--color-blush) 100%);
+}
+@utility bg-coffret-soft {
+  background: linear-gradient(180deg, color-mix(in oklab, var(--color-sky) 55%, var(--color-paper)) 0%, color-mix(in oklab, var(--color-blush) 45%, var(--color-paper)) 100%);
+}
+
+/* Mot accentué dans un titre : italique serif, contraste avec la grotesque. */
+@utility accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+@utility shadow-soft {
+  box-shadow: 0 24px 60px -30px color-mix(in oklab, var(--color-ink) 40%, transparent);
+}
+
+/* Bandeau défilant */
+@keyframes bm-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.bm-marquee-track { animation: bm-marquee 38s linear infinite; }
+
+@keyframes bm-up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.bm-up { animation: bm-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.bm-up-2 { animation-delay: 0.12s; }
+.bm-up-3 { animation-delay: 0.24s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .bm-marquee-track, .bm-up { animation: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* Texte long (articles, pages légales) rendu depuis du Markdown. */
+.prose-bm { font-size: 1.0625rem; line-height: 1.75; color: var(--color-ink-soft); }
+.prose-bm > :first-child { margin-top: 0; }
+.prose-bm h2 { font-size: 1.75rem; margin-top: 2.75rem; margin-bottom: 0.75rem; color: var(--color-ink); }
+.prose-bm h3 { font-size: 1.3rem; margin-top: 2rem; margin-bottom: 0.5rem; color: var(--color-ink); letter-spacing: -0.02em; }
+.prose-bm p { margin-top: 1rem; }
+.prose-bm ul, .prose-bm ol { margin-top: 1rem; padding-left: 1.25rem; }
+.prose-bm ul { list-style: disc; }
+.prose-bm ol { list-style: decimal; }
+.prose-bm li { margin-top: 0.35rem; }
+.prose-bm li::marker { color: var(--color-earth); }
+.prose-bm strong { color: var(--color-ink); font-weight: 600; }
+.prose-bm a { color: var(--color-ink); text-decoration: underline; text-underline-offset: 3px; }
+.prose-bm blockquote {
+  margin-top: 2.5rem; padding: 1.25rem 1.5rem; border-radius: 1.25rem;
+  background: color-mix(in oklab, var(--color-blush) 40%, var(--color-paper));
+  font-size: 0.95rem; line-height: 1.65; color: var(--color-ink);
+}
+.prose-bm blockquote p:first-child { margin-top: 0; }
+.prose-bm table { width: 100%; margin-top: 1.5rem; border-collapse: collapse; font-size: 0.95rem; }
+.prose-bm th, .prose-bm td { border-bottom: 1px solid var(--color-line); padding: 0.6rem 0.5rem; text-align: left; }
+.prose-bm th { color: var(--color-ink); font-weight: 600; }
+.prose-bm hr { margin: 2.5rem 0; border-color: var(--color-line); }
