@@ -27,6 +27,8 @@ export type PaidOrder = {
   items: PricedLine[];
   subtotal_cents: number;
   discount_cents: number;
+  coupon_code: string | null;
+  coupon_cents: number;
   shipping_cents: number;
   total_cents: number;
   newsletter_opt_in: boolean;
@@ -76,6 +78,9 @@ async function customerEmail(o: PaidOrder) {
   const rows: [string, string][] = [
     ...o.items.map((l): [string, string] => [`${d.products[l.slug]?.name ?? l.slug} × ${l.qty}`, money(l.unitCents * l.qty, lang)]),
     ...(o.discount_cents > 0 ? [[t.discount, `− ${money(o.discount_cents, lang)}`] as [string, string]] : []),
+    ...(o.coupon_code && o.coupon_cents > 0
+      ? [[t.coupon.replace("{code}", o.coupon_code), `− ${money(o.coupon_cents, lang)}`] as [string, string]]
+      : []),
     [t.shipping, o.shipping_cents === 0 ? t.free : money(o.shipping_cents, lang)],
   ];
   const address = addressLines(o, lang);
@@ -133,6 +138,7 @@ async function notifyBien(o: PaidOrder) {
     "",
     ...o.items.map((l) => `${l.qty} × ${d.products[l.slug]?.name ?? l.slug} (${money(l.totalCents, "en")})`),
     o.discount_cents > 0 ? `Volume discount: −${money(o.discount_cents, "en")}` : null,
+    o.coupon_code && o.coupon_cents > 0 ? `Code ${o.coupon_code}: −${money(o.coupon_cents, "en")}` : null,
     `Shipping: ${money(o.shipping_cents, "en")}`,
     `Total paid: ${money(o.total_cents, "en")}`,
     "",
@@ -147,7 +153,7 @@ async function notifyBien(o: PaidOrder) {
     "",
     `Paid at: ${o.paid_at ?? "-"} · CardGate transaction: ${o.payment_transaction ?? "-"}`,
     "",
-    "To do: ship the package and schedule the 15-minute consultation.",
+    "To do: ship the package.",
   ].filter((l): l is string => l !== null);
 
   const text = lines.join("\n");

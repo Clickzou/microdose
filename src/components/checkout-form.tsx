@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useCart } from "@/lib/cart";
 import { trackCart } from "@/lib/analytics";
-import { computeTotals, enabledCountries } from "@/lib/catalog";
+import { computeTotals, enabledCountries, normalizeCoupon } from "@/lib/catalog";
 import { formatPrice, href, intlLocale, type Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/dictionaries/en";
 
@@ -16,7 +16,18 @@ export default function CheckoutForm({ lang, t }: { lang: Locale; t: Dictionary 
   const [country, setCountry] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [sending, setSending] = useState(false);
-  const totals = computeTotals(lines, country || undefined);
+  const [couponInput, setCouponInput] = useState("");
+  const [coupon, setCoupon] = useState<string | null>(null);
+  const [couponError, setCouponError] = useState(false);
+  const totals = computeTotals(lines, country || undefined, coupon);
+
+  // Le code est vérifié ici pour l’affichage ; le serveur refait le contrôle complet
+  // (code connu, une seule utilisation par adresse e-mail).
+  function applyCoupon() {
+    const code = normalizeCoupon(couponInput);
+    setCoupon(code);
+    setCouponError(!code);
+  }
   const regionNames = new Intl.DisplayNames([intlLocale[lang]], { type: "region" });
   const countries = enabledCountries()
     .map((code) => ({ code, name: regionNames.of(code) ?? code }))
@@ -51,6 +62,7 @@ export default function CheckoutForm({ lang, t }: { lang: Locale; t: Dictionary 
           ageConfirmed: true,
           legalConfirmed: true,
           newsletter: Boolean(f.get("newsletter")),
+          coupon: coupon ?? undefined,
         }),
       });
       const json = await res.json().catch(() => ({}));
@@ -139,15 +151,55 @@ export default function CheckoutForm({ lang, t }: { lang: Locale; t: Dictionary 
               <span>
                 {t.products[l.slug].name} × {l.qty}
               </span>
-              <span>{formatPrice(l.totalCents, lang)}</span>
+              <span>{formatPrice(l.unitCents * l.qty, lang)}</span>
             </li>
           ))}
         </ul>
-        <dl className="mt-6 space-y-2 border-t border-ink/10 pt-4">
+        <div className="mt-6 border-t border-ink/10 pt-4">
+          {coupon ? (
+            <p className="flex items-center justify-between gap-3 text-sm">
+              <span>{c.couponApplied.replace("{code}", coupon)}</span>
+              <button type="button" onClick={() => setCoupon(null)} className="underline underline-offset-4">
+                {c.couponRemove}
+              </button>
+            </p>
+          ) : (
+            <div className="flex gap-2">
+              <input
+                className={`${input} py-2.5`}
+                value={couponInput}
+                onChange={(e) => {
+                  setCouponInput(e.target.value);
+                  setCouponError(false);
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    e.preventDefault();
+                    applyCoupon();
+                  }
+                }}
+                placeholder={c.couponLabel}
+                aria-label={c.couponLabel}
+                autoComplete="off"
+              />
+              <button type="button" onClick={applyCoupon} disabled={!couponInput.trim()} className="shrink-0 rounded-full border border-ink/20 px-4 text-sm hover:border-ink disabled:opacity-50">
+                {c.couponApply}
+              </button>
+            </div>
+          )}
+          {couponError ? <p className="mt-2 text-sm">{c.errors.coupon}</p> : null}
+        </div>
+        <dl className="mt-4 space-y-2 border-t border-ink/10 pt-4">
           {totals.discountCents > 0 ? (
             <div className="flex justify-between text-signal">
               <dt>{t.cart.discount}</dt>
               <dd>−{formatPrice(totals.discountCents, lang)}</dd>
+            </div>
+          ) : null}
+          {totals.couponCode ? (
+            <div className="flex justify-between text-signal">
+              <dt>{t.cart.coupon.replace("{code}", totals.couponCode)}</dt>
+              <dd>−{formatPrice(totals.couponCents, lang)}</dd>
             </div>
           ) : null}
           <div className="flex justify-between">

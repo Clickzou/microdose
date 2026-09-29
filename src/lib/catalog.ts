@@ -111,28 +111,56 @@ export function shippingFor(country: string, subtotalCents: number): number | nu
   return subtotalCents >= FREE_SHIPPING_FROM_CENTS ? 0 : cost;
 }
 
+/**
+ * Codes promo. SHROOM10 est repris de l'ancienne boutique WooCommerce (sauvegarde du
+ * 02/09/2026) : −10 %, une seule utilisation par adresse e-mail — contrôle fait par
+ * le serveur, qui seul connaît l'historique des commandes.
+ *
+ * Cumulable avec la remise sur quantité (décision de la cliente, 29/09/2026) : le
+ * pourcentage s'applique au sous-total déjà remisé, jamais aux frais de port. Le seuil
+ * de livraison offerte se calcule avant le code, pour qu'un code ne fasse pas perdre
+ * la livraison gratuite.
+ */
+export const COUPONS: Record<string, { percent: number }> = {
+  SHROOM10: { percent: 10 },
+};
+
+/** Code saisi → code reconnu (en majuscules), ou `null`. */
+export function normalizeCoupon(raw: string | null | undefined): string | null {
+  const code = (raw ?? "").trim().toUpperCase();
+  return Object.hasOwn(COUPONS, code) ? code : null;
+}
+
 export type Totals = {
   lines: PricedLine[];
+  /** Somme des lignes, remise sur quantité déduite. */
   subtotalCents: number;
+  /** Remise sur quantité. */
   discountCents: number;
+  couponCode: string | null;
+  couponCents: number;
   shippingCents: number | null;
   totalCents: number | null;
   restricted: boolean;
 };
 
-export function computeTotals(lines: CartLine[], country?: string): Totals {
+export function computeTotals(lines: CartLine[], country?: string, coupon?: string | null): Totals {
   const priced = lines
     .filter((l) => isProductSlug(l.slug) && Number.isInteger(l.qty) && l.qty > 0)
     .map((l) => priceLine({ slug: l.slug, qty: Math.min(l.qty, products[l.slug].maxQty) }));
   const subtotalCents = priced.reduce((s, l) => s + l.totalCents, 0);
   const discountCents = priced.reduce((s, l) => s + l.discountCents, 0);
+  const couponCode = priced.length ? normalizeCoupon(coupon) : null;
+  const couponCents = couponCode ? Math.round((subtotalCents * COUPONS[couponCode].percent) / 100) : 0;
   const shippingCents = country ? shippingFor(country, subtotalCents) : null;
   return {
     lines: priced,
     subtotalCents,
     discountCents,
+    couponCode,
+    couponCents,
     shippingCents,
-    totalCents: shippingCents === null ? null : subtotalCents + shippingCents,
+    totalCents: shippingCents === null ? null : subtotalCents - couponCents + shippingCents,
     restricted: priced.some((l) => products[l.slug].restricted),
   };
 }

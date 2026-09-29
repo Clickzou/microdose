@@ -6,7 +6,7 @@ import { cardgateConfig, createPayment, CG_ITEM, type CardGateCartItem } from "@
 import { EMAIL_RE, clientIp, rateLimited, siteOrigin } from "@/lib/request";
 
 /** Version des CGV acceptée, conservée avec la preuve de consentement. */
-const TERMS_VERSION = "2026-09-22";
+const TERMS_VERSION = "2026-09-29";
 
 type Body = {
   lang?: string;
@@ -15,6 +15,7 @@ type Body = {
   ageConfirmed?: boolean;
   legalConfirmed?: boolean;
   newsletter?: boolean;
+  coupon?: string;
 };
 
 const fail = (error: string, status = 400) => NextResponse.json({ error }, { status });
@@ -37,17 +38,35 @@ export async function POST(req: Request) {
   if (!EMAIL_RE.test(c.email)) return fail("email");
 
   // Prix, remises et frais de port recalculés ici : ceux du navigateur sont ignorés.
-  const totals = computeTotals(Array.isArray(body.lines) ? body.lines : [], c.country);
+  const totals = computeTotals(Array.isArray(body.lines) ? body.lines : [], c.country, body.coupon);
   if (totals.lines.length === 0) return fail("server");
   if (totals.shippingCents === null || totals.totalCents === null) return fail("country");
   if (totals.restricted && body.ageConfirmed !== true) return fail("age");
   if (body.legalConfirmed !== true) return fail("legal");
+  // Code saisi mais inconnu : on le signale plutôt que de facturer sans la remise attendue.
+  if (body.coupon?.trim() && !totals.couponCode) return fail("coupon");
 
   const db = supabaseAdmin();
   const cg = cardgateConfig();
   if (!db || !cg) {
     console.error("checkout: Supabase ou CardGate non configuré");
     return fail("server", 503);
+  }
+
+  // Une seule utilisation par adresse e-mail : seules les commandes payées comptent,
+  // un paiement abandonné ne « consomme » pas le code.
+  if (totals.couponCode) {
+    const { count, error: couponError } = await db
+      .from("orders")
+      .select("id", { count: "exact", head: true })
+      .eq("email", c.email.toLowerCase())
+      .eq("coupon_code", totals.couponCode)
+      .in("status", ["paid", "shipped", "refunded"]);
+    if (couponError) {
+      console.error("checkout: vérification du code", couponError);
+      return fail("server", 500);
+    }
+    if (count) return fail("couponUsed");
   }
 
   const now = new Date().toISOString();
@@ -67,6 +86,8 @@ export async function POST(req: Request) {
       items: totals.lines,
       subtotal_cents: totals.subtotalCents,
       discount_cents: totals.discountCents,
+      coupon_code: totals.couponCode,
+      coupon_cents: totals.couponCents,
       shipping_cents: totals.shippingCents,
       total_cents: totals.totalCents,
       age_confirmed_at: body.ageConfirmed ? now : null,
@@ -84,8 +105,8 @@ export async function POST(req: Request) {
     return fail("server", 500);
   }
 
-  // Lignes CardGate : prix unitaire TTC. La remise de volume est une ligne à part,
-  // pour que la somme des lignes égale exactement le montant facturé.
+  // Lignes CardGate : prix unitaire TTC. La remise de volume et le code promo sont des
+  // lignes à part, pour que la somme des lignes égale exactement le montant facturé.
   const items: CardGateCartItem[] = totals.lines.map((l) => ({
     type: CG_ITEM.product,
     sku: products[l.slug].sku,
@@ -97,6 +118,9 @@ export async function POST(req: Request) {
   }));
   if (totals.discountCents > 0) {
     items.push({ type: CG_ITEM.discount, sku: "VOLUME", name: "Volume discount", quantity: 1, price: -totals.discountCents, vat: 21, vat_inc: 1 });
+  }
+  if (totals.couponCode && totals.couponCents > 0) {
+    items.push({ type: CG_ITEM.discount, sku: totals.couponCode, name: `Code ${totals.couponCode}`, quantity: 1, price: -totals.couponCents, vat: 21, vat_inc: 1 });
   }
   if (totals.shippingCents > 0) {
     items.push({ type: CG_ITEM.shipping, sku: "SHIPPING", name: "Shipping", quantity: 1, price: totals.shippingCents, vat: 21, vat_inc: 1 });
