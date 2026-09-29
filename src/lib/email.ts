@@ -44,7 +44,7 @@ const money = (cents: number, lang: string) =>
 
 const countryName = (code: string, lang: string) => new Intl.DisplayNames([lang], { type: "region" }).of(code) ?? code;
 
-async function send(msg: { to: string; subject: string; html: string; text: string }) {
+async function send(msg: { to: string; subject: string; html: string; text: string; reply_to?: string }) {
   const key = process.env.RESEND_API_KEY;
   const from = process.env.EMAIL_FROM;
   if (!key || !from) {
@@ -160,6 +160,27 @@ async function notifyBien(o: PaidOrder) {
   await send({
     to: process.env.ORDER_NOTIFY_EMAIL || "info@bien.health",
     subject: `New order ${ref} — ${o.first_name} ${o.last_name} — ${money(o.total_cents, "en")}`,
+    text,
+    html: `<pre style="font-family:Arial,Helvetica,sans-serif;font-size:14px;white-space:pre-wrap">${esc(text)}</pre>`,
+  });
+}
+
+/** Message du formulaire de contact, transmis à BIEN ; « Répondre » écrit directement à l'expéditeur. */
+export async function sendContactNotification(m: { lang: string; name: string; email: string; subject: string; message: string }) {
+  const text = [
+    `New message from the contact form (${m.lang.toUpperCase()})`,
+    "",
+    `From: ${m.name} <${m.email}>`,
+    `Subject: ${m.subject || "-"}`,
+    "",
+    m.message,
+    "",
+    "Reply to this e-mail to answer the customer directly.",
+  ].join("\n");
+  await send({
+    to: process.env.ORDER_NOTIFY_EMAIL || "info@bien.health",
+    reply_to: m.email,
+    subject: `Contact — ${m.name}${m.subject ? ` — ${m.subject}` : ""}`,
     text,
     html: `<pre style="font-family:Arial,Helvetica,sans-serif;font-size:14px;white-space:pre-wrap">${esc(text)}</pre>`,
   });

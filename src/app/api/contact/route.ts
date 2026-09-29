@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { hasLocale } from "@/lib/i18n";
 import { supabaseAdmin } from "@/lib/supabase";
 import { EMAIL_RE, clientIp, rateLimited } from "@/lib/request";
+import { sendContactNotification } from "@/lib/email";
 
 export async function POST(req: Request) {
   const ip = clientIp(req);
@@ -19,8 +20,9 @@ export async function POST(req: Request) {
 
   const db = supabaseAdmin();
   if (!db) return NextResponse.json({ ok: false }, { status: 503 });
+  const lang = hasLocale(String(b.lang)) ? String(b.lang) : "en";
   const { error } = await db.from("contact_messages").insert({
-    lang: hasLocale(String(b.lang)) ? String(b.lang) : "en",
+    lang,
     name,
     email,
     subject,
@@ -31,5 +33,7 @@ export async function POST(req: Request) {
     console.error("contact", error);
     return NextResponse.json({ ok: false }, { status: 500 });
   }
+  // Le message est déjà en base : un échec d'envoi ne doit pas le faire passer pour perdu.
+  await sendContactNotification({ lang, name, email, subject, message }).catch((e) => console.error("contact: e-mail", e));
   return NextResponse.json({ ok: true });
 }

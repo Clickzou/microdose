@@ -11,6 +11,7 @@ export default function SiteHeader({ lang, t }: { lang: Locale; t: Dictionary["n
     { href: href(lang, "/learn"), label: t.learn },
     { href: href(lang, "/about"), label: t.about },
     { href: href(lang, "/faq"), label: t.faq },
+    { href: href(lang, "/contact"), label: t.contact },
   ];
   const [before, after] = t.promo.split("{code}");
   return (
@@ -25,7 +26,7 @@ export default function SiteHeader({ lang, t }: { lang: Locale; t: Dictionary["n
           {t.skip}
         </a>
         <div className="mx-auto flex h-16 max-w-7xl items-center gap-4 px-4 sm:px-6 lg:h-20">
-          <MobileMenu lang={lang} t={t} links={[...links, { href: href(lang, "/contact"), label: t.contact }]} />
+          <MobileMenu lang={lang} t={t} links={links} />
           <Link href={href(lang)} className="shrink-0" aria-label="BIEN Microdose">
             <Image src="/brand/logo-bien.svg" alt="BIEN" width={488} height={155} priority className="h-7 w-auto lg:h-8" />
           </Link>
