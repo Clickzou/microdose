@@ -426,6 +426,7 @@ const en = {
     name: "Name",
     email: "Email",
     phone: "Phone",
+    required: "All fields are required.",
     subject: "Subject",
     subjects: ["Order", "Programme", "Press & events", "Other"],
     message: "Message",

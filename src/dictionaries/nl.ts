@@ -424,6 +424,7 @@ const nl: Dictionary = {
     name: "Naam",
     email: "E-mail",
     phone: "Telefoon",
+    required: "Alle velden zijn verplicht.",
     subject: "Onderwerp",
     subjects: ["Bestelling", "Programma", "Pers & events", "Anders"],
     message: "Bericht",

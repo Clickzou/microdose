@@ -424,6 +424,7 @@ const de: Dictionary = {
     name: "Name",
     email: "E-Mail",
     phone: "Telefon",
+    required: "Alle Felder sind Pflichtfelder.",
     subject: "Betreff",
     subjects: ["Bestellung", "Programm", "Presse & Veranstaltungen", "Sonstiges"],
     message: "Nachricht",
