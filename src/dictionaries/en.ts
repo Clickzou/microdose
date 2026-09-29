@@ -34,6 +34,7 @@ const en = {
     menu: "Menu",
     close: "Close",
     skip: "Skip to content",
+    promo: "10% off your first order with the code {code}",
     language: "Language",
   },
   common: {

@@ -33,6 +33,7 @@ const fr: Dictionary = {
     menu: "Menu",
     close: "Fermer",
     skip: "Aller au contenu",
+    promo: "-10 % sur votre première commande avec le code {code}",
     language: "Langue",
   },
   common: {

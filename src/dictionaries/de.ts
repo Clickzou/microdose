@@ -32,6 +32,7 @@ const de: Dictionary = {
     menu: "Menü",
     close: "Schließen",
     skip: "Zum Inhalt springen",
+    promo: "10 % Rabatt auf Ihre erste Bestellung mit dem Code {code}",
     language: "Sprache",
   },
   common: {

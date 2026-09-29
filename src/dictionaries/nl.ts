@@ -32,6 +32,7 @@ const nl: Dictionary = {
     menu: "Menu",
     close: "Sluiten",
     skip: "Naar de inhoud",
+    promo: "10% korting op je eerste bestelling met de code {code}",
     language: "Taal",
   },
   common: {
