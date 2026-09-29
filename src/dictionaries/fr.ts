@@ -8,18 +8,18 @@ import type { Dictionary } from "./en";
 const fr: Dictionary = {
   meta: {
     siteName: "BIEN Microdose",
-    title: "Microdosing aux truffes, programme de 6 semaines — BIEN",
+    title: "Microdosing psilocybine : programme de 6 semaines — BIEN",
     description:
       "Truffes à psilocybine prédosées à 1 g, cultivées aux Pays-Bas, avec un programme guidé de 6 semaines et une application compagnon. Réservé aux adultes.",
   },
   seo: {
-    shop: { title: "Boutique : truffes pour le microdosing", description: "PEACE in the Chaos : six truffes Psilocybe mexicana prédosées à 1 g, un programme de 6 semaines et une application. Cultivées aux Pays-Bas, envoi discret." },
-    howItWorks: { title: "Comment microdoser : le protocole 2-6-2", description: "Microdoser avec BIEN : une demi-dose la première fois, puis deux microdoses par semaine pendant six semaines et deux semaines de pause, avec précautions." },
-    faq: { title: "Microdosing : vos questions, nos réponses", description: "Réponses sur le microdosing aux truffes : légalité, dosage, rythme 2-6-2, conservation, contre-indications, livraison et paiement. Clair et honnête." },
+    shop: { title: "Truffes psilocybine pour le microdosing", description: "PEACE in the Chaos : six truffes Psilocybe mexicana prédosées à 1 g, un programme de 6 semaines et une application. Cultivées aux Pays-Bas, envoi discret." },
+    howItWorks: { title: "Microdosing psilocybine : le protocole 2-6-2", description: "Microdoser avec BIEN : une demi-dose la première fois, puis deux microdoses par semaine pendant six semaines et deux semaines de pause, avec précautions." },
+    faq: { title: "Truffes magiques et microdosing : FAQ", description: "Réponses sur les truffes magiques et le microdosing : légalité, dosage, rythme 2-6-2, conservation, contre-indications, livraison et paiement. Clair et honnête." },
     about: { title: "À propos de BIEN, microdosing néerlandais", description: "BIEN propose des truffes Psilocybe mexicana prédosées, cultivées aux Pays-Bas, une routine claire de 6 semaines et un vrai accompagnement, sans promesse." },
     contact: { title: "Nous contacter", description: "Une question sur une commande, le programme ou une demande presse ? Écrivez à l’équipe BIEN Microdose : nous répondons en général sous un jour ouvré." },
-    learn: { title: "Guides et articles sur le microdosing", description: "" },
-    peace: { title: "Truffes mexicana : PEACE in the Chaos", description: "PEACE in the Chaos : six truffes Psilocybe mexicana prédosées à 1 g, trois semaines de microdoses, avec le programme BIEN, l’application et la ligne d’écoute." },
+    learn: { title: "Microdosing : guides et articles", description: "" },
+    peace: { title: "Truffes magiques mexicana : PEACE in the Chaos", description: "PEACE in the Chaos : six truffes Psilocybe mexicana prédosées à 1 g, trois semaines de microdoses, avec le programme BIEN, l’application et la ligne d’écoute." },
     tote: { title: "Tote bag BIEN en toile recyclée", description: "Le tote bag BIEN : toile 80 % coton recyclé et 20 % polyester recyclé, 39 × 37 cm, couleur naturelle, imprimé du logo BIEN. Solide, pour tous les jours." },
   },
   nav: {
