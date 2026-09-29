@@ -24,7 +24,8 @@ export type Article = {
   image: string;
   category: "basics" | "protocols" | "science" | "everyday";
   readingMinutes: number;
-  compliance: { status: "ok" | "review"; notes: string };
+  /** `noCta` : pas d'appel à l'achat sous l'article, même publié (sujet proche d'une allégation). */
+  compliance: { status: "ok" | "review"; notes: string; noCta?: boolean };
   i18n: Record<Locale, Required<LocalizedText>>;
 };
 

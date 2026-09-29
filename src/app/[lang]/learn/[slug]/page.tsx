@@ -39,7 +39,7 @@ export default async function ArticlePage({ params }: PageProps<"/[lang]/learn/[
     .slice(0, 3);
   // Pas d'appel à l'achat à côté d'un article qui traite d'un sujet de santé : le
   // rapprochement suffirait à constituer une allégation (règlement 1924/2006).
-  const showCta = article.compliance.status === "ok" && article.category !== "science";
+  const showCta = article.compliance.status === "ok" && article.category !== "science" && !article.compliance.noCta;
 
   return (
     <article>
