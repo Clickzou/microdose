@@ -19,7 +19,9 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/product/[s
   if (!hasLocale(lang) || !isProductSlug(slug)) return {};
   const t = await getDictionary(lang);
   const c = t.products[slug];
-  return pageMetadata({ lang, path: `/product/${slug}`, title: c.name, description: c.short, image: products[slug].images[0] });
+  // PEACE in the Chaos : l'image de partage par défaut est déjà sa boîte, en JPG 1200 × 630.
+  const image = slug === "peace-in-the-chaos" ? undefined : products[slug].images[0];
+  return pageMetadata({ lang, path: `/product/${slug}`, title: c.name, description: c.short, image });
 }
 
 export default async function ProductPage({ params }: PageProps<"/[lang]/product/[slug]">) {

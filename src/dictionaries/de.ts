@@ -125,6 +125,10 @@ const de: Dictionary = {
         date: "2024-02-09",
       },
     ],
+    videosTitle: "Was unsere Shroomies über BIEN sagen.",
+    videosCta: "Folgen Sie uns auf Instagram",
+    videosLabel: "Kundenvideo {n}",
+    videosNote: "Videos auf Englisch. Individuelle, subjektive Erfahrungen: Sie sind von Person zu Person verschieden und kein Ergebnisversprechen.",
     expertKicker: "Begleitung",
     expertTitle: "Sie sind dabei nicht allein.",
     expertText:

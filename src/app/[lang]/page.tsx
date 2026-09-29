@@ -218,6 +218,39 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
           <NewsletterForm lang={lang} t={t.newsletter} />
         </div>
       </section>
+
+      {/* ------------------------------------------------------------ Vidéos clients */}
+      {/* Reprise de l'ancien site. Vidéos recompressées (540 × 960, ~2 Mo) et servies
+          par le site : rien ne se charge avant le clic sur lecture (preload="none"),
+          seule l'image d'aperçu est téléchargée. */}
+      <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:py-32">
+        <h2 className="text-center text-4xl sm:text-5xl">{h.videosTitle}</h2>
+        <div className="mt-12 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+          {[1, 2, 3, 4].map((n) => (
+            <video
+              key={n}
+              src={`/videos/shroomies-${n}.mp4`}
+              poster={`/images/shroomies-${n}.webp`}
+              controls
+              playsInline
+              preload="none"
+              aria-label={h.videosLabel.replace("{n}", String(n))}
+              className="aspect-[9/16] w-full rounded-[2rem] bg-ink object-cover"
+            />
+          ))}
+        </div>
+        <div className="mt-10 text-center">
+          <a
+            href="https://www.instagram.com/bien.health/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-full bg-ink px-7 py-3.5 font-medium text-paper transition hover:bg-ink-soft"
+          >
+            {h.videosCta}
+          </a>
+        </div>
+        <p className="mx-auto mt-6 max-w-3xl text-center text-xs text-muted">{h.videosNote}</p>
+      </section>
     </>
   );
 }

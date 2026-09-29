@@ -126,6 +126,10 @@ const fr: Dictionary = {
         date: "2024-02-09",
       },
     ],
+    videosTitle: "Ce que nos Shroomies disent de BIEN.",
+    videosCta: "Suivez-nous sur Instagram",
+    videosLabel: "Vidéo client {n}",
+    videosNote: "Vidéos en anglais. Ressentis individuels et subjectifs : ils varient d’une personne à l’autre et ne constituent pas une promesse de résultat.",
     expertKicker: "Accompagnement",
     expertTitle: "Vous n’êtes pas livrés à vous-même.",
     expertText:

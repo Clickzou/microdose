@@ -125,6 +125,10 @@ const nl: Dictionary = {
         date: "2024-02-09",
       },
     ],
+    videosTitle: "Wat onze Shroomies over BIEN zeggen.",
+    videosCta: "Volg ons op Instagram",
+    videosLabel: "Klantvideo {n}",
+    videosNote: "Video’s in het Engels. Individuele, subjectieve ervaringen: ze verschillen van persoon tot persoon en zijn geen belofte van resultaat.",
     expertKicker: "Begeleiding",
     expertTitle: "Je doet dit niet alleen.",
     expertText:

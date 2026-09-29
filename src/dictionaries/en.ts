@@ -127,6 +127,10 @@ const en = {
         date: "2024-02-09",
       },
     ],
+    videosTitle: "See what our Shroomies say about BIEN.",
+    videosCta: "Follow us on Instagram",
+    videosLabel: "Customer video {n}",
+    videosNote: "Videos in English. Individual, subjective experiences: they vary from person to person and are not a promise of results.",
     expertKicker: "Guidance",
     expertTitle: "You are not doing this alone.",
     expertText:
