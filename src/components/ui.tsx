@@ -103,20 +103,63 @@ export function ProductCard({ lang, slug, t }: { lang: Locale; slug: ProductSlug
   );
 }
 
+/** Catégorie cliquable, temps de lecture et date de parution — commun aux cartes du blog. */
+function ArticleMeta({ lang, article, t }: { lang: Locale; article: Article; t: Dictionary }) {
+  return (
+    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">
+      <Link href={href(lang, `/learn/category/${article.category}`)} className="hover:text-ink hover:underline hover:underline-offset-4">
+        {t.learn.categories[article.category]}
+      </Link>{" "}
+      · {article.readingMinutes} {t.common.minutes} · <span className="font-normal normal-case tracking-normal">{formatDate(article.publishAt ?? article.date, lang)}</span>
+    </p>
+  );
+}
+
+/* Pas de lien englobant toute la carte : la catégorie est un lien à part, et deux
+   liens imbriqués seraient du HTML invalide. L'image et le titre mènent à l'article. */
 export function ArticleCard({ lang, article, t }: { lang: Locale; article: Article; t: Dictionary }) {
   const a = article.i18n[lang];
+  const url = href(lang, `/learn/${article.slug}`);
   return (
-    <Link href={href(lang, `/learn/${article.slug}`)} className="group flex flex-col">
-      <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-coffret-soft">
+    <article className="group flex flex-col">
+      <Link href={url} tabIndex={-1} aria-hidden className="relative block aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-coffret-soft">
         <Image src={article.image} alt="" fill sizes="(min-width: 1024px) 30vw, 90vw" className="object-cover transition duration-700 group-hover:scale-[1.03]" />
+      </Link>
+      <div className="mt-4">
+        <ArticleMeta lang={lang} article={article} t={t} />
       </div>
-      <p className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-muted">
-        {t.learn.categories[article.category]} · {article.readingMinutes} {t.common.minutes}
-      </p>
-      <h3 className="mt-2 text-xl leading-tight group-hover:underline group-hover:underline-offset-4">{a.title}</h3>
+      <h3 className="mt-2 text-xl leading-tight">
+        <Link href={url} className="hover:underline hover:underline-offset-4">
+          {a.title}
+        </Link>
+      </h3>
       <p className="mt-2 line-clamp-2 text-ink-soft">{a.excerpt}</p>
-      <p className="mt-3 text-xs text-muted">{formatDate(article.updated, lang)}</p>
-    </Link>
+    </article>
+  );
+}
+
+/** Article mis en avant en tête de liste (le plus récent de la liste). */
+export function FeaturedArticle({ lang, article, t }: { lang: Locale; article: Article; t: Dictionary }) {
+  const a = article.i18n[lang];
+  const url = href(lang, `/learn/${article.slug}`);
+  return (
+    <article className="group grid items-center gap-8 lg:grid-cols-[1.2fr_1fr] lg:gap-12">
+      <Link href={url} tabIndex={-1} aria-hidden className="relative block aspect-[16/10] overflow-hidden rounded-[2rem] bg-coffret-soft">
+        <Image src={article.image} alt="" fill priority sizes="(min-width: 1024px) 55vw, 90vw" className="object-cover transition duration-700 group-hover:scale-[1.02]" />
+      </Link>
+      <div>
+        <Kicker>{t.learn.featured}</Kicker>
+        <div className="mt-4">
+          <ArticleMeta lang={lang} article={article} t={t} />
+        </div>
+        <h2 className="mt-3 text-3xl leading-tight sm:text-4xl">
+          <Link href={url} className="hover:underline hover:underline-offset-4">
+            {a.title}
+          </Link>
+        </h2>
+        <p className="mt-4 text-lg text-ink-soft">{a.excerpt}</p>
+      </div>
+    </article>
   );
 }
 

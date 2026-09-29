@@ -8,6 +8,10 @@ import { getArticles } from "@/lib/content";
 import { ArticleCard, ButtonLink, Kicker, Marquee, Title } from "@/components/ui";
 import NewsletterForm from "@/components/newsletter-form";
 
+// Régénérée toutes les heures : les articles programmés (publishAt) y apparaissent
+// le jour de leur parution, sans redéploiement.
+export const revalidate = 3600;
+
 export default async function Home({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
