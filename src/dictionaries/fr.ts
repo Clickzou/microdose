@@ -72,7 +72,7 @@ const fr: Dictionary = {
     "Réservé aux adultes",
   ],
   home: {
-    heroKicker: "Microdoses de truffes à psilocybine",
+    heroKicker: "Microdosing de truffes à psilocybine",
     heroTitleA: "La paix",
     heroTitleB: "dans le chaos.",
     heroText:

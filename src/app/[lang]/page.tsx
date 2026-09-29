@@ -39,12 +39,16 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       <section className="relative overflow-hidden bg-coffret">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 pb-16 pt-12 sm:px-6 lg:grid-cols-[1.1fr_1fr] lg:gap-16 lg:pb-24 lg:pt-20">
           <div>
-            <Kicker className="bm-up">{h.heroKicker}</Kicker>
-            <h1 className="bm-up mt-5 text-[clamp(3.25rem,9vw,7.5rem)] leading-[0.92]">
+            {/* H1 = mot-clé de la page (« microdosing » + truffes/psilocybine) ; le slogan
+                reste le plus grand texte, mais n'est pas un titre. */}
+            <h1 className="bm-up font-sans text-xs font-semibold uppercase leading-normal tracking-[0.16em] text-ink-soft">
+              {h.heroKicker}
+            </h1>
+            <p className="bm-up mt-5 font-display text-[clamp(3.25rem,9vw,7.5rem)] font-bold leading-[0.92] tracking-[-0.03em]">
               {h.heroTitleA}
               <br />
               <span className="accent">{h.heroTitleB}</span>
-            </h1>
+            </p>
             <p className="bm-up bm-up-2 mt-7 max-w-xl text-lg leading-relaxed text-ink-soft">{h.heroText}</p>
             <div className="bm-up bm-up-3 mt-9 flex flex-wrap gap-3">
               <ButtonLink href={href(lang, "/product/peace-in-the-chaos")}>{h.heroCta}</ButtonLink>

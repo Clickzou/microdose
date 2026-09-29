@@ -71,7 +71,18 @@ export function Marquee({ items }: { items: string[] }) {
   );
 }
 
-export function ProductCard({ lang, slug, t }: { lang: Locale; slug: ProductSlug; t: Dictionary }) {
+export function ProductCard({
+  lang,
+  slug,
+  t,
+  heading: Heading = "h3",
+}: {
+  lang: Locale;
+  slug: ProductSlug;
+  t: Dictionary;
+  /** Niveau du titre : h3 sous un H2 de section, h2 quand la page n'en a pas (boutique). */
+  heading?: "h2" | "h3";
+}) {
   const p = products[slug];
   const copy = t.products[slug];
   return (
@@ -87,7 +98,7 @@ export function ProductCard({ lang, slug, t }: { lang: Locale; slug: ProductSlug
       </div>
       <div className="mt-5 flex items-start justify-between gap-4">
         <div>
-          <h3 className="text-2xl">{copy.name}</h3>
+          <Heading className="text-2xl">{copy.name}</Heading>
           <p className="mt-1 text-ink-soft">{copy.tagline}</p>
         </div>
         <div className="text-right">

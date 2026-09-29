@@ -71,7 +71,7 @@ const de: Dictionary = {
     "Nur für Erwachsene",
   ],
   home: {
-    heroKicker: "Mikrodosen aus Psilocybin-Trüffeln",
+    heroKicker: "Microdosing mit Psilocybin-Trüffeln",
     heroTitleA: "Ruhe im",
     heroTitleB: "Chaos.",
     heroText:

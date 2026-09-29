@@ -3,6 +3,7 @@ import Image from "next/image";
 import { href, type Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/dictionaries/en";
 import NewsletterForm from "./newsletter-form";
+import HomeCredit from "./home-credit";
 
 export default function SiteFooter({ lang, t }: { lang: Locale; t: Dictionary }) {
   const f = t.footer;
@@ -54,7 +55,8 @@ export default function SiteFooter({ lang, t }: { lang: Locale; t: Dictionary })
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
             {cols.map((c) => (
               <div key={c.title}>
-                <h4 className="text-paper/50">{c.title}</h4>
+                {/* Libellé, pas un titre : un H4 ici sautait un niveau après le dernier H2/H1. */}
+                <p className="text-xs font-semibold uppercase tracking-[0.08em] text-paper/50">{c.title}</p>
                 <ul className="mt-4 space-y-2.5">
                   {c.links.map((l) => (
                     <li key={l.href}>
@@ -73,6 +75,7 @@ export default function SiteFooter({ lang, t }: { lang: Locale; t: Dictionary })
           <p>
             © {new Date().getFullYear()} {f.rights}
           </p>
+          <HomeCredit lang={lang} />
           <p>
             <a href="mailto:info@bien.health" className="hover:text-paper">
               info@bien.health

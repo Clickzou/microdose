@@ -24,7 +24,7 @@ export default async function Shop({ params }: PageProps<"/[lang]/shop">) {
         <p className="text-sm text-muted">{t.shop.shippingNote}</p>
         <div className="mt-8 grid gap-12 md:grid-cols-2">
           {productList.map((p) => (
-            <ProductCard key={p.slug} lang={lang} slug={p.slug} t={t} />
+            <ProductCard key={p.slug} lang={lang} slug={p.slug} t={t} heading="h2" />
           ))}
         </div>
       </section>

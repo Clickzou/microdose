@@ -71,7 +71,7 @@ const nl: Dictionary = {
     "Alleen voor volwassenen",
   ],
   home: {
-    heroKicker: "Microdoses psilocybinetruffels",
+    heroKicker: "Microdosing met psilocybinetruffels",
     heroTitleA: "Rust in",
     heroTitleB: "de chaos.",
     heroText:

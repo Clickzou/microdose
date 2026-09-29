@@ -73,7 +73,7 @@ const en = {
     "Adults only",
   ],
   home: {
-    heroKicker: "Psilocybin truffle microdoses",
+    heroKicker: "Microdosing with psilocybin truffles",
     heroTitleA: "Peace in",
     heroTitleB: "the chaos.",
     heroText:
