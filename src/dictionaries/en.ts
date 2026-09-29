@@ -26,7 +26,7 @@ const en = {
   nav: {
     shop: "Shop",
     howItWorks: "How it works",
-    learn: "Blog",
+    learn: "Learn",
     about: "About",
     faq: "FAQ",
     contact: "Contact",
