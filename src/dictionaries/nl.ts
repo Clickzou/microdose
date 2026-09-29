@@ -24,7 +24,7 @@ const nl: Dictionary = {
   nav: {
     shop: "Shop",
     howItWorks: "Zo werkt het",
-    learn: "Kennis",
+    learn: "Blog",
     about: "Over ons",
     faq: "FAQ",
     contact: "Contact",

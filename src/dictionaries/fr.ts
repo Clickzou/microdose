@@ -25,7 +25,7 @@ const fr: Dictionary = {
   nav: {
     shop: "Boutique",
     howItWorks: "Comment ça marche",
-    learn: "Comprendre",
+    learn: "Blog",
     about: "À propos",
     faq: "FAQ",
     contact: "Contact",
