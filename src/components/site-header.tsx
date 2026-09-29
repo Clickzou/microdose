@@ -25,12 +25,12 @@ export default function SiteHeader({ lang, t }: { lang: Locale; t: Dictionary["n
         <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-paper">
           {t.skip}
         </a>
-        <div className="mx-auto flex h-16 max-w-7xl items-center gap-4 px-4 sm:px-6 lg:h-20">
+        <div className="relative mx-auto flex h-16 max-w-7xl items-center gap-4 px-4 sm:px-6 lg:h-20">
           <MobileMenu lang={lang} t={t} links={links} />
           <Link href={href(lang)} className="shrink-0" aria-label="BIEN Microdose">
             <Image src="/brand/logo-bien.svg" alt="BIEN" width={488} height={155} priority className="h-7 w-auto lg:h-8" />
           </Link>
-          <nav className="ml-8 hidden items-center gap-7 text-[0.95rem] lg:flex" aria-label="Main">
+          <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-5 whitespace-nowrap text-[0.95rem] lg:flex xl:gap-7" aria-label="Main">
             {links.map((l) => (
               <Link key={l.href} href={l.href} className="text-ink-soft transition hover:text-ink">
                 {l.label}
