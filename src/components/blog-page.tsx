@@ -48,6 +48,8 @@ export async function BlogPage({ params }: { params: Params }) {
   if (params.n === "1") redirect(href(lang, listingPath(p.category, 1)));
   const t = await getDictionary(lang);
   const { articles, counts } = listFor(p.category);
+  // Catégorie encore sans article publié (ses articles sont programmés) : pas de page vide.
+  if (p.category && articles.length === 0) notFound();
   if (p.page > pageCount(articles.length)) notFound();
   const hero = p.category
     ? { a: t.learn.categories[p.category], intro: t.learn.categoryMeta[p.category].description }
