@@ -1,4 +1,5 @@
-import { NextResponse } from "next/server";
+import { NextResponse, after } from "next/server";
+import { subscribeToKlaviyo } from "@/lib/klaviyo";
 import { computeTotals, products, type CartLine } from "@/lib/catalog";
 import { hasLocale } from "@/lib/i18n";
 import { supabaseAdmin } from "@/lib/supabase";
@@ -159,6 +160,8 @@ export async function POST(req: Request) {
 
     if (body.newsletter) {
       await db.from("newsletter_subscribers").upsert({ email: c.email.toLowerCase(), lang, source: "checkout" }, { onConflict: "email", ignoreDuplicates: true });
+      const optIn = c.email.toLowerCase();
+      after(() => subscribeToKlaviyo(optIn, lang, "checkout").catch((e) => console.error("checkout: Klaviyo", e)));
     }
     return NextResponse.json({ redirect: payment.url });
   } catch (e) {

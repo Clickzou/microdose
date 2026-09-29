@@ -6,7 +6,6 @@ import { fetchGa4, isGa4Configured, ga4PropertyId } from "@/lib/seo-dashboard/ga
 import { fetchGsc, isGscConfigured, gscSiteUrl } from "@/lib/seo-dashboard/gsc";
 import { fetchSales } from "@/lib/seo-dashboard/sales";
 import LoginForm from "./login-form";
-import DashboardTabs from "./tabs";
 import DateRange from "./date-range";
 import KeywordTable from "./keyword-table";
 import RealtimePanel from "./realtime";
@@ -123,8 +122,6 @@ export default async function SeoDashboard({
               <p className="text-[10px] uppercase tracking-[0.22em] text-[#1379b0]">Clickzou</p>
               <h1 className="text-xl font-semibold tracking-tight leading-tight">SEO by Clickzou</h1>
             </div>
-
-            <DashboardTabs active="stats" />
 
             <nav className="flex gap-1" aria-label="Période">
               {(Object.keys(PERIODS) as PeriodKey[]).map((k) => (

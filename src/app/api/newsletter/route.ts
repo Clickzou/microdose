@@ -1,7 +1,8 @@
-import { NextResponse } from "next/server";
+import { NextResponse, after } from "next/server";
 import { hasLocale } from "@/lib/i18n";
 import { supabaseAdmin } from "@/lib/supabase";
 import { EMAIL_RE, clientIp, rateLimited } from "@/lib/request";
+import { subscribeToKlaviyo } from "@/lib/klaviyo";
 
 export async function POST(req: Request) {
   if (rateLimited(`nl:${clientIp(req)}`, 5, 10 * 60_000)) return NextResponse.json({ ok: false }, { status: 429 });
@@ -21,5 +22,7 @@ export async function POST(req: Request) {
     console.error("newsletter", error);
     return NextResponse.json({ ok: false }, { status: 500 });
   }
+  // Klaviyo après la réponse : le visiteur n’attend pas l’outil d’envoi, et un échec ne perd pas l’inscription.
+  after(() => subscribeToKlaviyo(email, lang, "site").catch((e) => console.error("newsletter: Klaviyo", e)));
   return NextResponse.json({ ok: true });
 }
