@@ -6,6 +6,7 @@ import { fetchGa4, isGa4Configured, ga4PropertyId } from "@/lib/seo-dashboard/ga
 import { fetchGsc, isGscConfigured, gscSiteUrl } from "@/lib/seo-dashboard/gsc";
 import { fetchSales } from "@/lib/seo-dashboard/sales";
 import LoginForm from "./login-form";
+import DashboardTabs from "./tabs";
 import DateRange from "./date-range";
 import KeywordTable from "./keyword-table";
 import RealtimePanel from "./realtime";
@@ -48,6 +49,9 @@ const CHART_AMBER = "#c2760b";
 /** Premier jour où le site envoie `add_to_cart` et `begin_checkout` à GA4 (le
  *  suivi n'existait pas sur l'ancien WordPress). */
 const CART_TRACKING_SINCE = "2026-09-29";
+
+/** Page protégée par cookie : toujours rendue à la demande, jamais prérendue au build. */
+export const dynamic = "force-dynamic";
 
 export default async function SeoDashboard({
   searchParams,
@@ -119,6 +123,8 @@ export default async function SeoDashboard({
               <p className="text-[10px] uppercase tracking-[0.22em] text-[#1379b0]">Clickzou</p>
               <h1 className="text-xl font-semibold tracking-tight leading-tight">SEO by Clickzou</h1>
             </div>
+
+            <DashboardTabs active="stats" />
 
             <nav className="flex gap-1" aria-label="Période">
               {(Object.keys(PERIODS) as PeriodKey[]).map((k) => (
