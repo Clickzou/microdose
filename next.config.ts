@@ -35,6 +35,14 @@ const pageMap: Record<string, string> = {
   "21285-2": "",
 };
 
+/**
+ * Articles fusionnés (recherche de mots-clés du 29/09/2026) : l’ancien slug renvoie en
+ * 301 vers l’article qui l’a absorbé, pour son URL WordPress comme pour sa page /learn.
+ */
+const mergedArticles: Record<string, string> = {
+  "how-microdosing-catalyze-emotional-well-being": "microdosing-truffles-for-mindful-living",
+};
+
 function legacyRedirects() {
   const out: { source: string; destination: string; permanent: true }[] = [];
   // `{/}?` : l’ancienne URL WordPress (avec barre finale) comme sa variante sans barre
@@ -45,7 +53,11 @@ function legacyRedirects() {
     out.push({ source: `${from}{/}?`, destination: `/en${to}`, permanent: true });
     out.push({ source: `/:lang(fr|de|nl)${from}{/}?`, destination: `/:lang${to}`, permanent: true });
   };
-  for (const slug of articleSlugs) both(`/${slug}`, `/learn/${slug}`);
+  for (const slug of articleSlugs) if (!mergedArticles[slug]) both(`/${slug}`, `/learn/${slug}`);
+  for (const [from, to] of Object.entries(mergedArticles)) {
+    both(`/${from}`, `/learn/${to}`);
+    out.push({ source: `/:lang(en|fr|de|nl)/learn/${from}{/}?`, destination: `/:lang/learn/${to}`, permanent: true });
+  }
   for (const [from, to] of Object.entries(pageMap)) both(`/${from}`, to);
   both("/learn/:page(\\d+)", "/learn");
   both("/category/:path*", "/learn");
