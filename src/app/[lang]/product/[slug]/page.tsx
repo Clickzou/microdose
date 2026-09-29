@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Check, Leaf, MapPin, Nut, Package, Scale, Sprout } from "lucide-react";
+import { Check } from "lucide-react";
 import { getDictionary } from "@/dictionaries";
 import { formatPrice, hasLocale, locales } from "@/lib/i18n";
 import { SITE_URL, pageMetadata } from "@/lib/seo";
 import { isProductSlug, productList, products } from "@/lib/catalog";
-import { Kicker, ProductCard } from "@/components/ui";
+import { Kicker, ProductCard, TrustBadges } from "@/components/ui";
 import AddToCart from "@/components/add-to-cart";
 import ProductGallery from "@/components/product-gallery";
 import JsonLd from "@/components/json-ld";
@@ -95,19 +95,7 @@ export default async function ProductPage({ params }: PageProps<"/[lang]/product
             ))}
           </ul>
 
-          {slug === "peace-in-the-chaos" ? (
-            <ul className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3">
-              {t.product.badges.map((label, i) => {
-                const Icon = [Leaf, Sprout, Scale, MapPin, Nut, Package][i];
-                return (
-                  <li key={label} className="flex flex-col items-center gap-2 rounded-2xl bg-coffret-soft px-3 py-4 text-center text-xs font-semibold uppercase leading-snug tracking-[0.08em]">
-                    <Icon className="size-6" aria-hidden />
-                    {label}
-                  </li>
-                );
-              })}
-            </ul>
-          ) : null}
+          {slug === "peace-in-the-chaos" ? <TrustBadges labels={t.product.badges} className="mt-8" /> : null}
 
           <div className="mt-8">
             <AddToCart lang={lang} slug={slug} t={t} />

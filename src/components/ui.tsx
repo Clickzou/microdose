@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Leaf, MapPin, Nut, Package, Scale, Sprout } from "lucide-react";
 import type { Dictionary } from "@/dictionaries/en";
 import { products, type ProductSlug } from "@/lib/catalog";
 import { formatDate, formatPrice, href, type Locale } from "@/lib/i18n";
@@ -111,6 +112,27 @@ export function ProductCard({
         </div>
       </div>
     </Link>
+  );
+}
+
+/** Six badges de réassurance des truffes (bio, vegan, dose, origine, composition, envoi). */
+export function TrustBadges({ labels, dark = false, className = "" }: { labels: string[]; dark?: boolean; className?: string }) {
+  const icons = [Leaf, Sprout, Scale, MapPin, Nut, Package];
+  return (
+    <ul className={`grid grid-cols-2 gap-3 sm:grid-cols-3 ${className}`}>
+      {labels.map((label, i) => {
+        const Icon = icons[i];
+        return (
+          <li
+            key={label}
+            className={`flex flex-col items-center gap-2 rounded-2xl px-3 py-4 text-center text-xs font-semibold uppercase leading-snug tracking-[0.08em] ${dark ? "bg-paper/10 text-paper" : "bg-coffret-soft"}`}
+          >
+            <Icon className="size-6" aria-hidden />
+            {label}
+          </li>
+        );
+      })}
+    </ul>
   );
 }
 

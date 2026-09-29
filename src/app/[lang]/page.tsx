@@ -5,7 +5,7 @@ import { getDictionary } from "@/dictionaries";
 import { hasLocale, formatDate, formatPrice, href } from "@/lib/i18n";
 import { products } from "@/lib/catalog";
 import { getArticles } from "@/lib/content";
-import { ArticleCard, ButtonLink, Kicker, Marquee, Title } from "@/components/ui";
+import { ArticleCard, ButtonLink, Kicker, Marquee, Title, TrustBadges } from "@/components/ui";
 import NewsletterForm from "@/components/newsletter-form";
 import JsonLd from "@/components/json-ld";
 import { SITE_URL } from "@/lib/seo";
@@ -110,6 +110,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
                 </li>
               ))}
             </ul>
+            <TrustBadges labels={t.product.badges} dark className="mt-8" />
             <p className="mt-6 text-sm text-paper/60">{h.productRecommend}</p>
             <div className="mt-8">
               <ButtonLink href={href(lang, "/product/peace-in-the-chaos")} variant="light">
