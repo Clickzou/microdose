@@ -2,6 +2,7 @@
 
 import { useSyncExternalStore } from "react";
 import { isProductSlug, products, type CartLine, type ProductSlug } from "./catalog";
+import { trackCart } from "./analytics";
 
 /**
  * Panier conservé dans le navigateur (localStorage). Il ne contient que des
@@ -63,6 +64,7 @@ export function addToCart(slug: ProductSlug, qty: number) {
   if (i >= 0) lines[i] = { slug, qty: Math.min(lines[i].qty + qty, max) };
   else lines.push({ slug, qty: Math.min(qty, max) });
   write(lines);
+  trackCart("add_to_cart", [{ slug, qty: Math.min(qty, max) }]);
 }
 
 export function setQty(slug: ProductSlug, qty: number) {

@@ -29,5 +29,7 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next|api|images|brand|favicon|robots.txt|sitemap.xml|.*\\..*).*)"],
+  // `seo` est exclu comme `api` : le tableau de bord « SEO by Clickzou » vit hors
+  // du site multilingue, une redirection vers /en/seo le rendrait introuvable.
+  matcher: ["/((?!_next|api|seo|images|brand|favicon|robots.txt|sitemap.xml|.*\\..*).*)"],
 };

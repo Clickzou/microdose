@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useCart } from "@/lib/cart";
+import { trackCart } from "@/lib/analytics";
 import { computeTotals, enabledCountries } from "@/lib/catalog";
 import { formatPrice, href, intlLocale, type Locale } from "@/lib/i18n";
 import type { Dictionary } from "@/dictionaries/en";
@@ -54,6 +55,7 @@ export default function CheckoutForm({ lang, t }: { lang: Locale; t: Dictionary 
       });
       const json = await res.json().catch(() => ({}));
       if (res.ok && json.redirect) {
+        trackCart("begin_checkout", lines);
         window.location.href = json.redirect;
         return;
       }
