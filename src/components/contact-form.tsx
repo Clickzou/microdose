@@ -33,11 +33,14 @@ export default function ContactForm({ lang, t }: { lang: Locale; t: Dictionary["
         <input className={input} name="name" required autoComplete="name" placeholder={t.name} aria-label={t.name} />
         <input className={input} name="email" type="email" required autoComplete="email" placeholder={t.email} aria-label={t.email} />
       </div>
-      <select className={input} name="subject" aria-label={t.subject} defaultValue={t.subjects[0]}>
-        {t.subjects.map((s) => (
-          <option key={s}>{s}</option>
-        ))}
-      </select>
+      <div className="grid gap-4 sm:grid-cols-2">
+        <input className={input} name="phone" type="tel" required minLength={6} maxLength={30} autoComplete="tel" placeholder={t.phone} aria-label={t.phone} />
+        <select className={input} name="subject" required aria-label={t.subject} defaultValue={t.subjects[0]}>
+          {t.subjects.map((s) => (
+            <option key={s}>{s}</option>
+          ))}
+        </select>
+      </div>
       <textarea className={`${input} min-h-44`} name="message" required maxLength={5000} placeholder={t.message} aria-label={t.message} />
       <input name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
       {state === "error" ? (

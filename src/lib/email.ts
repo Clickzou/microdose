@@ -166,11 +166,12 @@ async function notifyBien(o: PaidOrder) {
 }
 
 /** Message du formulaire de contact, transmis à BIEN ; « Répondre » écrit directement à l'expéditeur. */
-export async function sendContactNotification(m: { lang: string; name: string; email: string; subject: string; message: string }) {
+export async function sendContactNotification(m: { lang: string; name: string; email: string; phone: string; subject: string; message: string }) {
   const text = [
     `New message from the contact form (${m.lang.toUpperCase()})`,
     "",
     `From: ${m.name} <${m.email}>`,
+    `Phone: ${m.phone}`,
     `Subject: ${m.subject || "-"}`,
     "",
     m.message,

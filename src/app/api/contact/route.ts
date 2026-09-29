@@ -12,9 +12,10 @@ export async function POST(req: Request) {
 
   const name = String(b.name ?? "").trim().slice(0, 120);
   const email = String(b.email ?? "").trim().toLowerCase();
+  const phone = String(b.phone ?? "").trim();
   const subject = String(b.subject ?? "").trim().slice(0, 120);
   const message = String(b.message ?? "").trim();
-  if (!name || !EMAIL_RE.test(email) || message.length < 2 || message.length > 5000) {
+  if (!name || !EMAIL_RE.test(email) || !/^\+?[\d\s().\/-]{6,30}$/.test(phone) || !subject || message.length < 2 || message.length > 5000) {
     return NextResponse.json({ ok: false }, { status: 400 });
   }
 
@@ -25,6 +26,7 @@ export async function POST(req: Request) {
     lang,
     name,
     email,
+    phone,
     subject,
     message,
     ip,
@@ -34,6 +36,6 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false }, { status: 500 });
   }
   // Le message est déjà en base : un échec d'envoi ne doit pas le faire passer pour perdu.
-  await sendContactNotification({ lang, name, email, subject, message }).catch((e) => console.error("contact: e-mail", e));
+  await sendContactNotification({ lang, name, email, phone, subject, message }).catch((e) => console.error("contact: e-mail", e));
   return NextResponse.json({ ok: true });
 }

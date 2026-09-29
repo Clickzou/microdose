@@ -423,6 +423,7 @@ const nl: Dictionary = {
     intro: "Een vraag over een bestelling of het programma, of een persverzoek? Stuur ons een bericht — meestal antwoorden we binnen één werkdag.",
     name: "Naam",
     email: "E-mail",
+    phone: "Telefoon",
     subject: "Onderwerp",
     subjects: ["Bestelling", "Programma", "Pers & events", "Anders"],
     message: "Bericht",

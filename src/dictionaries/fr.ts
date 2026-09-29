@@ -424,6 +424,7 @@ const fr: Dictionary = {
     intro: "Une question sur une commande, le programme, ou une demande presse ? Écrivez-nous : nous répondons généralement sous un jour ouvré.",
     name: "Nom",
     email: "E-mail",
+    phone: "Téléphone",
     subject: "Objet",
     subjects: ["Commande", "Programme", "Presse et événements", "Autre"],
     message: "Message",

@@ -423,6 +423,7 @@ const de: Dictionary = {
     intro: "Eine Frage zu einer Bestellung, zum Programm oder eine Presseanfrage? Schreiben Sie uns — wir antworten in der Regel innerhalb eines Werktags.",
     name: "Name",
     email: "E-Mail",
+    phone: "Telefon",
     subject: "Betreff",
     subjects: ["Bestellung", "Programm", "Presse & Veranstaltungen", "Sonstiges"],
     message: "Nachricht",

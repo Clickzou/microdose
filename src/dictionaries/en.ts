@@ -425,6 +425,7 @@ const en = {
     intro: "A question about an order, the programme or a press request? Write to us, we usually reply within one working day.",
     name: "Name",
     email: "Email",
+    phone: "Phone",
     subject: "Subject",
     subjects: ["Order", "Programme", "Press & events", "Other"],
     message: "Message",
