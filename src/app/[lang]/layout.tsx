@@ -30,8 +30,10 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
   return {
     metadataBase: new URL(SITE_URL),
     applicationName: t.meta.siteName,
-    title: { default: t.meta.title, template: `%s — ${t.meta.siteName}` },
     ...pageMetadata({ lang, path: "", title: t.meta.title, description: t.meta.description }),
+    // Après l’étalement : sinon le titre brut de pageMetadata écrasait le modèle et les
+    // pages s’intitulaient « Shop », « About »… sans marque (audit 29/09, P1).
+    title: { default: t.meta.title, template: `%s — ${t.meta.siteName}` },
   };
 }
 
@@ -53,6 +55,7 @@ export default async function LangLayout({ children, params }: LayoutProps<"/[la
             logo: `${SITE_URL}/brand/logo-bien.svg`,
             email: "info@bien.health",
             vatID: "NL864408997B01",
+            sameAs: ["https://www.instagram.com/bien.health/"],
             address: {
               "@type": "PostalAddress",
               streetAddress: "Keizersgracht 391A",

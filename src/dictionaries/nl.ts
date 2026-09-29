@@ -7,9 +7,19 @@ import type { Dictionary } from "./en";
 const nl: Dictionary = {
   meta: {
     siteName: "BIEN Microdose",
-    title: "BIEN Microdose — voorgedoseerde microdoses psilocybinetruffels",
+    title: "Microdosing truffels: 6-weekse programma — BIEN",
     description:
       "Voorgedoseerde psilocybinetruffels van 1 g, gekweekt in Nederland, met een begeleid programma van 6 weken en een app. Alleen voor volwassenen.",
+  },
+  seo: {
+    shop: { title: "Microdosing truffels kopen", description: "PEACE in the Chaos: zes voorgedoseerde truffels van 1 g, Psilocybe mexicana, met een programma van 6 weken en een app. Gekweekt in Nederland." },
+    howItWorks: { title: "Truffels microdoseren: het 2-6-2-schema", description: "Zo microdoseer je truffels met BIEN: eerst een halve dosis, daarna twee microdoses per week, zes weken lang, en dan twee weken pauze. Met voorzorg." },
+    faq: { title: "Microdosing truffels: vragen en antwoorden", description: "Antwoorden over microdosing met truffels: legaliteit, dosering, het 2-6-2-schema, bewaren, contra-indicaties, levering en betaling. Helder en eerlijk." },
+    about: { title: "Over BIEN: microdosing uit Nederland", description: "BIEN biedt voorgedoseerde Psilocybe mexicana-truffels, gekweekt in Nederland, een duidelijk ritme van 6 weken en echte begeleiding. Zonder wonderbeloftes." },
+    contact: { title: "Contact", description: "Een vraag over een bestelling, het programma of een persverzoek? Schrijf naar het team van BIEN Microdose: we antwoorden meestal binnen één werkdag." },
+    learn: { title: "Microdosing informatie en artikelen", description: "" },
+    peace: { title: "Microdosing truffels: PEACE in the Chaos", description: "PEACE in the Chaos: zes voorgedoseerde truffels van 1 g, Psilocybe mexicana, voor drie weken, met het BIEN-programma, de app en de hotline. Alleen 18+." },
+    tote: { title: "BIEN tote bag van gerecycled canvas", description: "De BIEN tote bag: canvas van 80% gerecycled katoen en 20% gerecycled polyester, 39 × 37 cm, naturel, met het BIEN-logo. Stevig, voor elke dag." },
   },
   nav: {
     shop: "Shop",
@@ -26,7 +36,7 @@ const nl: Dictionary = {
   },
   common: {
     shopNow: "Naar de shop",
-    learnMore: "Meer weten",
+    learnMore: "Zo werkt het programma van 6 weken",
     readMore: "Lees verder",
     addToCart: "In winkelwagen",
     added: "Toegevoegd aan winkelwagen",
@@ -164,7 +174,7 @@ const nl: Dictionary = {
       ],
       descriptionTitle: "Over de truffels",
       description:
-        "De sclerotia van Psilocybe mexicana — vaak ‘magic truffels’ genoemd — zijn de ondergrondse vorm van de paddenstoel. We leveren ze heel en voorgedoseerd op 1 g, zodat elke microdosis vanaf dag één hetzelfde is. Ze worden gekweekt in Alphen aan den Rijn, waar de verkoop legaal is.",
+        "De sclerotia van Psilocybe mexicana — vaak ‘magic truffels’ genoemd — zijn de ondergrondse vorm van de paddenstoel. We leveren ze heel en voorgedoseerd op 1 g, zodat elke microdosis vanaf dag één evenveel weegt — het natuurlijke psilocybinegehalte van een truffel kan wel licht verschillen. Ze worden gekweekt in Alphen aan den Rijn, waar de verkoop legaal is.",
       howToTitle: "Gebruik",
       howTo: [
         "Begin met een halve dosis (0,5 g) op een rustige dag zonder verplichtingen.",
@@ -351,7 +361,7 @@ const nl: Dictionary = {
     ],
     valuesTitle: "Waar we voor staan",
     values: [
-      { title: "Precisie", text: "Voorgedoseerde, constante microdoses — geen giswerk." },
+      { title: "Precisie", text: "Microdoses voorgedoseerd op 1 g — geen giswerk over het gewicht." },
       { title: "Eerlijkheid", text: "We delen wat onderzoek zegt, en ook wat het niet zegt." },
       { title: "Zorg", text: "Screening en begeleiding komen eerst, vóór elke verkoop." },
     ],

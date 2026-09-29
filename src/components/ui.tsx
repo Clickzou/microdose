@@ -145,7 +145,7 @@ export function FeaturedArticle({ lang, article, t }: { lang: Locale; article: A
   return (
     <article className="group grid items-center gap-8 lg:grid-cols-[1.2fr_1fr] lg:gap-12">
       <Link href={url} tabIndex={-1} aria-hidden className="relative block aspect-[16/10] overflow-hidden rounded-[2rem] bg-coffret-soft">
-        <Image src={article.image} alt="" fill priority sizes="(min-width: 1024px) 55vw, 90vw" className="object-cover transition duration-700 group-hover:scale-[1.02]" />
+        <Image src={article.image} alt="" fill loading="eager" fetchPriority="high" sizes="(min-width: 1024px) 55vw, 90vw" className="object-cover transition duration-700 group-hover:scale-[1.02]" />
       </Link>
       <div>
         <Kicker>{t.learn.featured}</Kicker>

@@ -7,6 +7,8 @@ import { products } from "@/lib/catalog";
 import { getArticles } from "@/lib/content";
 import { ArticleCard, ButtonLink, Kicker, Marquee, Title } from "@/components/ui";
 import NewsletterForm from "@/components/newsletter-form";
+import JsonLd from "@/components/json-ld";
+import { SITE_URL } from "@/lib/seo";
 
 // Régénérée toutes les heures : les articles programmés (publishAt) y apparaissent
 // le jour de leur parution, sans redéploiement.
@@ -23,6 +25,16 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: t.meta.siteName,
+          url: `${SITE_URL}/${lang}`,
+          inLanguage: lang,
+          publisher: { "@type": "Organization", name: "Bien Health B.V." },
+        }}
+      />
       {/* ------------------------------------------------------------ Héros */}
       <section className="relative overflow-hidden bg-coffret">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 pb-16 pt-12 sm:px-6 lg:grid-cols-[1.1fr_1fr] lg:gap-16 lg:pb-24 lg:pt-20">
@@ -44,7 +56,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
           </div>
           <div className="relative mx-auto w-full max-w-md lg:max-w-none">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-soft">
-              <Image src="/images/hero-sky.webp" alt="" fill priority sizes="(min-width: 1024px) 45vw, 90vw" className="object-cover" />
+              <Image src="/images/hero-sky.webp" alt="" fill loading="eager" fetchPriority="high" sizes="(min-width: 1024px) 45vw, 90vw" className="object-cover" />
             </div>
             <div className="absolute -bottom-6 -left-4 w-40 overflow-hidden rounded-3xl bg-paper p-2 shadow-soft sm:-left-10 sm:w-52">
               <div className="relative aspect-square overflow-hidden rounded-2xl">
@@ -73,7 +85,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       <section className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="grid overflow-hidden rounded-[2.5rem] bg-ink text-paper lg:grid-cols-2">
           <div className="relative min-h-[22rem] lg:min-h-[36rem]">
-            <Image src="/images/hand-truffles.webp" alt="" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+            <Image src="/images/hand-truffles.webp" alt={t.products["peace-in-the-chaos"].tagline} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
           </div>
           <div className="flex flex-col justify-center p-8 sm:p-12 lg:p-16">
             <Kicker className="text-paper/60">{h.productKicker}</Kicker>
@@ -128,7 +140,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       <section className="bg-coffret">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 py-24 sm:px-6 lg:grid-cols-[1fr_1.2fr] lg:items-center lg:py-32">
           <div className="relative aspect-square overflow-hidden rounded-[2.5rem]">
-            <Image src="/images/truffles-grid.webp" alt="" fill sizes="(min-width: 1024px) 40vw, 90vw" className="object-cover" />
+            <Image src="/images/truffles-grid.webp" alt={t.products["peace-in-the-chaos"].name} fill sizes="(min-width: 1024px) 40vw, 90vw" className="object-cover" />
           </div>
           <div>
             <Kicker>{h.qualityKicker}</Kicker>

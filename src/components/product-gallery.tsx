@@ -8,7 +8,7 @@ export default function ProductGallery({ images, alt }: { images: string[]; alt:
   return (
     <div>
       <div className="relative aspect-square overflow-hidden rounded-[2rem] bg-coffret-soft">
-        <Image src={images[active]} alt={alt} fill priority sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+        <Image src={images[active]} alt={alt} fill loading="eager" fetchPriority="high" sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
       </div>
       {images.length > 1 ? (
         <div className="mt-4 grid grid-cols-5 gap-3">

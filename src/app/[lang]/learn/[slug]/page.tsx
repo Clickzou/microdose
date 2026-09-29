@@ -104,7 +104,7 @@ export default async function ArticlePage({ params }: PageProps<"/[lang]/learn/[
       </header>
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <div className="relative -mt-2 aspect-[16/9] overflow-hidden rounded-[2rem]">
-          <Image src={article.image} alt="" fill priority sizes="(min-width: 1024px) 56rem, 100vw" className="object-cover" />
+          <Image src={article.image} alt={a.title} fill loading="eager" fetchPriority="high" sizes="(min-width: 1024px) 56rem, 100vw" className="object-cover" />
         </div>
       </div>
       <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6">

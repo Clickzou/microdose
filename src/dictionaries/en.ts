@@ -9,9 +9,19 @@
 const en = {
   meta: {
     siteName: "BIEN Microdose",
-    title: "BIEN Microdose — pre-dosed psilocybin truffle microdoses",
+    title: "Microdosing truffles: 6-week programme — BIEN Microdose",
     description:
       "Pre-dosed 1 g psilocybin truffles grown in the Netherlands, with a guided 6-week programme and a companion app. Adults only.",
+  },
+  seo: {
+    shop: { title: "Microdosing truffles shop, Netherlands", description: "PEACE in the Chaos: six pre-dosed 1 g Psilocybe mexicana truffles with a 6-week programme and app. Grown in the Netherlands, shipped discreetly." },
+    howItWorks: { title: "How to microdose truffles: the 2-6-2 plan", description: "How to microdose truffles with BIEN: a gentle first half dose, then two microdoses a week for six weeks and a two-week break, with precautions." },
+    faq: { title: "Microdosing truffles: questions answered", description: "Answers about microdosing truffles: legality, doses, the 2-6-2 schedule, storage, contraindications, delivery and payment. Clear and honest." },
+    about: { title: "About BIEN, microdosing from the Netherlands", description: "BIEN offers pre-dosed Psilocybe mexicana truffles grown in the Netherlands, a clear 6-week routine and real support. No mysticism, no miracle promises." },
+    contact: { title: "Contact us", description: "A question about an order, the programme or a press request? Write to the BIEN Microdose team: we usually reply within one working day, in English." },
+    learn: { title: "Microdosing guide and truffle articles", description: "" },
+    peace: { title: "Microdosing truffles kit: PEACE in the Chaos", description: "PEACE in the Chaos: six pre-dosed 1 g Psilocybe mexicana truffles, a 3-week supply, with BIEN's 6-week programme, companion app and hotline. Adults only." },
+    tote: { title: "BIEN tote bag in recycled canvas", description: "The BIEN tote bag: 80% recycled cotton and 20% recycled polyester canvas, 39 × 37 cm, natural colour, printed with the BIEN logo. Sturdy and everyday." },
   },
   nav: {
     shop: "Shop",
@@ -28,7 +38,7 @@ const en = {
   },
   common: {
     shopNow: "Shop now",
-    learnMore: "Learn more",
+    learnMore: "How the 6-week programme works",
     readMore: "Read more",
     addToCart: "Add to cart",
     added: "Added to cart",
@@ -166,7 +176,7 @@ const en = {
       ],
       descriptionTitle: "About the truffles",
       description:
-        "Psilocybe mexicana sclerotia — often called “magic truffles” — are the underground form of the mushroom. We deliver them whole and pre-dosed at 1 g, so every microdose is the same from day one. They are grown in Alphen aan den Rijn, in the Netherlands, where their sale is legal.",
+        "Psilocybe mexicana sclerotia — often called “magic truffles” — are the underground form of the mushroom. We deliver them whole and pre-dosed at 1 g, so every microdose weighs the same from day one — the natural psilocybin content of a truffle can still vary slightly. They are grown in Alphen aan den Rijn, in the Netherlands, where their sale is legal.",
       howToTitle: "How to use",
       howTo: [
         "Start with half a dose (0.5 g) on a quiet day, without obligations.",
@@ -353,7 +363,7 @@ const en = {
     ],
     valuesTitle: "What we stand for",
     values: [
-      { title: "Precision", text: "Pre-dosed, consistent microdoses — no guesswork." },
+      { title: "Precision", text: "Microdoses pre-dosed at 1 g — no guesswork on the weight." },
       { title: "Honesty", text: "We share what research says, including what it doesn't." },
       { title: "Care", text: "Screening and support come first, before any sale." },
     ],

@@ -34,7 +34,7 @@ export async function blogMetadata(params: Params): Promise<Metadata> {
   const t = await getDictionary(params.lang);
   const base = p.category
     ? { title: t.learn.categoryMeta[p.category].title, description: t.learn.categoryMeta[p.category].description }
-    : { title: `${t.learn.title} ${t.learn.accent}`, description: t.learn.intro };
+    : { title: t.seo.learn.title, description: t.learn.intro };
   // Pages 2+ : titre distinct, canonical sur elles-mêmes (recommandation Google pour la pagination).
   const title = p.page > 1 ? `${base.title} — ${t.learn.page} ${p.page}` : base.title;
   return pageMetadata({ lang: params.lang, path: listingPath(p.category, p.page), title, description: base.description });

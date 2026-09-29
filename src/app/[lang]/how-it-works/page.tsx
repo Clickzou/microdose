@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/how-it-wor
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
   const t = await getDictionary(lang);
-  return pageMetadata({ lang, path: "/how-it-works", title: `${t.howItWorks.title} ${t.howItWorks.accent}`, description: t.howItWorks.intro });
+  return pageMetadata({ lang, path: "/how-it-works", title: t.seo.howItWorks.title, description: t.seo.howItWorks.description });
 }
 
 const supportImages = ["/images/app.webp", "/images/chat.webp", "/images/group-sofa.webp"];

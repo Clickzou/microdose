@@ -7,9 +7,19 @@ import type { Dictionary } from "./en";
 const de: Dictionary = {
   meta: {
     siteName: "BIEN Microdose",
-    title: "BIEN Microdose — vordosierte Mikrodosen aus Psilocybin-Trüffeln",
+    title: "Microdosing mit Trüffeln: 6-Wochen-Programm — BIEN",
     description:
       "Vordosierte Psilocybin-Trüffel zu je 1 g, gezüchtet in den Niederlanden, mit einem begleiteten 6-Wochen-Programm und einer Begleit-App. Nur für Erwachsene.",
+  },
+  seo: {
+    shop: { title: "Shop: Trüffel für Microdosing", description: "PEACE in the Chaos: sechs auf 1 g vordosierte Psilocybe-mexicana-Trüffel mit 6-Wochen-Programm und App. Gezüchtet in den Niederlanden, diskreter Versand." },
+    howItWorks: { title: "Microdosing-Anleitung: das 2-6-2-Protokoll", description: "Microdosing mit BIEN: beim ersten Mal eine halbe Dosis, dann zwei Mikrodosen pro Woche für sechs Wochen und zwei Wochen Pause, mit allen Vorsichtshinweisen." },
+    faq: { title: "Microdosing mit Trüffeln: häufige Fragen", description: "Antworten zum Microdosing mit Trüffeln: Rechtslage, Dosierung, 2-6-2-Rhythmus, Lagerung, Gegenanzeigen, Lieferung und Zahlung. Klar und ehrlich erklärt." },
+    about: { title: "Über BIEN: Microdosing aus den Niederlanden", description: "BIEN bietet vordosierte Psilocybe-mexicana-Trüffel aus den Niederlanden, einen klaren 6-Wochen-Rhythmus und echte Begleitung, ohne Wunderversprechen." },
+    contact: { title: "Kontakt", description: "Eine Frage zu einer Bestellung, zum Programm oder eine Presseanfrage? Schreiben Sie dem Team von BIEN Microdose: Antwort meist innerhalb eines Werktags." },
+    learn: { title: "Microdosing-Ratgeber und Artikel", description: "" },
+    peace: { title: "Mexicana-Trüffel: PEACE in the Chaos", description: "PEACE in the Chaos: sechs auf 1 g vordosierte Psilocybe-mexicana-Trüffel für drei Wochen, mit dem BIEN-Programm, der Begleit-App und der Hotline. Nur ab 18." },
+    tote: { title: "BIEN Tote Bag aus recyceltem Canvas", description: "Die BIEN Tote Bag: Canvas aus 80 % recycelter Baumwolle und 20 % recyceltem Polyester, 39 × 37 cm, naturfarben, mit BIEN-Logo bedruckt. Robust für jeden Tag." },
   },
   nav: {
     shop: "Shop",
@@ -26,7 +36,7 @@ const de: Dictionary = {
   },
   common: {
     shopNow: "Zum Shop",
-    learnMore: "Mehr erfahren",
+    learnMore: "So funktioniert das 6-Wochen-Programm",
     readMore: "Weiterlesen",
     addToCart: "In den Warenkorb",
     added: "Zum Warenkorb hinzugefügt",
@@ -164,7 +174,7 @@ const de: Dictionary = {
       ],
       descriptionTitle: "Über die Trüffel",
       description:
-        "Die Sklerotien von Psilocybe mexicana — oft „Magic Truffles“ genannt — sind die unterirdische Form des Pilzes. Wir liefern sie ganz und auf 1 g vordosiert, damit jede Mikrodosis vom ersten Tag an gleich ist. Gezüchtet werden sie in Alphen aan den Rijn in den Niederlanden, wo ihr Verkauf legal ist.",
+        "Die Sklerotien von Psilocybe mexicana — oft „Magic Truffles“ genannt — sind die unterirdische Form des Pilzes. Wir liefern sie ganz und auf 1 g vordosiert, damit jede Mikrodosis vom ersten Tag an gleich viel wiegt — der natürliche Psilocybingehalt einer Trüffel kann dennoch leicht schwanken. Gezüchtet werden sie in Alphen aan den Rijn in den Niederlanden, wo ihr Verkauf legal ist.",
       howToTitle: "Anwendung",
       howTo: [
         "Beginnen Sie mit einer halben Dosis (0,5 g) an einem ruhigen Tag ohne Verpflichtungen.",
@@ -351,7 +361,7 @@ const de: Dictionary = {
     ],
     valuesTitle: "Wofür wir stehen",
     values: [
-      { title: "Präzision", text: "Vordosierte, gleichbleibende Mikrodosen — ohne Rätselraten." },
+      { title: "Präzision", text: "Auf 1 g vordosierte Mikrodosen — ohne Rätselraten beim Gewicht." },
       { title: "Ehrlichkeit", text: "Wir teilen, was die Forschung sagt — und auch, was sie nicht sagt." },
       { title: "Sorgfalt", text: "Screening und Begleitung kommen zuerst, vor jedem Verkauf." },
     ],

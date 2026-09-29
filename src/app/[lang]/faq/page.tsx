@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/faq">): Pr
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
   const t = await getDictionary(lang);
-  return pageMetadata({ lang, path: "/faq", title: `${t.faq.title} ${t.faq.accent}`, description: t.faq.intro });
+  return pageMetadata({ lang, path: "/faq", title: t.seo.faq.title, description: t.seo.faq.description });
 }
 
 export default async function Faq({ params }: PageProps<"/[lang]/faq">) {

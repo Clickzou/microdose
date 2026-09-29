@@ -8,9 +8,19 @@ import type { Dictionary } from "./en";
 const fr: Dictionary = {
   meta: {
     siteName: "BIEN Microdose",
-    title: "BIEN Microdose — microdoses de truffes à psilocybine prédosées",
+    title: "Microdosing aux truffes, programme de 6 semaines — BIEN",
     description:
       "Truffes à psilocybine prédosées à 1 g, cultivées aux Pays-Bas, avec un programme guidé de 6 semaines et une application compagnon. Réservé aux adultes.",
+  },
+  seo: {
+    shop: { title: "Boutique : truffes pour le microdosing", description: "PEACE in the Chaos : six truffes Psilocybe mexicana prédosées à 1 g, un programme de 6 semaines et une application. Cultivées aux Pays-Bas, envoi discret." },
+    howItWorks: { title: "Comment microdoser : le protocole 2-6-2", description: "Microdoser avec BIEN : une demi-dose la première fois, puis deux microdoses par semaine pendant six semaines et deux semaines de pause, avec précautions." },
+    faq: { title: "Microdosing : vos questions, nos réponses", description: "Réponses sur le microdosing aux truffes : légalité, dosage, rythme 2-6-2, conservation, contre-indications, livraison et paiement. Clair et honnête." },
+    about: { title: "À propos de BIEN, microdosing néerlandais", description: "BIEN propose des truffes Psilocybe mexicana prédosées, cultivées aux Pays-Bas, une routine claire de 6 semaines et un vrai accompagnement, sans promesse." },
+    contact: { title: "Nous contacter", description: "Une question sur une commande, le programme ou une demande presse ? Écrivez à l’équipe BIEN Microdose : nous répondons en général sous un jour ouvré." },
+    learn: { title: "Guides et articles sur le microdosing", description: "" },
+    peace: { title: "Truffes mexicana : PEACE in the Chaos", description: "PEACE in the Chaos : six truffes Psilocybe mexicana prédosées à 1 g, trois semaines de microdoses, avec le programme BIEN, l’application et la ligne d’écoute." },
+    tote: { title: "Tote bag BIEN en toile recyclée", description: "Le tote bag BIEN : toile 80 % coton recyclé et 20 % polyester recyclé, 39 × 37 cm, couleur naturelle, imprimé du logo BIEN. Solide, pour tous les jours." },
   },
   nav: {
     shop: "Boutique",
@@ -27,7 +37,7 @@ const fr: Dictionary = {
   },
   common: {
     shopNow: "Découvrir la boutique",
-    learnMore: "En savoir plus",
+    learnMore: "Voir le programme de 6 semaines",
     readMore: "Lire la suite",
     addToCart: "Ajouter au panier",
     added: "Ajouté au panier",
@@ -165,7 +175,7 @@ const fr: Dictionary = {
       ],
       descriptionTitle: "À propos des truffes",
       description:
-        "Les sclérotes de Psilocybe mexicana — souvent appelés « truffes magiques » — sont la forme souterraine du champignon. Nous les livrons entiers et prédosés à 1 g, pour que chaque microdose soit identique dès le premier jour. Ils sont cultivés à Alphen aan den Rijn, aux Pays-Bas, où leur vente est légale.",
+        "Les sclérotes de Psilocybe mexicana — souvent appelés « truffes magiques » — sont la forme souterraine du champignon. Nous les livrons entiers et prédosés à 1 g, pour que chaque microdose ait le même poids dès le premier jour — la teneur naturelle en psilocybine d’une truffe peut, elle, légèrement varier. Ils sont cultivés à Alphen aan den Rijn, aux Pays-Bas, où leur vente est légale.",
       howToTitle: "Mode d’emploi",
       howTo: [
         "Commencez par une demi-dose (0,5 g), un jour calme et sans obligations.",
@@ -352,7 +362,7 @@ const fr: Dictionary = {
     ],
     valuesTitle: "Ce qui nous guide",
     values: [
-      { title: "Précision", text: "Des microdoses prédosées et constantes — sans approximation." },
+      { title: "Précision", text: "Des microdoses prédosées à 1 g — sans approximation sur le poids." },
       { title: "Honnêteté", text: "Nous partageons ce que dit la recherche, y compris ce qu’elle ne dit pas." },
       { title: "Soin", text: "La vérification et l’accompagnement passent avant toute vente." },
     ],

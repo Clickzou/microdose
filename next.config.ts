@@ -37,10 +37,13 @@ const pageMap: Record<string, string> = {
 
 function legacyRedirects() {
   const out: { source: string; destination: string; permanent: true }[] = [];
+  // `{/}?` : l’ancienne URL WordPress (avec barre finale) comme sa variante sans barre
+  // vont en UN saut à la destination (la redirection automatique de la barre finale
+  // est désactivée plus bas, sinon elle ajoutait un saut).
   const both = (from: string, to: string) => {
     // Racine = anciennes URL anglaises ; /fr|de|nl = versions Weglot.
-    out.push({ source: from, destination: `/en${to}`, permanent: true });
-    out.push({ source: `/:lang(fr|de|nl)${from}`, destination: `/:lang${to}`, permanent: true });
+    out.push({ source: `${from}{/}?`, destination: `/en${to}`, permanent: true });
+    out.push({ source: `/:lang(fr|de|nl)${from}{/}?`, destination: `/:lang${to}`, permanent: true });
   };
   for (const slug of articleSlugs) both(`/${slug}`, `/learn/${slug}`);
   for (const [from, to] of Object.entries(pageMap)) both(`/${from}`, to);
@@ -53,14 +56,20 @@ function legacyRedirects() {
   both("/product-tag/:path*", "/shop");
   // Les fiches produit anglaises étaient à la racine ; les versions traduites ont
   // déjà l'adresse du nouveau site (/fr/product/…).
-  out.push({ source: "/product/:slug", destination: "/en/product/:slug", permanent: true });
-  out.push({ source: "/cart", destination: "/en/cart", permanent: true });
-  out.push({ source: "/shop", destination: "/en/shop", permanent: true });
+  out.push({ source: "/product/:slug{/}?", destination: "/en/product/:slug", permanent: true });
+  out.push({ source: "/cart{/}?", destination: "/en/cart", permanent: true });
+  out.push({ source: "/learn{/}?", destination: "/en/learn", permanent: true });
+  out.push({ source: "/shop{/}?", destination: "/en/shop", permanent: true });
+  // Toute autre URL avec barre finale : on la retire nous-mêmes (remplace la
+  // redirection automatique de Next, désactivée par skipTrailingSlashRedirect).
+  out.push({ source: "/:path+/", destination: "/:path+", permanent: true });
   return out;
 }
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // Barre finale gérée dans redirects() : une ancienne URL en un seul saut (audit 29/09, P1).
+  skipTrailingSlashRedirect: true,
   images: {
     formats: ["image/avif", "image/webp"],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
