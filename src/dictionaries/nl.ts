@@ -267,6 +267,22 @@ const nl: Dictionary = {
     reference: "Bestelnummer",
     retry: "Terug naar winkelwagen",
   },
+  email: {
+    subject: "Je BIEN-bestelling {number}",
+    hello: "Hoi {name},",
+    intro: "Bedankt voor je bestelling. We hebben je betaling ontvangen en maken je pakket klaar.",
+    summary: "Overzicht",
+    discount: "Volumekorting",
+    shipping: "Verzending",
+    free: "Gratis",
+    total: "Totaal betaald",
+    address: "Bezorgadres",
+    nextTitle: "Hoe gaat het verder?",
+    next: [
+      "We nemen per e-mail contact met je op om je online consult van 15 minuten in te plannen, vóór je eerste dosis.",    ],
+    questions: "Vragen? Beantwoord gewoon deze e-mail of schrijf naar info@bien.health.",
+    signature: "Het BIEN-team",
+  },
   learn: {
     title: "Begrijp het",
     accent: "voordat je begint.",

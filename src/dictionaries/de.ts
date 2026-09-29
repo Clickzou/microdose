@@ -267,6 +267,22 @@ const de: Dictionary = {
     reference: "Bestellnummer",
     retry: "Zurück zum Warenkorb",
   },
+  email: {
+    subject: "Ihre BIEN-Bestellung {number}",
+    hello: "Hallo {name},",
+    intro: "Vielen Dank für Ihre Bestellung. Wir haben Ihre Zahlung erhalten und bereiten Ihr Paket vor.",
+    summary: "Bestellübersicht",
+    discount: "Mengenrabatt",
+    shipping: "Versand",
+    free: "Kostenlos",
+    total: "Bezahlter Betrag",
+    address: "Lieferadresse",
+    nextTitle: "Wie es weitergeht",
+    next: [
+      "Wir kontaktieren Sie per E-Mail, um Ihre 15-minütige Online-Beratung vor Ihrer ersten Dosis zu vereinbaren.",    ],
+    questions: "Fragen? Antworten Sie einfach auf diese E-Mail oder schreiben Sie an info@bien.health.",
+    signature: "Ihr BIEN-Team",
+  },
   learn: {
     title: "Verstehen,",
     accent: "bevor Sie beginnen.",

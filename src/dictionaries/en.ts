@@ -269,6 +269,22 @@ const en = {
     reference: "Order reference",
     retry: "Back to cart",
   },
+  email: {
+    subject: "Your BIEN order {number}",
+    hello: "Hello {name},",
+    intro: "Thank you for your order. We have received your payment and are preparing your package.",
+    summary: "Order summary",
+    discount: "Volume discount",
+    shipping: "Shipping",
+    free: "Free",
+    total: "Total paid",
+    address: "Delivery address",
+    nextTitle: "What happens next",
+    next: [
+      "We will contact you by email to schedule your 15-minute online consultation, before your first dose.",    ],
+    questions: "Any questions? Simply reply to this email or write to info@bien.health.",
+    signature: "The BIEN team",
+  },
   learn: {
     title: "Learn",
     accent: "before you start.",

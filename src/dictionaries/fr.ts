@@ -268,6 +268,22 @@ const fr: Dictionary = {
     reference: "Référence de commande",
     retry: "Retour au panier",
   },
+  email: {
+    subject: "Votre commande BIEN {number}",
+    hello: "Bonjour {name},",
+    intro: "Merci pour votre commande. Nous avons bien reçu votre paiement et préparons votre colis.",
+    summary: "Récapitulatif",
+    discount: "Remise sur quantité",
+    shipping: "Livraison",
+    free: "Offerte",
+    total: "Total payé",
+    address: "Adresse de livraison",
+    nextTitle: "Et maintenant ?",
+    next: [
+      "Nous vous contacterons par e-mail pour planifier votre consultation en ligne de 15 minutes, avant votre première dose.",    ],
+    questions: "Une question ? Répondez simplement à cet e-mail ou écrivez à info@bien.health.",
+    signature: "L’équipe BIEN",
+  },
   learn: {
     title: "Comprendre",
     accent: "avant de commencer.",

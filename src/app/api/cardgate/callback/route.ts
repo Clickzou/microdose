@@ -1,4 +1,6 @@
+import { after } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase";
+import { sendOrderEmails, type PaidOrder } from "@/lib/email";
 import { cardgateConfig, stateFromCode, verifyCallback, type CallbackData } from "@/lib/cardgate";
 
 /**
@@ -54,10 +56,16 @@ async function handle(req: Request) {
 
   const state = stateFromCode(code);
   if (state === "paid") {
-    await db
+    // Mise à jour conditionnelle : si deux callbacks arrivent en même temps, un seul
+    // obtient la ligne en retour, et les e-mails ne partent qu'une fois.
+    const { data: paid } = await db
       .from("orders")
       .update({ status: "paid", paid_at: new Date().toISOString(), payment_transaction: d.transaction, payment_code: code })
-      .eq("id", order.id);
+      .eq("id", order.id)
+      .not("status", "in", "(paid,shipped,refunded)")
+      .select()
+      .maybeSingle();
+    if (paid) after(() => sendOrderEmails(paid as PaidOrder));
   } else if (state === "failed") {
     await db.from("orders").update({ status: "failed", payment_code: code }).eq("id", order.id);
   } else {
