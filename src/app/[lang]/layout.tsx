@@ -48,12 +48,18 @@ export default async function LangLayout({ children, params }: LayoutProps<"/[la
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "BIEN Microdose",
-            legalName: "Bien B.V.",
+            legalName: "Bien Health B.V.",
             url: SITE_URL,
             logo: `${SITE_URL}/brand/logo-bien.svg`,
             email: "info@bien.health",
             vatID: "NL864408997B01",
-            address: { "@type": "PostalAddress", addressCountry: "NL" },
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Keizersgracht 391A",
+              postalCode: "1016 EJ",
+              addressLocality: "Amsterdam",
+              addressCountry: "NL",
+            },
           }}
         />
         <SiteHeader lang={lang} t={t.nav} />

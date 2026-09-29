@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/how-it-wor
   return pageMetadata({ lang, path: "/how-it-works", title: `${t.howItWorks.title} ${t.howItWorks.accent}`, description: t.howItWorks.intro });
 }
 
-const supportImages = ["/images/app.webp", "/images/consultation.webp", "/images/chat.webp", "/images/group-sofa.webp"];
+const supportImages = ["/images/app.webp", "/images/chat.webp", "/images/group-sofa.webp"];
 
 export default async function HowItWorks({ params }: PageProps<"/[lang]/how-it-works">) {
   const { lang } = await params;
@@ -40,11 +40,11 @@ export default async function HowItWorks({ params }: PageProps<"/[lang]/how-it-w
 
       <section className="mx-auto max-w-7xl px-4 sm:px-6">
         <h2 className="text-4xl">{h.supportTitle}</h2>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
           {h.support.map((s, i) => (
             <div key={s.title} className="overflow-hidden rounded-[2rem] bg-coffret-soft">
               <div className="relative aspect-[16/10]">
-                <Image src={supportImages[i]} alt="" fill sizes="(min-width: 640px) 45vw, 100vw" className="object-cover" />
+                <Image src={supportImages[i]} alt="" fill sizes="(min-width: 768px) 30vw, 100vw" className="object-cover" />
               </div>
               <div className="p-8">
                 <h3 className="text-2xl">{s.title}</h3>
