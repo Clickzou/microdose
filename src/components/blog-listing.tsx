@@ -42,12 +42,14 @@ export default function BlogListing({
   const total = pageCount(articles.length);
   const slice = articles.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
   const [featured, ...rest] = page === 1 ? slice : [undefined, ...slice];
-  const tab = "whitespace-nowrap rounded-full px-4 py-2 text-sm transition";
+  // inline-flex : un lien « en ligne » laisse déborder son padding vertical, ce qui
+  // faisait apparaître une barre de défilement verticale sur la rangée d’onglets.
+  const tab = "inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-full px-4 py-2 text-sm transition";
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6">
-      <nav aria-label={t.learn.categoriesLabel} className="-mx-4 overflow-x-auto px-4 pt-10 sm:mx-0 sm:px-0">
-        <ul className="flex gap-2">
+      <nav aria-label={t.learn.categoriesLabel} className="-mx-4 overflow-x-auto overflow-y-hidden px-4 pb-1 pt-10 [scrollbar-width:none] sm:mx-0 sm:px-0">
+        <ul className="flex w-max gap-2 py-1">
           <li>
             <Link
               href={href(lang, "/learn")}
