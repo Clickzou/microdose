@@ -3,22 +3,27 @@ import type { Dictionary } from "./en";
 /**
  * Deutsches Wörterbuch. Anrede „Sie“.
  * Konformität: keine gesundheitsbezogenen Heilversprechen (siehe docs/brief-contenu-agents.md).
+ *
+ * Exception voulue par la cliente (05/10/2026) : les textes d'origine repris fidèlement
+ * (bienfaits, FAQ de l'accueil, journée type), qu'elle a choisi de garder malgré le risque signalé.
+ *
+ * Pas de tiret long (— ou –) dans les textes : demande de la cliente, « ça fait trop IA ».
  */
 const de: Dictionary = {
   meta: {
     siteName: "BIEN Microdose",
-    title: "Microdosing Psilocybin: 6-Wochen-Programm — BIEN",
+    title: "Microdosing Psilocybin: 6-Wochen-Programm | BIEN",
     description:
-      "Vordosierte Psilocybin-Trüffel zu je 1 g, gezüchtet in den Niederlanden, mit einem begleiteten 6-Wochen-Programm und einer Begleit-App. Nur für Erwachsene.",
+      "Vordosierte Psilocybin-Trüffel zu je 1 g, gezüchtet in den Niederlanden, mit einem 6-Wochen-Programm und einer Begleit-App. Nur für Erwachsene.",
   },
   seo: {
     shop: { title: "Psilocybin-Trüffel für Microdosing", description: "PEACE in the Chaos: sechs auf 1 g vordosierte Psilocybe-mexicana-Trüffel mit 6-Wochen-Programm und App. Gezüchtet in den Niederlanden, diskreter Versand." },
     howItWorks: { title: "Microdosing-Protokoll: das 2-6-2-Schema", description: "Microdosing mit BIEN: beim ersten Mal eine halbe Dosis, dann zwei Mikrodosen pro Woche für sechs Wochen und zwei Wochen Pause, mit allen Vorsichtshinweisen." },
     faq: { title: "Zaubertrüffel und Microdosing: FAQ", description: "Antworten zum Microdosing mit Trüffeln: Rechtslage, Dosierung, 2-6-2-Rhythmus, Lagerung, Gegenanzeigen, Lieferung und Zahlung. Klar und ehrlich erklärt." },
-    about: { title: "Über BIEN: Microdosing aus den Niederlanden", description: "BIEN bietet vordosierte Psilocybe-mexicana-Trüffel aus den Niederlanden, einen klaren 6-Wochen-Rhythmus und echte Begleitung, ohne Wunderversprechen." },
+    about: { title: "Über BIEN: Microdosing aus den Niederlanden", description: "BIEN bietet vordosierte Psilocybe-mexicana-Trüffel aus den Niederlanden, einen klaren 6-Wochen-Rhythmus und eine Begleit-App. Keine Mystik, keine Wunderversprechen." },
     contact: { title: "Kontakt", description: "Eine Frage zu einer Bestellung, zum Programm oder eine Presseanfrage? Schreiben Sie dem Team von BIEN Microdose: Antwort meist innerhalb eines Werktags." },
     learn: { title: "Microdosing: Ratgeber und Artikel", description: "" },
-    peace: { title: "Psilocybin-Trüffel: PEACE in the Chaos", description: "PEACE in the Chaos: sechs auf 1 g vordosierte Psilocybe-mexicana-Trüffel für drei Wochen, mit dem BIEN-Programm, der Begleit-App und der Hotline. Nur ab 18." },
+    peace: { title: "Psilocybin-Trüffel: PEACE in the Chaos", description: "PEACE in the Chaos: sechs auf 1 g vordosierte Psilocybe-mexicana-Trüffel für drei Wochen, mit dem 6-Wochen-Programm von BIEN und der Begleit-App. Nur ab 18." },
     tote: { title: "BIEN Tote Bag aus recyceltem Canvas", description: "Die BIEN Tote Bag: Canvas aus 80 % recycelter Baumwolle und 20 % recyceltem Polyester, 39 × 37 cm, naturfarben, mit BIEN-Logo bedruckt. Robust für jeden Tag." },
   },
   nav: {
@@ -54,11 +59,11 @@ const de: Dictionary = {
     body: "Diese Website stellt Produkte aus Psilocybin-Trüffeln vor, die ausschließlich für Erwachsene bestimmt sind. Bitte bestätigen Sie Ihr Alter, um fortzufahren.",
     yes: "Ja, ich bin 18 oder älter",
     no: "Nein",
-    refused: "Entschuldigung — diese Website ist nur für Erwachsene zugänglich.",
+    refused: "Entschuldigung, diese Website ist nur für Erwachsene zugänglich.",
     legal: "Mit dem Betreten bestätigen Sie, dass Sie in Ihrem Wohnsitzland volljährig sind.",
   },
   cookies: {
-    text: "Wir verwenden notwendige Cookies für den Betrieb des Shops und — nur mit Ihrer Einwilligung — Cookies zur Reichweitenmessung, um die Website zu verbessern.",
+    text: "Wir verwenden notwendige Cookies für den Betrieb des Shops und, nur mit Ihrer Einwilligung, Cookies zur Reichweitenmessung, um die Website zu verbessern.",
     accept: "Akzeptieren",
     refuse: "Ablehnen",
     more: "Datenschutzerklärung",
@@ -66,8 +71,8 @@ const de: Dictionary = {
   marquee: [
     "Vordosierte Trüffel zu 1 g",
     "Gezüchtet in den Niederlanden",
-    "Begleitetes 6-Wochen-Programm",
-    "BIEN-Hotline inklusive",
+    "6-Wochen-Programm",
+    "BIEN-Begleit-App",
     "Diskreter Versand",
     "Nur für Erwachsene",
   ],
@@ -76,13 +81,13 @@ const de: Dictionary = {
     heroTitleA: "Ruhe im",
     heroTitleB: "Chaos.",
     heroText:
-      "Vordosierte Mikrodosen aus Psilocybe-mexicana-Trüffeln, gezüchtet in den Niederlanden — mit einem 6-Wochen-Programm, einer Begleit-App und einem echten Menschen, mit dem Sie sprechen können.",
+      "Vordosierte Mikrodosen aus Psilocybe-mexicana-Trüffeln, gezüchtet in den Niederlanden und geliefert mit einem 6-Wochen-Programm und einer Begleit-App.",
     heroCta: "Das Paket entdecken",
     heroCta2: "So funktioniert’s",
     introTitle: "Zu viele Gedanken. Zu viele Reize. Zu viel Druck.",
     introAccent: "Kommt Ihnen das bekannt vor?",
     introText:
-      "Das moderne Leben ist laut. Wir haben BIEN für Menschen gegründet, die Microdosing mit Sorgfalt erkunden möchten — mit einer klaren Routine, präzisen Dosen und Begleitung bei jedem Schritt, statt mit Rätselraten.",
+      "Das moderne Leben ist laut. Wir haben BIEN für Menschen gegründet, die Microdosing mit Sorgfalt erkunden möchten: eine klare Routine und präzise Dosen statt Rätselraten.",
     introText2:
       "Microdosing ist keine schnelle Lösung und nicht für jeden geeignet. Es ist eine Praxis, die manche Erwachsene bewusst und verantwortungsvoll ausprobieren. Genau dabei möchten wir Sie unterstützen.",
     productKicker: "Das Paket",
@@ -94,7 +99,7 @@ const de: Dictionary = {
     steps: [
       {
         title: "Sanft beginnen",
-        text: "Lesen Sie die Vorsichtsmaßnahmen und beginnen Sie an einem ruhigen Tag mit einer halben Mikrodosis (0,5 g). Die BIEN-Hotline beantwortet Ihre Fragen vor Ihrer ersten Dosis.",
+        text: "Lesen Sie die Vorsichtsmaßnahmen und beginnen Sie dann mit einer halben Mikrodosis (0,5 g) an einem ruhigen Tag ohne Verpflichtungen.",
       },
       {
         title: "Einem 6-Wochen-Zyklus folgen",
@@ -102,7 +107,7 @@ const de: Dictionary = {
       },
       {
         title: "Reflektieren, anpassen, pausieren",
-        text: "Notieren Sie, was Ihnen auffällt. Die BIEN-Hotline beantwortet Ihre Fragen während des gesamten Zyklus. Danach folgt eine Pause — ein Zyklus soll auch enden.",
+        text: "Notieren Sie in der App, was Ihnen auffällt. Danach folgt eine Pause: Ein Zyklus soll auch enden.",
       },
     ],
     qualityKicker: "Qualität",
@@ -111,7 +116,7 @@ const de: Dictionary = {
     quality: [
       { title: "Vordosiert zu 1 g", text: "Keine Waage, kein Schätzen. Jede Mikrodosis wird einzeln abgewogen und verpackt." },
       { title: "Gezüchtet in den Niederlanden", text: "Sklerotien von Psilocybe mexicana aus Alphen aan den Rijn, wo ihr Verkauf legal ist." },
-      { title: "Ganze Trüffel", text: "In ihrer natürlichen Form geliefert — nichts hinzugefügt, nichts extrahiert." },
+      { title: "Ganze Trüffel", text: "In ihrer natürlichen Form geliefert. Nichts hinzugefügt, nichts extrahiert." },
       { title: "Diskrete Lieferung", text: "Neutrale Außenverpackung, Sendungsverfolgung." },
       { title: "Bio-zertifiziert", text: "Biologischer Anbau, mit offizieller Bio-Zertifizierung." },
       { title: "Vegan-zertifiziert", text: "Keine tierischen Bestandteile, vegan zertifiziert." },
@@ -142,25 +147,81 @@ const de: Dictionary = {
     videosCta: "Folgen Sie uns auf Instagram",
     videosLabel: "Kundenvideo {n}",
     videosNote: "Videos auf Englisch. Individuelle, subjektive Erfahrungen: Sie sind von Person zu Person verschieden und kein Ergebnisversprechen.",
-    expertKicker: "Begleitung",
-    expertTitle: "Sie sind dabei nicht allein.",
-    expertText:
-      "Unser medizinischer Berater, Dr. David Garcia Padron, und das BIEN-Team sorgen dafür, dass Sie mit den richtigen Informationen starten: Ihre gesundheitliche Situation, mögliche Wechselwirkungen und die Fälle, in denen Microdosing schlicht keine gute Idee ist.",
-    expertCta: "So funktioniert’s",
+    // Textes de l'ancien site, traduits fidèlement à la demande de la cliente (05/10/2026).
+    benefitsTitle: "Makro-Vorteile in jeder Dosis.",
+    benefitsText: "Unser Forschungsteam hat die besten Pilzsorten für die größten Vorteile sorgfältig ausgewählt.",
+    benefits: [
+      { title: "Ruhe", text: "Fördert ein Gefühl der Ruhe und verringert Stress und allgemeine Ängstlichkeit." },
+      { title: "Fokus", text: "Weniger Ablenkung und ein schärferer Fokus, um tief in den Flow einzutauchen." },
+      { title: "Resilienz", text: "Ein Perspektivwechsel, um Herausforderungen mit Stärke und Anpassungsfähigkeit zu meistern." },
+      { title: "Leistung", text: "Setzt Ihr volles Potenzial für Kreativität und Problemlösung frei." },
+      { title: "Mentale Klarheit", text: "Weniger Gedankennebel, klarere Entscheidungen und bessere kognitive Leistungsfähigkeit." },
+      { title: "Kreativität", text: "Stärkt die Fähigkeit, Probleme zu lösen, und fördert das Denken über den Tellerrand hinaus." },
+    ],
+    faqTitle: "Häufig gestellte Fragen.",
+    faqCta: "Mehr anzeigen",
+    // FAQ de l'ancien site, traduite fidèlement, sans les renvois au médecin consultant, à
+    // l'appel d'accueil et au guide alcool (services retirés). Paragraphes séparés par \n\n.
+    faq: [
+      {
+        q: "Ist Microdosing legal?",
+        a: "Die Verordnung über die gegenseitige Anerkennung von Waren\n\nPsilocybin-Trüffel sind in den Niederlanden, wo BIEN ansässig ist, zu 100 % legal und können gemäß der Verordnung über die gegenseitige Anerkennung von Waren in jedes EU-Land versendet werden.\n\nDieses EU-Recht erlaubt die legale Einfuhr von einem Mitgliedstaat in einen anderen, unabhängig von der Rechtslage im Einfuhrland.",
+      },
+      {
+        q: "Bin ich bei einer Mikrodosis high?",
+        a: "Nein, der Psilocybingehalt einer Mikrodosis ist minimal, sodass sie sich für die tägliche Anwendung eignet.\n\nAlle unsere Mikrodosen sind vorab abgemessen (1 g), um Dosierungsfehler zu vermeiden. Es ist immer sicherer, mit einer niedrigen Dosis zu beginnen und sie mit wachsendem Vertrauen nach und nach zu erhöhen.",
+      },
+      {
+        q: "Macht Microdosing mit Pilzen abhängig?",
+        a: "Nein, eigentlich ist das Gegenteil der Fall.\n\nDas Abhängigkeitsrisiko von Psilocybin, dem Wirkstoff unserer Mikrodosis, ist mit 0,2 % minimal. Zum Vergleich: Bei SSRI liegt es bei 44 %.\n\nDie aktuelle Forschung untersucht Psilocybin als mögliche Behandlung von Substanzgebrauchsstörungen. Dennoch ist es immer wichtig, den eigenen Umgang damit im Blick zu behalten.",
+      },
+      {
+        q: "Kann ich mit einer Mikrodosis arbeiten?",
+        a: "Ja, Microdosing bei der Arbeit kann in der empfohlenen Dosierung ein großer Gewinn sein.\n\nEs kann die Stressbewältigung, den Fokus und die Fähigkeit zur Problemlösung verbessern.",
+      },
+      {
+        q: "Wie gehe ich bei meiner ersten Mikrodosis vor?",
+        a: "Im Allgemeinen wird empfohlen, an einem Tag ohne soziale Verpflichtungen zu beginnen. Am besten starten Sie mit einer kleineren Dosis von 0,5 Gramm (einer halben vordosierten Einheit) und erhöhen sie im Lauf der folgenden Woche schrittweise, um zu sehen, wie Ihr Körper reagiert.",
+      },
+      {
+        q: "Ich nehme ein Antidepressivum. Kann ich trotzdem mikrodosieren?",
+        a: "Wir raten davon ab, beides zu kombinieren.\n\nWenn Sie überlegen, Ihr Medikament auszuschleichen, oder sich Sorgen über mögliche Wechselwirkungen machen, wenden Sie sich bitte an Ihre eigene Ärztin oder Ihren eigenen Arzt.",
+      },
+      {
+        q: "Ist Microdosing bei ADHS hilfreich?",
+        a: "Ja, mehrere Fachleute sind der Ansicht, dass es Menschen mit ADHS oder ADS helfen kann, da Microdosing den Fokus und den Flow-Zustand verbessert.\n\nBitte sprechen Sie mit Ihrer eigenen Ärztin oder Ihrem eigenen Arzt, vor allem wenn Sie bereits in Behandlung sind.",
+      },
+      {
+        q: "Wann ist der beste Zeitpunkt, um mit Microdosing zu beginnen?",
+        a: "Den perfekten Zeitpunkt gibt es nicht, denn fast jeder Moment kann der richtige sein.\n\nEntscheidend ist, dass Sie zu Beginn eines Zyklus in einer guten mentalen Verfassung und offen für Veränderung sind.",
+      },
+      {
+        q: "Kann ich beim Microdosing Alkohol trinken?",
+        a: "Microdosing und Alkohol lassen sich zwar kombinieren, wir empfehlen es aber nicht.\n\nAlkohol kann die positiven Wirkungen des Microdosings abschwächen und wie ein „Alkohol-Booster“ wirken, sodass Sie sich schneller beschwipst fühlen.",
+      },
+      {
+        q: "Wie lagere ich frische Trüffel, damit sie ihre Wirkung behalten?",
+        a: "Damit frische Trüffel ihre Wirkung behalten, bewahren Sie sie im Kühlschrank auf.\n\nVerschlossen halten sie sich bis zu zwei Monate, nach dem Öffnen eine Woche.\n\nLagern Sie sie kühl, trocken und dunkel, um das Risiko von Fäulnis oder eines sinkenden Psilocybingehalts zu verringern.\n\nFrieren Sie sie nicht ein und lassen Sie die Streifen in ihrer Verpackung, damit sie keine Feuchtigkeit aufnehmen.",
+      },
+      {
+        q: "Liefergarantie",
+        a: "Wir versenden innerhalb der Europäischen Union mit einer hohen Zustellquote.\n\nFür unsere Kundinnen und Kunden in der EU bieten wir eine Liefergarantie: Kommt Ihre Bestellung nicht an, schicken wir Ihnen eine neue.",
+      },
+    ],
     learnKicker: "Wissen",
     learnTitle: "Verstehen, bevor Sie beginnen.",
     learnCta: "Alle Artikel",
     safetyTitle: "Microdosing ist nicht für jeden geeignet.",
     safetyText:
-      "Unsere Produkte sind ausschließlich für Erwachsene bestimmt. Sie sind nicht geeignet während der Schwangerschaft oder Stillzeit, wenn Sie oder nahe Angehörige eine Vorgeschichte mit Psychosen oder bipolaren Störungen haben, bei Herzerkrankungen oder wenn Sie Medikamente einnehmen — insbesondere Antidepressiva oder Lithium. Fahren Sie nach einer Mikrodosis niemals Auto. Sprechen Sie im Zweifel mit Ihrer Ärztin oder Ihrem Arzt.",
+      "Unsere Produkte sind ausschließlich für Erwachsene bestimmt. Sie sind nicht geeignet während der Schwangerschaft oder Stillzeit, wenn Sie oder nahe Angehörige eine Vorgeschichte mit Psychosen oder bipolaren Störungen haben, bei Herzerkrankungen oder wenn Sie Medikamente einnehmen, insbesondere Antidepressiva oder Lithium. Fahren Sie nach einer Mikrodosis niemals Auto. Sprechen Sie im Zweifel mit Ihrer Ärztin oder Ihrem Arzt.",
     safetyCta: "Alle Sicherheitshinweise lesen",
     newsletterTitle: "Der BIEN-Brief",
-    newsletterText: "Neues aus der Forschung, praktische Leitfäden und Einladungen zu unseren Veranstaltungen. Eine E-Mail pro Monat, kein Spam.",
+    newsletterText: "Neues aus der Forschung und praktische Leitfäden. Eine E-Mail pro Monat, kein Spam.",
   },
   newsletter: {
     placeholder: "Ihre E-Mail-Adresse",
     submit: "Abonnieren",
-    success: "Danke — Sie sind jetzt dabei.",
+    success: "Danke, Sie sind jetzt dabei.",
     error: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
     consent: "Mit dem Abonnement willigen Sie ein, unsere E-Mails zu erhalten. Abmeldung jederzeit möglich.",
   },
@@ -172,12 +233,10 @@ const de: Dictionary = {
       includes: [
         "6 × 1 g vordosierte Psilocybe-mexicana-Trüffel (für 3 Wochen)",
         "BIEN-Begleit-App",
-        "BIEN-Hotline",
-        "Einladungen zu Veranstaltungen der BIEN-Community",
       ],
       descriptionTitle: "Über die Trüffel",
       description:
-        "Die Sklerotien von Psilocybe mexicana — oft „Magic Truffles“ genannt — sind die unterirdische Form des Pilzes. Wir liefern sie ganz und auf 1 g vordosiert, damit jede Mikrodosis vom ersten Tag an gleich viel wiegt — der natürliche Psilocybingehalt einer Trüffel kann dennoch leicht schwanken. Gezüchtet werden sie in Alphen aan den Rijn in den Niederlanden, wo ihr Verkauf legal ist.",
+        "Die Sklerotien von Psilocybe mexicana, oft „Magic Truffles“ genannt, sind die unterirdische Form des Pilzes. Wir liefern sie ganz und auf 1 g vordosiert, damit jede Mikrodosis vom ersten Tag an gleich viel wiegt (der natürliche Psilocybingehalt einer Trüffel kann dennoch leicht schwanken). Gezüchtet werden sie in Alphen aan den Rijn in den Niederlanden, wo ihr Verkauf legal ist.",
       howToTitle: "Anwendung",
       howTo: [
         "Beginnen Sie mit einer halben Dosis (0,5 g) an einem ruhigen Tag ohne Verpflichtungen.",
@@ -191,20 +250,20 @@ const de: Dictionary = {
       storage: "Gekühlt lagern, in der Originalverpackung und für Kinder unzugänglich.",
       warningTitle: "Vorsichtsmaßnahmen",
       warning:
-        "Nur für Erwachsene (18+). Nicht geeignet während der Schwangerschaft oder Stillzeit, bei persönlicher oder familiärer Vorgeschichte mit Psychosen oder bipolaren Störungen, bei Herzerkrankungen oder bei Einnahme von Medikamenten (insbesondere Antidepressiva oder Lithium). Nicht mit Alkohol oder anderen Substanzen kombinieren. Kein Fahrzeug führen und keine Maschinen bedienen. Psilocybin-Trüffel werden in den Niederlanden legal verkauft; ihr rechtlicher Status ist von Land zu Land verschieden — informieren Sie sich über die Gesetze in Ihrem Land.",
+        "Nur für Erwachsene (18+). Nicht geeignet während der Schwangerschaft oder Stillzeit, bei persönlicher oder familiärer Vorgeschichte mit Psychosen oder bipolaren Störungen, bei Herzerkrankungen oder bei Einnahme von Medikamenten (insbesondere Antidepressiva oder Lithium). Nicht mit Alkohol oder anderen Substanzen kombinieren. Kein Fahrzeug führen und keine Maschinen bedienen. Psilocybin-Trüffel werden in den Niederlanden legal verkauft; ihr rechtlicher Status ist von Land zu Land verschieden. Informieren Sie sich daher über die Gesetze in Ihrem Land.",
       qtyNote: "10 % sparen ab 2 Paketen",
     },
     "bien-totebag": {
       name: "BIEN Tote Bag",
       tagline: "Canvas aus recycelter Baumwolle",
-      short: "So tragen, wie sie ist — oder als leere Leinwand nutzen.",
+      short: "So tragen, wie sie ist, oder als leere Leinwand nutzen.",
       includes: [
         "80 % recycelte Baumwolle, 20 % recyceltes Polyester",
         "39 × 37 cm, 300 g/m²",
         "Naturfarben, Einheitsgröße",
       ],
       descriptionTitle: "Über die Tasche",
-      description: "Eine robuste Alltagstasche aus recyceltem Canvas, bedruckt mit dem BIEN-Logo. So tragen, wie sie ist — oder ganz zu Ihrer eigenen machen.",
+      description: "Eine robuste Alltagstasche aus recyceltem Canvas, bedruckt mit dem BIEN-Logo. So tragen, wie sie ist, oder ganz zu Ihrer eigenen machen.",
       howToTitle: "",
       howTo: [] as string[],
       ingredientsTitle: "Material",
@@ -218,18 +277,50 @@ const de: Dictionary = {
   },
   shop: {
     title: "Shop",
-    intro: "Alles für einen begleiteten Microdosing-Zyklus — und eine Tasche, um es mitzunehmen.",
+    intro: "Alles für einen Microdosing-Zyklus, dazu eine Tasche, um es mitzunehmen.",
     shippingNote: "Kostenloser Versand ab 100 € · Mit Sendungsverfolgung",
   },
   product: {
     quantity: "Menge",
     packs: "Pakete",
     total: "Gesamt",
-    reassurance: ["Diskreter Versand mit Sendungsverfolgung", "Kostenloser Versand ab 100 €", "BIEN-Hotline inklusive"],
+    reassurance: ["Diskreter Versand mit Sendungsverfolgung", "Kostenloser Versand ab 100 €", "BIEN-Begleit-App inklusive"],
     badges: ["Bio-zertifiziert", "Vegan-zertifiziert", "Vordosiert zu 1 g", "Gezüchtet in den Niederlanden", "100 % Trüffel, ohne Zusätze", "Diskreter Versand"],
     ageNotice: "Indem Sie dieses Produkt in den Warenkorb legen, bestätigen Sie, dass Sie 18 Jahre oder älter sind.",
     related: "Das könnte Ihnen auch gefallen",
     reviewsTitle: "Erfahrungen unserer Kundschaft",
+  },
+  // Sections de la fiche PEACE in the Chaos reprises de l'ancien site, traduites fidèlement
+  // (demande de la cliente du 05/10/2026).
+  protocol: {
+    benefitsTitle: "Unterstützung bei den Herausforderungen des modernen Lebens.",
+    benefitsText: "Genießen Sie die Vorteile des Microdosings, ohne einen veränderten Bewusstseinszustand zu erleben. Fühlen Sie sich wie Sie selbst, nur an einem richtig guten Tag.",
+    benefits: [
+      { title: "Ruhe", text: "Fördert ein Gefühl der Ruhe und verringert Stress und allgemeine Ängstlichkeit." },
+      { title: "Resilienz", text: "Ein Perspektivwechsel, um Herausforderungen mit Stärke und Anpassungsfähigkeit zu meistern." },
+      { title: "Mentale Klarheit", text: "Weniger Gedankennebel, klarere Entscheidungen und bessere kognitive Leistungsfähigkeit." },
+      { title: "Kreativität", text: "Stärkt die Fähigkeit, Probleme zu lösen, und fördert das Denken über den Tellerrand hinaus." },
+    ],
+    fadimanTitle: "Wir folgen dem Protokoll von Dr. Fadiman.",
+    fadimanText: "Das am besten erforschte Microdosing-Protokoll, das es gibt.",
+    fadimanRemember: "Merken Sie sich einfach 2-6-2: 6 Wochen lang 2-mal pro Woche eine Mikrodosis.",
+    fadimanRemember2: "Danach 2 Wochen Pause. Dann können Sie wieder beginnen.",
+    day: "Tag {n}",
+    dose: "Dosis",
+    off: "Pause",
+    weeksOn: "6 Wochen Einnahme",
+    weeksOff: "2 Wochen Pause",
+    dayTitle: "24 Stunden mit BIEN.",
+    dayText: "So sieht ein typischer Microdosing-Tag mit BIEN aus.",
+    timeline: [
+      { time: "8 Uhr", title: "In den Tag starten", text: "Nehmen Sie BIEN auf nüchternen Magen ein. Legen Sie mit der BIEN-Begleit-App eine Intention fest." },
+      { time: "8:30 bis 9 Uhr", title: "Erste Wirkungen", text: "Ein leichter Energieschub." },
+      { time: "9 bis 12 Uhr", title: "Energiegeladener Flow", text: "Wie eine Tasse Kaffee, aber ohne die nervösen Nebenwirkungen. Mentale Klarheit. Fokus." },
+      { time: "12 bis 14 Uhr", title: "Höhepunkt der Klarheit", text: "Eine gute Gelegenheit, zu meditieren und über die am Morgen festgelegte Intention nachzudenken." },
+      { time: "14 bis 20 Uhr", title: "Ruhiger Flow", text: "Ähnlich wie der energiegeladene Flow am Morgen, aber sanfter. Gesteigerte Kreativität. Denken über den Tellerrand hinaus." },
+      { time: "20 bis 24 Uhr", title: "Integration", text: "Führen Sie Tagebuch in der BIEN-Begleit-App, um den Tag zu reflektieren und zu integrieren. Ruhig und gelassen, bereit für eine erholsame Nacht." },
+      { time: "Tag +1", title: "Nachklang", text: "Subtilere Wirkungen. Ausgeglichene Stimmung und kreatives Denken." },
+    ],
   },
   cart: {
     title: "Ihr Warenkorb",
@@ -265,7 +356,7 @@ const de: Dictionary = {
     newsletterOptIn: "Schicken Sie mir den BIEN-Brief (optional).",
     pay: "Weiter zur sicheren Zahlung",
     paying: "Weiterleitung zur Zahlung …",
-    secure: "Sichere Zahlung über CardGate — iDEAL, Bancontact, Karten und mehr.",
+    secure: "Sichere Zahlung über CardGate: iDEAL, Bancontact, Karten und mehr.",
     couponLabel: "Rabattcode",
     couponApply: "Einlösen",
     couponApplied: "Code {code} eingelöst",
@@ -287,7 +378,7 @@ const de: Dictionary = {
     pendingTitle: "Zahlung ausstehend",
     pendingText: "Ihre Zahlung wird bearbeitet. Sie erhalten eine E-Mail, sobald sie bestätigt ist.",
     failureTitle: "Zahlung nicht abgeschlossen",
-    failureText: "Die Zahlung wurde abgebrochen oder abgelehnt. Ihr Warenkorb bleibt erhalten — Sie können es erneut versuchen.",
+    failureText: "Die Zahlung wurde abgebrochen oder abgelehnt. Ihr Warenkorb bleibt erhalten, Sie können es also erneut versuchen.",
     reference: "Bestellnummer",
     retry: "Zurück zum Warenkorb",
   },
@@ -335,49 +426,41 @@ const de: Dictionary = {
   howItWorks: {
     title: "So",
     accent: "funktioniert’s.",
-    intro: "Ein strukturierter, begleiteter Zyklus — von der ersten Dosis bis zur abschließenden Pause.",
+    intro: "Ein strukturierter Zyklus, von der ersten Dosis bis zur abschließenden Pause.",
     timelineTitle: "Ihre 6 Wochen",
     timeline: [
-      { when: "Vorher", title: "Vorsichtsmaßnahmen prüfen", text: "Lesen Sie die Gegenanzeigen, bevor Sie beginnen. Im Zweifel fragen Sie die BIEN-Hotline oder Ihre Ärztin bzw. Ihren Arzt." },
+      { when: "Vorher", title: "Vorsichtsmaßnahmen prüfen", text: "Lesen Sie die Gegenanzeigen, bevor Sie beginnen. Im Zweifel fragen Sie Ihre Ärztin oder Ihren Arzt." },
       { when: "Tag 1", title: "Ein sanfter Einstieg", text: "Eine halbe Mikrodosis (0,5 g) an einem ruhigen Tag. Sie beobachten und notieren, was Ihnen auffällt." },
-      { when: "Woche 1–6", title: "Zwei Dosen pro Woche", text: "Zum Beispiel montags und donnerstags, an den übrigen Tagen keine Einnahme. Die App erinnert Sie und schlägt eine kurze Intention und eine Tagebuchfrage vor." },
+      { when: "Woche 1 bis 6", title: "Zwei Dosen pro Woche", text: "Zum Beispiel montags und donnerstags, an den übrigen Tagen keine Einnahme. Die App erinnert Sie und schlägt eine kurze Intention und eine Tagebuchfrage vor." },
       { when: "Danach", title: "Pause und Rückblick", text: "2 Wochen Pause. Lesen Sie Ihre Notizen und entscheiden Sie in Ruhe, ob und wann Sie wieder beginnen." },
     ],
-    supportTitle: "Begleitung inklusive",
-    support: [
-      { title: "Begleit-App", text: "Erinnerungen, Audios zur Intention, Tagebuchfragen und Ihr Einnahmekalender." },
-      { title: "BIEN-Hotline", text: "Ein direkter Draht für Ihre Fragen während des gesamten Zyklus." },
-      { title: "Community", text: "Vorträge, Workshops und Veranstaltungen mit der BIEN-Community." },
-    ],
-    doctorTitle: "Dr. David Garcia Padron",
-    doctorRole: "Medizinischer Berater",
-    doctorText:
-      "Dr. Garcia Padron berät BIEN in Sicherheitsfragen: Screening-Fragen, Gegenanzeigen und Wechselwirkungen mit Medikamenten. Unsere Begleitung ersetzt nicht Ihre eigene Ärztin oder Ihren eigenen Arzt, die Ihre Krankengeschichte kennen.",
+    appTitle: "Die BIEN-Begleit-App",
+    appText: "Erinnerungen, Audios zur Intention, Tagebuchfragen und Ihr Einnahmekalender: während des gesamten Zyklus immer griffbereit.",
   },
   about: {
     title: "Hinter",
     accent: "BIEN.",
     intro: "BIEN ist aus einer einfachen Frustration entstanden: Die Menschen um uns herum waren müde und überreizt, und die Angebote, die es gab, fühlten sich selten richtig an.",
     body: [
-      "Wir haben BIEN gegründet, um Microdosing anders anzugehen: präzise Dosen, eine klare Routine und echte Menschen als Ansprechpartner. Keine Mystik, keine Wunderversprechen.",
-      "Wir finden, dass Microdosing mit Absicht und Sorgfalt angegangen werden sollte. Deshalb gehören zu jedem Paket eine Begleit-App und eine Hotline — und deshalb sagen wir genauso klar, wer nicht mikrodosieren sollte, wie wir erklären, wie man es gut macht.",
+      "Wir haben BIEN gegründet, um Microdosing anders anzugehen: präzise Dosen und eine klare Routine. Keine Mystik, keine Wunderversprechen.",
+      "Wir finden, dass Microdosing mit Absicht und Sorgfalt angegangen werden sollte. Deshalb gehört zu jedem Paket eine Begleit-App, und deshalb sagen wir genauso klar, wer nicht mikrodosieren sollte, wie wir erklären, wie man es gut macht.",
       "BIEN Microdose wird betrieben von der Bien Health B.V., einem in den Niederlanden eingetragenen Unternehmen.",
     ],
     valuesTitle: "Wofür wir stehen",
     values: [
-      { title: "Präzision", text: "Auf 1 g vordosierte Mikrodosen — ohne Rätselraten beim Gewicht." },
-      { title: "Ehrlichkeit", text: "Wir teilen, was die Forschung sagt — und auch, was sie nicht sagt." },
-      { title: "Sorgfalt", text: "Screening und Begleitung kommen zuerst, vor jedem Verkauf." },
+      { title: "Präzision", text: "Auf 1 g vordosierte Mikrodosen. Kein Rätselraten beim Gewicht." },
+      { title: "Ehrlichkeit", text: "Wir teilen, was die Forschung sagt, und auch, was sie nicht sagt." },
+      { title: "Sorgfalt", text: "Wir sagen, wer nicht mikrodosieren sollte, bevor wir erklären, wie es geht." },
     ],
   },
   faq: {
     title: "Häufig gestellte",
     accent: "Fragen.",
-    intro: "Keine passende Antwort gefunden? Schreiben Sie uns — ein Mensch antwortet Ihnen.",
+    intro: "Keine passende Antwort gefunden? Schreiben Sie uns, wir antworten in der Regel innerhalb eines Werktags.",
     items: [
       {
         q: "Was ist Microdosing?",
-        a: "Beim Microdosing nimmt man eine sehr kleine Menge einer psychedelischen Substanz — hier Psilocybin-Trüffel — deutlich unterhalb der Dosis, die Wahrnehmungseffekte hervorruft, und zwar regelmäßig über einen begrenzten Zeitraum. Die Forschung zu den Wirkungen läuft noch, und die bisherigen Ergebnisse sind uneinheitlich; ein Teil der beschriebenen Effekte könnte mit Erwartungen zusammenhängen.",
+        a: "Beim Microdosing nimmt man eine sehr kleine Menge einer psychedelischen Substanz (hier Psilocybin-Trüffel) deutlich unterhalb der Dosis, die Wahrnehmungseffekte hervorruft, und zwar regelmäßig über einen begrenzten Zeitraum. Die Forschung zu den Wirkungen läuft noch, und die bisherigen Ergebnisse sind uneinheitlich; ein Teil der beschriebenen Effekte könnte mit Erwartungen zusammenhängen.",
       },
       {
         q: "Ist das legal?",
@@ -385,11 +468,11 @@ const de: Dictionary = {
       },
       {
         q: "Bin ich dann „high“?",
-        a: "Bei einer Mikrodosis berichten die meisten Menschen von keinen Wahrnehmungseffekten. Die Empfindlichkeit ist jedoch unterschiedlich — deshalb empfehlen wir, mit einer halben Dosis (0,5 g) an einem Tag ohne Verpflichtungen zu beginnen. Fahren Sie nach einer Mikrodosis niemals Auto und bedienen Sie keine Maschinen.",
+        a: "Bei einer Mikrodosis berichten die meisten Menschen von keinen Wahrnehmungseffekten. Die Empfindlichkeit ist jedoch unterschiedlich. Deshalb empfehlen wir, mit einer halben Dosis (0,5 g) an einem Tag ohne Verpflichtungen zu beginnen. Fahren Sie nach einer Mikrodosis niemals Auto und bedienen Sie keine Maschinen.",
       },
       {
         q: "Wer sollte nicht mikrodosieren?",
-        a: "Unsere Produkte sind ausschließlich für Erwachsene (18+) bestimmt. Microdosing ist nicht geeignet während der Schwangerschaft oder Stillzeit, wenn Sie oder nahe Angehörige eine Vorgeschichte mit Psychosen oder bipolaren Störungen haben, bei Herzerkrankungen oder wenn Sie Medikamente einnehmen — insbesondere Antidepressiva (SSRI, MAO-Hemmer) oder Lithium. Sprechen Sie im Zweifel vor der Bestellung mit Ihrer Ärztin oder Ihrem Arzt.",
+        a: "Unsere Produkte sind ausschließlich für Erwachsene (18+) bestimmt. Microdosing ist nicht geeignet während der Schwangerschaft oder Stillzeit, wenn Sie oder nahe Angehörige eine Vorgeschichte mit Psychosen oder bipolaren Störungen haben, bei Herzerkrankungen oder wenn Sie Medikamente einnehmen, insbesondere Antidepressiva (SSRI, MAO-Hemmer) oder Lithium. Sprechen Sie im Zweifel vor der Bestellung mit Ihrer Ärztin oder Ihrem Arzt.",
       },
       {
         q: "Ich nehme Antidepressiva. Kann ich mikrodosieren?",
@@ -397,11 +480,11 @@ const de: Dictionary = {
       },
       {
         q: "Wie nehme ich meine erste Mikrodosis?",
-        a: "Wählen Sie einen ruhigen Tag ohne soziale oder berufliche Verpflichtungen. Beginnen Sie mit einem halben Trüffel (0,5 g), achten Sie darauf, wie Sie sich fühlen, und schreiben Sie es auf. Die App und die BIEN-Hotline begleiten Sie durch die ersten Tage.",
+        a: "Wählen Sie einen ruhigen Tag ohne soziale oder berufliche Verpflichtungen. Beginnen Sie mit einem halben Trüffel (0,5 g), achten Sie darauf, wie Sie sich fühlen, und halten Sie es in der App fest.",
       },
       {
         q: "Kann ich während des Microdosings Alkohol trinken?",
-        a: "Wir empfehlen, an Einnahmetagen — und grundsätzlich während des gesamten Zyklus — auf Alkohol und andere Substanzen zu verzichten.",
+        a: "Wir empfehlen, an Einnahmetagen und grundsätzlich während des gesamten Zyklus auf Alkohol und andere Substanzen zu verzichten.",
       },
       {
         q: "Wie bewahre ich die Trüffel auf?",
@@ -420,7 +503,7 @@ const de: Dictionary = {
   contact: {
     title: "Sprechen Sie mit",
     accent: "einem Menschen.",
-    intro: "Eine Frage zu einer Bestellung, zum Programm oder eine Presseanfrage? Schreiben Sie uns — wir antworten in der Regel innerhalb eines Werktags.",
+    intro: "Eine Frage zu einer Bestellung, zum Programm oder eine Presseanfrage? Schreiben Sie uns, wir antworten in der Regel innerhalb eines Werktags.",
     name: "Name",
     email: "E-Mail",
     phone: "Telefon",
@@ -430,12 +513,12 @@ const de: Dictionary = {
     message: "Nachricht",
     send: "Senden",
     sending: "Wird gesendet …",
-    success: "Danke — Ihre Nachricht wurde gesendet.",
+    success: "Danke, Ihre Nachricht wurde gesendet.",
     error: "Die Nachricht konnte nicht gesendet werden. Bitte schreiben Sie an info@bien.health.",
     direct: "Oder schreiben Sie uns direkt",
   },
   footer: {
-    tagline: "Vordosierte Mikrodosen aus Psilocybin-Trüffeln, mit Begleitung.",
+    tagline: "Vordosierte Mikrodosen aus Psilocybin-Trüffeln, gezüchtet in den Niederlanden.",
     shop: "Shop",
     help: "Hilfe",
     company: "Unternehmen",
@@ -443,7 +526,7 @@ const de: Dictionary = {
     terms: "AGB",
     privacy: "Datenschutzerklärung",
     shipping: "Versand & Rückgabe",
-    rights: "Bien Health B.V. — Alle Rechte vorbehalten.",
+    rights: "Bien Health B.V. Alle Rechte vorbehalten.",
     disclaimer:
       "Nur für Erwachsene (18+). Unsere Produkte sind keine Arzneimittel und nicht dazu bestimmt, Krankheiten zu diagnostizieren, zu behandeln, zu heilen oder ihnen vorzubeugen. Die Informationen auf dieser Website ersetzen keine ärztliche Beratung.",
   },

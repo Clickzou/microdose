@@ -83,7 +83,7 @@ export function MobileMenu({ lang, t, links }: { lang: Locale; t: Dictionary["na
           </div>
           <nav className="mt-6 flex flex-col gap-1 px-2">
             {links.map((l) => (
-              <Link key={l.href} href={l.href} className="font-display text-4xl font-bold tracking-tight py-2">
+              <Link key={l.href} href={l.href} className="font-display text-4xl font-medium tracking-tight py-2">
                 {l.label}
               </Link>
             ))}

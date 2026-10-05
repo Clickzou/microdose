@@ -82,12 +82,12 @@ export default function CheckoutForm({ lang, t }: { lang: Locale; t: Dictionary 
     <form onSubmit={onSubmit} className="grid gap-10 lg:grid-cols-[1.4fr_1fr]" noValidate={false}>
       <div className="space-y-10">
         <fieldset className="space-y-4">
-          <legend className="font-display text-2xl font-bold">{c.contact}</legend>
+          <legend className="font-display text-2xl font-medium">{c.contact}</legend>
           <input className={input} name="email" type="email" required autoComplete="email" placeholder={c.email} aria-label={c.email} />
           <input className={input} name="phone" type="tel" autoComplete="tel" placeholder={c.phone} aria-label={c.phone} />
         </fieldset>
         <fieldset className="space-y-4">
-          <legend className="font-display text-2xl font-bold">{c.delivery}</legend>
+          <legend className="font-display text-2xl font-medium">{c.delivery}</legend>
           <select
             className={input}
             name="country"
@@ -208,7 +208,7 @@ export default function CheckoutForm({ lang, t }: { lang: Locale; t: Dictionary 
               {totals.shippingCents === null ? "—" : totals.shippingCents === 0 ? t.common.free : formatPrice(totals.shippingCents, lang)}
             </dd>
           </div>
-          <div className="flex justify-between pt-2 font-display text-xl font-bold">
+          <div className="flex justify-between pt-2 font-sans text-xl font-bold">
             <dt>{t.cart.total}</dt>
             <dd>{formatPrice(totals.totalCents ?? totals.subtotalCents, lang)}</dd>
           </div>

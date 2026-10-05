@@ -17,7 +17,7 @@ export default function ProductGallery({ images, alt }: { images: string[]; alt:
               key={src}
               type="button"
               onClick={() => setActive(i)}
-              aria-label={`${alt} — ${i + 1}/${images.length}`}
+              aria-label={`${alt}, ${i + 1}/${images.length}`}
               aria-current={i === active ? "true" : undefined}
               className={`relative aspect-square overflow-hidden rounded-xl ring-2 ring-offset-2 ring-offset-paper transition ${i === active ? "ring-ink" : "ring-transparent hover:ring-ink/20"}`}
             >

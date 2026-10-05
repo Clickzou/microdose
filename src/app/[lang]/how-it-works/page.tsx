@@ -13,8 +13,6 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/how-it-wor
   return pageMetadata({ lang, path: "/how-it-works", title: t.seo.howItWorks.title, description: t.seo.howItWorks.description });
 }
 
-const supportImages = ["/images/app.webp", "/images/chat.webp", "/images/group-sofa.webp"];
-
 export default async function HowItWorks({ params }: PageProps<"/[lang]/how-it-works">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
@@ -38,36 +36,18 @@ export default async function HowItWorks({ params }: PageProps<"/[lang]/how-it-w
         </ol>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 sm:px-6">
-        <h2 className="text-4xl">{h.supportTitle}</h2>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {h.support.map((s, i) => (
-            <div key={s.title} className="overflow-hidden rounded-[2rem] bg-coffret-soft">
-              <div className="relative aspect-[16/10]">
-                <Image src={supportImages[i]} alt="" fill sizes="(min-width: 768px) 30vw, 100vw" className="object-cover" />
-              </div>
-              <div className="p-8">
-                <h3 className="text-2xl">{s.title}</h3>
-                <p className="mt-2 text-ink-soft">{s.text}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
-        <div className="grid items-center gap-10 rounded-[2.5rem] bg-ink p-6 text-paper sm:p-10 lg:grid-cols-[0.7fr_1.3fr] lg:p-16">
-          <div className="relative mx-auto aspect-[3/4] w-full max-w-xs overflow-hidden rounded-[2rem]">
-            <Image src="/images/dr-garcia.webp" alt={h.doctorTitle} fill sizes="320px" className="object-cover" />
+      {/* Accompagnement (hotline, médecin consultant, communauté) retiré le 05/10/2026 :
+          seule l'application compagnon reste fournie avec le pack. */}
+      <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6">
+        <div className="grid items-center gap-10 overflow-hidden rounded-[2.5rem] bg-coffret-soft lg:grid-cols-2">
+          <div className="relative aspect-[16/10] lg:aspect-auto lg:h-full lg:min-h-[24rem]">
+            <Image src="/images/app.webp" alt="" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
           </div>
-          <div>
-            <Kicker className="text-paper/60">{h.doctorRole}</Kicker>
-            <h2 className="mt-4 text-4xl">{h.doctorTitle}</h2>
-            <p className="mt-6 text-lg leading-relaxed text-paper/80">{h.doctorText}</p>
+          <div className="p-8 sm:p-12 lg:pl-0">
+            <h2 className="text-4xl">{h.appTitle}</h2>
+            <p className="mt-5 text-lg leading-relaxed text-ink-soft">{h.appText}</p>
             <div className="mt-8">
-              <ButtonLink href={href(lang, "/product/peace-in-the-chaos")} variant="light">
-                {t.home.heroCta}
-              </ButtonLink>
+              <ButtonLink href={href(lang, "/product/peace-in-the-chaos")}>{t.home.heroCta}</ButtonLink>
             </div>
           </div>
         </div>

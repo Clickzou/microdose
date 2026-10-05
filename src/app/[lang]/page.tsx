@@ -5,7 +5,7 @@ import { getDictionary } from "@/dictionaries";
 import { hasLocale, formatDate, formatPrice, href } from "@/lib/i18n";
 import { products } from "@/lib/catalog";
 import { getArticles } from "@/lib/content";
-import { ArticleCard, ButtonLink, Kicker, Marquee, Title, TrustBadges } from "@/components/ui";
+import { ArticleCard, BenefitsMarquee, ButtonLink, FaqList, Kicker, Marquee, Title, TrustBadges } from "@/components/ui";
 import NewsletterForm from "@/components/newsletter-form";
 import JsonLd from "@/components/json-ld";
 import { SITE_URL } from "@/lib/seo";
@@ -13,6 +13,16 @@ import { SITE_URL } from "@/lib/seo";
 // Régénérée toutes les heures : les articles programmés (publishAt) y apparaissent
 // le jour de leur parution, sans redéploiement.
 export const revalidate = 3600;
+
+/** Visuels d'origine des bienfaits (ancien site), dans l'ordre de `home.benefits`. */
+const BENEFIT_IMAGES = [
+  "/images/benefit-calm.webp",
+  "/images/benefit-focus.webp",
+  "/images/benefit-resiliency.webp",
+  "/images/benefit-performance.webp",
+  "/images/benefit-clarity.webp",
+  "/images/benefit-creativity.webp",
+];
 
 export default async function Home({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
@@ -44,7 +54,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             <h1 className="bm-up font-sans text-xs font-semibold uppercase leading-normal tracking-[0.16em] text-ink-soft">
               {h.heroKicker}
             </h1>
-            <p className="bm-up mt-5 font-display text-[clamp(3.25rem,9vw,7.5rem)] font-bold leading-[0.92] tracking-[-0.03em]">
+            <p className="bm-up mt-5 font-display text-[clamp(3.25rem,9vw,7.5rem)] font-normal leading-[0.92] tracking-[-0.02em]">
               {h.heroTitleA}
               <br />
               <span className="accent">{h.heroTitleB}</span>
@@ -96,7 +106,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             <h2 className="mt-4 text-4xl sm:text-5xl">{peaceCopy.name}</h2>
             <p className="mt-2 text-paper/70">{peaceCopy.tagline}</p>
             <div className="mt-8 flex items-baseline gap-4">
-              <p className="font-display text-4xl font-bold">{formatPrice(peace.priceCents, lang)}</p>
+              <p className="font-sans text-4xl font-bold">{formatPrice(peace.priceCents, lang)}</p>
               <p className="text-paper/60">
                 {formatPrice(Math.round(peace.priceCents / (peace.doses ?? 1)), lang)} {t.common.perDose}
               </p>
@@ -121,6 +131,51 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         </div>
       </section>
 
+      {/* ------------------------------------------------------------ Bienfaits */}
+      {/* Repris de l'ancien site (« Macro-benefits in every dose »), demande de la cliente
+          du 05/10/2026, textes mot pour mot. */}
+      <section className="py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <h2 className="max-w-3xl text-4xl sm:text-5xl lg:text-6xl">{h.benefitsTitle}</h2>
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">{h.benefitsText}</p>
+        </div>
+        <div className="mt-12">
+          <BenefitsMarquee items={h.benefits.map((b, i) => ({ ...b, image: BENEFIT_IMAGES[i] }))} />
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------------ Vidéos clients */}
+      {/* Reprise de l'ancien site. Vidéos recompressées (540 × 960, ~2 Mo) et servies
+          par le site : rien ne se charge avant le clic sur lecture (preload="none"),
+          seule l'image d'aperçu est téléchargée. */}
+      <section className="mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:pb-32">
+        <h2 className="text-center text-4xl sm:text-5xl">{h.videosTitle}</h2>
+        <div className="mt-12 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+          {[1, 2, 3, 4].map((n) => (
+            <video
+              key={n}
+              src={`/videos/shroomies-${n}.mp4`}
+              poster={`/images/shroomies-${n}.webp`}
+              controls
+              playsInline
+              preload="none"
+              aria-label={h.videosLabel.replace("{n}", String(n))}
+              className="aspect-[9/16] w-full rounded-[2rem] bg-ink object-cover"
+            />
+          ))}
+        </div>
+        <div className="mt-10 text-center">
+          <a
+            href="https://www.instagram.com/bien.health/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-full bg-ink px-7 py-3.5 font-medium text-paper transition hover:bg-ink-soft"
+          >
+            {h.videosCta}
+          </a>
+        </div>
+        <p className="mx-auto mt-6 max-w-3xl text-center text-xs text-muted">{h.videosNote}</p>
+      </section>
       {/* ------------------------------------------------------------ Méthode */}
       <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:py-32">
         <Kicker>{h.stepsKicker}</Kicker>
@@ -128,7 +183,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         <ol className="mt-14 grid gap-6 md:grid-cols-3">
           {h.steps.map((s, i) => (
             <li key={s.title} className="rounded-[2rem] bg-coffret-soft p-8">
-              <span className="font-display text-6xl font-extrabold text-ink/15">0{i + 1}</span>
+              <span className="font-sans text-6xl font-bold text-ink/15">0{i + 1}</span>
               <h3 className="mt-6 text-2xl">{s.title}</h3>
               <p className="mt-3 leading-relaxed text-ink-soft">{s.text}</p>
             </li>
@@ -153,7 +208,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             <dl className="mt-10 grid gap-x-8 gap-y-8 sm:grid-cols-2">
               {h.quality.map((q) => (
                 <div key={q.title} className="border-t border-ink/15 pt-5">
-                  <dt className="font-display text-xl font-bold">{q.title}</dt>
+                  <dt className="font-display text-xl font-medium">{q.title}</dt>
                   <dd className="mt-2 text-ink-soft">{q.text}</dd>
                 </div>
               ))}
@@ -181,26 +236,22 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         <p className="mt-6 max-w-3xl text-xs text-muted">{h.voicesNote}</p>
       </section>
 
-      {/* ------------------------------------------------------------ Accompagnement */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="grid items-center gap-10 rounded-[2.5rem] bg-coffret-soft p-6 sm:p-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 lg:p-16">
-          <div className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden rounded-[2rem]">
-            <Image src="/images/dr-garcia.webp" alt="Dr. David Garcia Padron" fill sizes="(min-width: 1024px) 30vw, 80vw" className="object-cover" />
-          </div>
-          <div>
-            <Kicker>{h.expertKicker}</Kicker>
-            <h2 className="mt-4 text-4xl sm:text-5xl">{h.expertTitle}</h2>
-            <p className="mt-6 text-lg leading-relaxed text-ink-soft">{h.expertText}</p>
-            <div className="mt-8">
-              <ButtonLink href={href(lang, "/how-it-works")}>{h.expertCta}</ButtonLink>
-            </div>
-          </div>
+      {/* ------------------------------------------------------------ FAQ */}
+      <section className="mx-auto max-w-3xl px-4 py-24 sm:px-6 lg:py-32">
+        <h2 className="text-4xl sm:text-5xl">{h.faqTitle}</h2>
+        <div className="mt-10">
+          <FaqList items={h.faq} />
+        </div>
+        <div className="mt-10">
+          <ButtonLink href={href(lang, "/faq")} variant="ghost">
+            {h.faqCta}
+          </ButtonLink>
         </div>
       </section>
 
       {/* ------------------------------------------------------------ Blog */}
       {articles.length > 0 ? (
-        <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:py-32">
+        <section className="mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:pb-32">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
               <Kicker>{h.learnKicker}</Kicker>
@@ -240,38 +291,6 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         </div>
       </section>
 
-      {/* ------------------------------------------------------------ Vidéos clients */}
-      {/* Reprise de l'ancien site. Vidéos recompressées (540 × 960, ~2 Mo) et servies
-          par le site : rien ne se charge avant le clic sur lecture (preload="none"),
-          seule l'image d'aperçu est téléchargée. */}
-      <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:py-32">
-        <h2 className="text-center text-4xl sm:text-5xl">{h.videosTitle}</h2>
-        <div className="mt-12 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
-          {[1, 2, 3, 4].map((n) => (
-            <video
-              key={n}
-              src={`/videos/shroomies-${n}.mp4`}
-              poster={`/images/shroomies-${n}.webp`}
-              controls
-              playsInline
-              preload="none"
-              aria-label={h.videosLabel.replace("{n}", String(n))}
-              className="aspect-[9/16] w-full rounded-[2rem] bg-ink object-cover"
-            />
-          ))}
-        </div>
-        <div className="mt-10 text-center">
-          <a
-            href="https://www.instagram.com/bien.health/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-ink px-7 py-3.5 font-medium text-paper transition hover:bg-ink-soft"
-          >
-            {h.videosCta}
-          </a>
-        </div>
-        <p className="mx-auto mt-6 max-w-3xl text-center text-xs text-muted">{h.videosNote}</p>
-      </section>
     </>
   );
 }

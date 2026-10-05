@@ -3,22 +3,28 @@ import type { Dictionary } from "./en";
 /**
  * Nederlands woordenboek. Aanspreekvorm: je/jij.
  * Conformiteit: geen medische claims (zie docs/brief-contenu-agents.md).
+ *
+ * Exception voulue par la cliente (05/10/2026) : les textes d'origine repris fidèlement
+ * (bienfaits, FAQ de l'accueil, journée type), qu'elle a choisi de garder malgré le
+ * risque signalé.
+ *
+ * Pas de tiret long (— ou –) dans les textes : demande de la cliente, « ça fait trop IA ».
  */
 const nl: Dictionary = {
   meta: {
     siteName: "BIEN Microdose",
-    title: "Microdosing truffels: 6-weekse programma — BIEN",
+    title: "Microdosing truffels: programma van 6 weken | BIEN Microdose",
     description:
-      "Voorgedoseerde psilocybinetruffels van 1 g, gekweekt in Nederland, met een begeleid programma van 6 weken en een app. Alleen voor volwassenen.",
+      "Voorgedoseerde psilocybinetruffels van 1 g, gekweekt in Nederland, met een programma van 6 weken en een app. Alleen voor volwassenen.",
   },
   seo: {
     shop: { title: "Microdosing truffels kopen", description: "PEACE in the Chaos: zes voorgedoseerde truffels van 1 g, Psilocybe mexicana, met een programma van 6 weken en een app. Gekweekt in Nederland." },
     howItWorks: { title: "Truffels microdoseren: het 2-6-2-schema", description: "Zo microdoseer je truffels met BIEN: eerst een halve dosis, daarna twee microdoses per week, zes weken lang, en dan twee weken pauze. Met voorzorg." },
     faq: { title: "Microdosing truffels: vragen en antwoorden", description: "Antwoorden over microdosing met truffels: legaliteit, dosering, het 2-6-2-schema, bewaren, contra-indicaties, levering en betaling. Helder en eerlijk." },
-    about: { title: "Over BIEN: microdosing uit Nederland", description: "BIEN biedt voorgedoseerde Psilocybe mexicana-truffels, gekweekt in Nederland, een duidelijk ritme van 6 weken en echte begeleiding. Zonder wonderbeloftes." },
+    about: { title: "Over BIEN: microdosing uit Nederland", description: "BIEN biedt voorgedoseerde Psilocybe mexicana-truffels, gekweekt in Nederland, een duidelijk ritme van 6 weken en een eigen app. Zonder wonderbeloftes." },
     contact: { title: "Contact", description: "Een vraag over een bestelling, het programma of een persverzoek? Schrijf naar het team van BIEN Microdose: we antwoorden meestal binnen één werkdag." },
     learn: { title: "Microdosing informatie en artikelen", description: "" },
-    peace: { title: "Microdosing truffels: PEACE in the Chaos", description: "PEACE in the Chaos: zes voorgedoseerde truffels van 1 g, Psilocybe mexicana, voor drie weken, met het BIEN-programma, de app en de hotline. Alleen 18+." },
+    peace: { title: "Microdosing truffels: PEACE in the Chaos", description: "PEACE in the Chaos: zes voorgedoseerde truffels van 1 g, Psilocybe mexicana, voor drie weken, met het BIEN-programma van 6 weken en de app. Alleen 18+." },
     tote: { title: "BIEN tote bag van gerecycled canvas", description: "De BIEN tote bag: canvas van 80% gerecycled katoen en 20% gerecycled polyester, 39 × 37 cm, naturel, met het BIEN-logo. Stevig, voor elke dag." },
   },
   nav: {
@@ -54,11 +60,11 @@ const nl: Dictionary = {
     body: "Op deze website staan producten met psilocybinetruffels, die alleen bestemd zijn voor volwassenen. Bevestig je leeftijd om verder te gaan.",
     yes: "Ja, ik ben 18 of ouder",
     no: "Nee",
-    refused: "Sorry — deze website is alleen toegankelijk voor volwassenen.",
+    refused: "Sorry, deze website is alleen toegankelijk voor volwassenen.",
     legal: "Door verder te gaan bevestig je dat je meerderjarig bent in je land van verblijf.",
   },
   cookies: {
-    text: "We gebruiken noodzakelijke cookies om de shop te laten werken en — alleen met jouw toestemming — analytische cookies om de site te verbeteren.",
+    text: "We gebruiken noodzakelijke cookies om de shop te laten werken en, alleen met jouw toestemming, analytische cookies om de site te verbeteren.",
     accept: "Accepteren",
     refuse: "Weigeren",
     more: "Privacybeleid",
@@ -66,8 +72,8 @@ const nl: Dictionary = {
   marquee: [
     "Voorgedoseerde truffels van 1 g",
     "Gekweekt in Nederland",
-    "Begeleid programma van 6 weken",
-    "BIEN-hotline inbegrepen",
+    "Programma van 6 weken",
+    "BIEN-app",
     "Discrete verzending",
     "Alleen voor volwassenen",
   ],
@@ -76,13 +82,13 @@ const nl: Dictionary = {
     heroTitleA: "Rust in",
     heroTitleB: "de chaos.",
     heroText:
-      "Voorgedoseerde microdoses Psilocybe mexicana-truffels, gekweekt in Nederland en geleverd met een programma van 6 weken, een begeleidende app en een echt mens om mee te praten.",
+      "Voorgedoseerde microdoses Psilocybe mexicana-truffels, gekweekt in Nederland en geleverd met een programma van 6 weken en de BIEN-app.",
     heroCta: "Ontdek het pakket",
     heroCta2: "Zo werkt het",
     introTitle: "Overdenken. Overprikkeld. Overpresteren.",
     introAccent: "Klinkt bekend?",
     introText:
-      "Het moderne leven is luid. We hebben BIEN opgericht voor mensen die microdoseren met zorg willen verkennen — met een duidelijke routine, precieze doses en begeleiding bij elke stap, in plaats van giswerk.",
+      "Het moderne leven is luid. We hebben BIEN opgericht voor mensen die microdoseren met zorg willen verkennen: een duidelijke routine en precieze doses, in plaats van giswerk.",
     introText2:
       "Microdoseren is geen snelle oplossing, en het is niet voor iedereen. Het is een praktijk die sommige volwassenen bewust en verantwoord willen verkennen. Precies daarbij helpen we je.",
     productKicker: "Het pakket",
@@ -94,7 +100,7 @@ const nl: Dictionary = {
     steps: [
       {
         title: "Begin rustig",
-        text: "Lees de voorzorgsmaatregelen en begin op een rustige dag met een halve microdosis (0,5 g). De BIEN-hotline beantwoordt je vragen vóór je eerste dosis.",
+        text: "Lees de voorzorgsmaatregelen en begin met een halve microdosis (0,5 g) op een rustige dag, zonder verplichtingen.",
       },
       {
         title: "Volg een cyclus van 6 weken",
@@ -102,7 +108,7 @@ const nl: Dictionary = {
       },
       {
         title: "Reflecteer, stel bij, neem pauze",
-        text: "Schrijf op wat je opmerkt. De BIEN-hotline beantwoordt je vragen tijdens de hele cyclus. Daarna neem je pauze — een cyclus hoort ook te eindigen.",
+        text: "Schrijf in de app op wat je opmerkt. Neem daarna pauze: een cyclus hoort ook te eindigen.",
       },
     ],
     qualityKicker: "Kwaliteit",
@@ -111,7 +117,7 @@ const nl: Dictionary = {
     quality: [
       { title: "Voorgedoseerd op 1 g", text: "Geen weegschaal, geen gokwerk. Elke microdosis wordt apart gewogen en verpakt." },
       { title: "Gekweekt in Nederland", text: "Sclerotia van Psilocybe mexicana, gekweekt in Alphen aan den Rijn, waar de verkoop legaal is." },
-      { title: "Hele truffels", text: "Geleverd in hun natuurlijke vorm — niets toegevoegd, niets geëxtraheerd." },
+      { title: "Hele truffels", text: "Geleverd in hun natuurlijke vorm. Niets toegevoegd, niets geëxtraheerd." },
       { title: "Discrete levering", text: "Neutrale buitenverpakking, verzending met track & trace." },
       { title: "Biologisch gecertificeerd", text: "Biologisch gekweekt, met officiële biocertificering." },
       { title: "Vegan gecertificeerd", text: "Geen dierlijke ingrediënten, vegan gecertificeerd." },
@@ -142,25 +148,81 @@ const nl: Dictionary = {
     videosCta: "Volg ons op Instagram",
     videosLabel: "Klantvideo {n}",
     videosNote: "Video’s in het Engels. Individuele, subjectieve ervaringen: ze verschillen van persoon tot persoon en zijn geen belofte van resultaat.",
-    expertKicker: "Begeleiding",
-    expertTitle: "Je doet dit niet alleen.",
-    expertText:
-      "Onze medisch adviseur, dr. David Garcia Padron, en het BIEN-team zorgen dat je begint met de juiste informatie: je gezondheidssituatie, mogelijke wisselwerkingen, en wanneer microdoseren gewoon geen goed idee is.",
-    expertCta: "Hoe het werkt",
+    // Textes de l'ancien site, traduits fidèlement à la demande de la cliente (05/10/2026).
+    benefitsTitle: "Macrovoordelen in elke dosis.",
+    benefitsText: "Ons onderzoeksteam heeft zorgvuldig de beste paddenstoelsoorten geselecteerd, voor de grootste voordelen.",
+    benefits: [
+      { title: "Rust", text: "Bevordert een gevoel van rust en vermindert stress en algehele angst." },
+      { title: "Focus", text: "Minder afleiding en een scherpere focus om diep in de flow te komen." },
+      { title: "Veerkracht", text: "Een andere blik, om uitdagingen met kracht en aanpassingsvermogen aan te gaan." },
+      { title: "Prestaties", text: "Je volle potentieel benutten voor creativiteit en probleemoplossing." },
+      { title: "Mentale helderheid", text: "Minder hersenmist, scherpere beslissingen en betere cognitieve functies." },
+      { title: "Creativiteit", text: "Versterkt je probleemoplossend vermogen en stimuleert out-of-the-box denken." },
+    ],
+    faqTitle: "Veelgestelde vragen.",
+    faqCta: "Meer bekijken",
+    // FAQ de l'ancien site, traduite fidèlement, sans les renvois au médecin consultant, à
+    // l'appel d'accueil et au guide alcool (services retirés). Paragraphes séparés par \n\n.
+    faq: [
+      {
+        q: "Is microdoseren legaal?",
+        a: "De verordening wederzijdse erkenning van goederen\n\nPsilocybinetruffels zijn 100% legaal in Nederland, waar BIEN gevestigd is, en mogen op grond van de verordening wederzijdse erkenning van goederen naar elk EU-land worden verzonden.\n\nDeze EU-wet staat legale invoer van de ene lidstaat naar de andere toe, ongeacht of het product legaal is in het land van invoer.",
+      },
+      {
+        q: "Word ik high van een microdosis?",
+        a: "Nee, de hoeveelheid psilocybine in een microdosis is minimaal, waardoor die geschikt is voor dagelijks gebruik.\n\nAl onze microdoses zijn vooraf afgemeten (1 g) om doseerfouten te voorkomen. Het is altijd veiliger om met een lage dosis te beginnen en die geleidelijk te verhogen naarmate je meer vertrouwen krijgt.",
+      },
+      {
+        q: "Is microdoseren met paddenstoelen verslavend?",
+        a: "Nee, eigenlijk is het tegenovergestelde waar.\n\nHet risico op verslaving aan psilocybine, het werkzame bestanddeel van onze microdosis, is met 0,2% minimaal. Ter vergelijking: bij SSRI’s is dat 44%.\n\nLopend onderzoek bekijkt momenteel psilocybine als mogelijke behandeling van verslavingsstoornissen. Toch is het altijd belangrijk om je relatie ermee in de gaten te houden.",
+      },
+      {
+        q: "Kan ik werken met een microdosis?",
+        a: "Ja, microdoseren op het werk kan, in de aanbevolen dosis, een echte troef zijn.\n\nHet kan je helpen beter met stress om te gaan en je focus en probleemoplossend vermogen versterken.",
+      },
+      {
+        q: "Hoe pak ik mijn eerste microdosis aan?",
+        a: "Meestal wordt aangeraden te beginnen op een dag zonder sociale verplichtingen. Begin bij voorkeur met een kleinere dosis van 0,5 gram (een halve voorgedoseerde truffel) en verhoog die geleidelijk in de week daarna, om te zien hoe je lichaam reageert.",
+      },
+      {
+        q: "Ik gebruik antidepressiva, kan ik ook microdoseren?",
+        a: "We raden af om die twee te combineren.\n\nOverweeg je af te bouwen of maak je je zorgen over mogelijke wisselwerkingen met je medicatie? Overleg dan met je eigen arts.",
+      },
+      {
+        q: "Is microdoseren gunstig bij ADHD?",
+        a: "Ja, verschillende experts geven aan dat het gunstig kan zijn voor mensen met ADHD of ADD, omdat microdoseren de focus en de flow verbetert.\n\nOverleg met je eigen arts, zeker als je al onder behandeling bent.",
+      },
+      {
+        q: "Wanneer kan ik het best beginnen met microdoseren?",
+        a: "Er is geen perfect moment om te beginnen: bijna elk moment kan het juiste zijn.\n\nHet belangrijkste is dat je mentaal in een goede toestand bent en openstaat voor verandering als je aan een cyclus begint.",
+      },
+      {
+        q: "Kan ik microdoseren en alcohol drinken?",
+        a: "Microdoseren en alcohol drinken kan, maar we raden het af.\n\nAlcohol kan de gunstige effecten van microdoseren verminderen en werken als een ‘alcoholbooster’, waardoor je sneller aangeschoten raakt.",
+      },
+      {
+        q: "Hoe bewaar ik verse truffels zodat ze hun kracht behouden?",
+        a: "Bewaar verse truffels in de koelkast, zo behouden ze hun kracht.\n\nGesloten blijven ze tot twee maanden goed, na opening een week.\n\nBewaar ze op een koele, droge en donkere plek, zodat het risico op rotting of een lager psilocybinegehalte zo klein mogelijk is.\n\nVries ze niet in en laat de strips in hun verpakking, zodat ze geen vocht opnemen.",
+      },
+      {
+        q: "Leveringsgarantie",
+        a: "We verzenden binnen de Europese Unie, met een hoog slagingspercentage.\n\nVoor onze klanten in de EU bieden we een leveringsgarantie: komt je bestelling niet aan, dan sturen we je een nieuwe.",
+      },
+    ],
     learnKicker: "Kennis",
     learnTitle: "Begrijp het voordat je begint.",
     learnCta: "Alle artikelen",
     safetyTitle: "Microdoseren is niet voor iedereen.",
     safetyText:
-      "Onze producten zijn alleen voor volwassenen. Ze zijn niet geschikt tijdens zwangerschap of borstvoeding, als jij of een naaste een voorgeschiedenis van psychose of bipolaire stoornis hebt, bij een hartaandoening, of als je medicijnen gebruikt — vooral antidepressiva of lithium. Rijd nooit auto na een microdosis. Twijfel je? Overleg met je arts.",
+      "Onze producten zijn alleen voor volwassenen. Ze zijn niet geschikt tijdens zwangerschap of borstvoeding, als jij of een naaste een voorgeschiedenis van psychose of bipolaire stoornis hebt, bij een hartaandoening, of als je medicijnen gebruikt, vooral antidepressiva of lithium. Rijd nooit auto na een microdosis. Twijfel je? Overleg met je arts.",
     safetyCta: "Lees alle veiligheidsinformatie",
     newsletterTitle: "De BIEN-brief",
-    newsletterText: "Nieuws uit het onderzoek, praktische gidsen en uitnodigingen voor onze events. Eén mail per maand, geen spam.",
+    newsletterText: "Nieuws uit het onderzoek en praktische gidsen. Eén mail per maand, geen spam.",
   },
   newsletter: {
     placeholder: "Je e-mailadres",
     submit: "Inschrijven",
-    success: "Dank je — je staat op de lijst.",
+    success: "Dank je, je staat op de lijst.",
     error: "Er ging iets mis. Probeer het opnieuw.",
     consent: "Door je in te schrijven ga je akkoord met het ontvangen van onze e-mails. Je kunt je altijd uitschrijven.",
   },
@@ -172,12 +234,10 @@ const nl: Dictionary = {
       includes: [
         "6 × 1 g voorgedoseerde Psilocybe mexicana-truffels (voor 3 weken)",
         "BIEN-app",
-        "BIEN-hotline",
-        "Uitnodigingen voor events van de BIEN-community",
       ],
       descriptionTitle: "Over de truffels",
       description:
-        "De sclerotia van Psilocybe mexicana — vaak ‘magic truffels’ genoemd — zijn de ondergrondse vorm van de paddenstoel. We leveren ze heel en voorgedoseerd op 1 g, zodat elke microdosis vanaf dag één evenveel weegt — het natuurlijke psilocybinegehalte van een truffel kan wel licht verschillen. Ze worden gekweekt in Alphen aan den Rijn, waar de verkoop legaal is.",
+        "De sclerotia van Psilocybe mexicana, vaak ‘magic truffels’ genoemd, zijn de ondergrondse vorm van de paddenstoel. We leveren ze heel en voorgedoseerd op 1 g, zodat elke microdosis vanaf dag één evenveel weegt (het natuurlijke psilocybinegehalte van een truffel kan wel licht verschillen). Ze worden gekweekt in Alphen aan den Rijn, waar de verkoop legaal is.",
       howToTitle: "Gebruik",
       howTo: [
         "Begin met een halve dosis (0,5 g) op een rustige dag zonder verplichtingen.",
@@ -191,7 +251,7 @@ const nl: Dictionary = {
       storage: "Gekoeld bewaren, in de originele verpakking en buiten bereik van kinderen.",
       warningTitle: "Voorzorgsmaatregelen",
       warning:
-        "Alleen voor volwassenen (18+). Niet geschikt tijdens zwangerschap of borstvoeding, bij een persoonlijke of familiaire voorgeschiedenis van psychose of bipolaire stoornis, bij hartaandoeningen of bij medicijngebruik (vooral antidepressiva of lithium). Niet combineren met alcohol of andere middelen. Niet autorijden en geen machines bedienen. Psilocybinetruffels worden legaal verkocht in Nederland; de status verschilt per land — zoek uit wat de wet is in het land waar je woont.",
+        "Alleen voor volwassenen (18+). Niet geschikt tijdens zwangerschap of borstvoeding, bij een persoonlijke of familiaire voorgeschiedenis van psychose of bipolaire stoornis, bij hartaandoeningen of bij medicijngebruik (vooral antidepressiva of lithium). Niet combineren met alcohol of andere middelen. Niet autorijden en geen machines bedienen. Psilocybinetruffels worden legaal verkocht in Nederland; de status verschilt per land, dus zoek uit wat de wet is in het land waar je woont.",
       qtyNote: "10% korting vanaf 2 pakketten",
     },
     "bien-totebag": {
@@ -218,18 +278,50 @@ const nl: Dictionary = {
   },
   shop: {
     title: "Shop",
-    intro: "Alles voor een begeleide microdosingcyclus — en een tas om het mee te nemen.",
+    intro: "Alles voor een microdosingcyclus, en een tas om het mee te nemen.",
     shippingNote: "Gratis verzending vanaf € 100 · Met track & trace",
   },
   product: {
     quantity: "Aantal",
     packs: "pakketten",
     total: "Totaal",
-    reassurance: ["Discrete verzending met track & trace", "Gratis verzending vanaf € 100", "BIEN-hotline inbegrepen"],
+    reassurance: ["Discrete verzending met track & trace", "Gratis verzending vanaf € 100", "BIEN-app inbegrepen"],
     badges: ["Biologisch gecertificeerd", "Vegan gecertificeerd", "Voorgedoseerd op 1 g", "Gekweekt in Nederland", "100% truffel, zonder toevoegingen", "Discrete verzending"],
     ageNotice: "Door dit product aan je winkelwagen toe te voegen, bevestig je dat je 18 jaar of ouder bent.",
     related: "Misschien vind je dit ook leuk",
     reviewsTitle: "Ervaringen van klanten",
+  },
+  // Sections de la fiche PEACE in the Chaos reprises de l'ancien site, traduites fidèlement
+  // (demande de la cliente du 05/10/2026).
+  protocol: {
+    benefitsTitle: "Steun bij de worstelingen van deze tijd.",
+    benefitsText: "Geniet van de voordelen van microdoseren zonder een veranderde bewustzijnstoestand. Je voelt je jezelf, maar dan op een heel goede dag.",
+    benefits: [
+      { title: "Rust", text: "Bevordert een gevoel van rust en vermindert stress en algehele angst." },
+      { title: "Veerkracht", text: "Een andere blik, om uitdagingen met kracht en aanpassingsvermogen aan te gaan." },
+      { title: "Mentale helderheid", text: "Minder hersenmist, scherpere beslissingen en betere cognitieve functies." },
+      { title: "Creativiteit", text: "Versterkt je probleemoplossend vermogen en stimuleert out-of-the-box denken." },
+    ],
+    fadimanTitle: "We volgen het protocol van dr. Fadiman.",
+    fadimanText: "Het best onderzochte protocol voor microdoseren dat er bestaat.",
+    fadimanRemember: "Onthoud gewoon 2-6-2: neem 6 weken lang 2 keer per week een microdosis.",
+    fadimanRemember2: "Daarna 2 weken pauze. Dan kun je opnieuw beginnen.",
+    day: "Dag {n}",
+    dose: "Dosis",
+    off: "pauze",
+    weeksOn: "6 weken doseren",
+    weeksOff: "2 weken pauze",
+    dayTitle: "24 uur met BIEN.",
+    dayText: "Zo ziet een typische microdosingdag met BIEN eruit.",
+    timeline: [
+      { time: "8.00 uur", title: "Begin de dag", text: "met BIEN op een lege maag. Bepaal je intentie met de BIEN-app." },
+      { time: "8.30 tot 9.00 uur", title: "Eerste effecten", text: "Iets meer energie." },
+      { time: "9.00 tot 12.00 uur", title: "Energieke flow", text: "Als een kop koffie, maar zonder de onrustige nadelen. Mentale helderheid. Focus." },
+      { time: "12.00 tot 14.00 uur", title: "Piek van helderheid", text: "Een goed moment om te mediteren en stil te staan bij de intentie van vanochtend." },
+      { time: "14.00 tot 20.00 uur", title: "Rustige flow", text: "Vergelijkbaar met de energieke flow van de ochtend, maar zachter. Meer creativiteit. Out-of-the-box denken." },
+      { time: "20.00 tot 24.00 uur", title: "Integratie", text: "Schrijf in je dagboek in de BIEN-app om de dag te overdenken en te integreren. Kalm en sereen, klaar voor een goede nachtrust." },
+      { time: "Dag +1", title: "Afterglow", text: "Subtielere effecten. Een evenwichtige stemming en creatief denken." },
+    ],
   },
   cart: {
     title: "Je winkelwagen",
@@ -265,7 +357,7 @@ const nl: Dictionary = {
     newsletterOptIn: "Stuur mij de BIEN-brief (optioneel).",
     pay: "Verder naar veilig betalen",
     paying: "Je wordt doorgestuurd naar de betaling…",
-    secure: "Veilig betalen via CardGate — iDEAL, Bancontact, creditcards en meer.",
+    secure: "Veilig betalen via CardGate: iDEAL, Bancontact, creditcards en meer.",
     couponLabel: "Kortingscode",
     couponApply: "Toepassen",
     couponApplied: "Code {code} toegepast",
@@ -287,7 +379,7 @@ const nl: Dictionary = {
     pendingTitle: "Betaling in behandeling",
     pendingText: "Je betaling wordt verwerkt. Je krijgt een e-mail zodra die is bevestigd.",
     failureTitle: "Betaling niet voltooid",
-    failureText: "De betaling is geannuleerd of geweigerd. Je winkelwagen is bewaard — je kunt het opnieuw proberen.",
+    failureText: "De betaling is geannuleerd of geweigerd. Je winkelwagen is bewaard, dus je kunt het opnieuw proberen.",
     reference: "Bestelnummer",
     retry: "Terug naar winkelwagen",
   },
@@ -335,49 +427,41 @@ const nl: Dictionary = {
   howItWorks: {
     title: "Zo",
     accent: "werkt het.",
-    intro: "Een gestructureerde, begeleide cyclus — van de eerste dosis tot de laatste pauze.",
+    intro: "Een gestructureerde cyclus, van de eerste dosis tot de laatste pauze.",
     timelineTitle: "Jouw 6 weken",
     timeline: [
-      { when: "Vooraf", title: "Voorzorgsmaatregelen checken", text: "Lees de contra-indicaties voordat je begint. Twijfel je? Vraag het de BIEN-hotline of je eigen arts." },
+      { when: "Vooraf", title: "Voorzorgsmaatregelen checken", text: "Lees de contra-indicaties voordat je begint. Twijfel je? Vraag het aan je eigen arts." },
       { when: "Dag 1", title: "Een rustige eerste dosis", text: "Een halve microdosis (0,5 g) op een rustige dag. Je observeert en schrijft op wat je opmerkt." },
-      { when: "Week 1–6", title: "Twee doses per week", text: "Bijvoorbeeld op maandag en donderdag, de andere dagen niets. De app herinnert je eraan en stelt een korte intentie en een dagboekvraag voor." },
+      { when: "Week 1 tot 6", title: "Twee doses per week", text: "Bijvoorbeeld op maandag en donderdag, de andere dagen niets. De app herinnert je eraan en stelt een korte intentie en een dagboekvraag voor." },
       { when: "Daarna", title: "Pauze en terugblik", text: "2 weken pauze. Lees je aantekeningen terug en besluit rustig of, en wanneer, je opnieuw begint." },
     ],
-    supportTitle: "Begeleiding inbegrepen",
-    support: [
-      { title: "Begeleidende app", text: "Herinneringen, audio’s voor je intentie, dagboekvragen en je doseerkalender." },
-      { title: "BIEN-hotline", text: "Een directe lijn voor je vragen tijdens de hele cyclus." },
-      { title: "Community", text: "Talks, workshops en events met de BIEN-community." },
-    ],
-    doctorTitle: "Dr. David Garcia Padron",
-    doctorRole: "Medisch adviseur",
-    doctorText:
-      "Dr. Garcia Padron adviseert BIEN over veiligheid: screeningsvragen, contra-indicaties en wisselwerkingen met medicijnen. Onze begeleiding vervangt je eigen arts niet, die je medische geschiedenis kent.",
+    appTitle: "De BIEN-app",
+    appText: "Herinneringen, audio’s voor je intentie, dagboekvragen en je doseerkalender: de hele cyclus lang op zak.",
   },
   about: {
     title: "Achter",
     accent: "BIEN.",
     intro: "BIEN is ontstaan uit een simpele frustratie: de mensen om ons heen waren moe en overprikkeld, en wat er werd aangeboden voelde zelden goed.",
     body: [
-      "We zijn BIEN begonnen om microdoseren anders aan te pakken: precieze doses, een duidelijke routine en echte mensen om mee te praten. Geen mystiek, geen wonderbeloftes.",
-      "Wij vinden dat je microdoseren met aandacht en zorg moet benaderen. Daarom zit bij elk pakket een app en een hotline — en daarom zijn we net zo duidelijk over wie beter niet kan microdoseren als over hoe je het goed doet.",
+      "We zijn BIEN begonnen om microdoseren anders aan te pakken: precieze doses en een duidelijke routine. Geen mystiek, geen wonderbeloftes.",
+      "Wij vinden dat je microdoseren met aandacht en zorg moet benaderen. Daarom zit bij elk pakket een app, en daarom zijn we net zo duidelijk over wie beter niet kan microdoseren als over hoe je het goed doet.",
       "BIEN Microdose wordt geëxploiteerd door Bien Health B.V., een in Nederland ingeschreven bedrijf.",
     ],
     valuesTitle: "Waar we voor staan",
     values: [
-      { title: "Precisie", text: "Microdoses voorgedoseerd op 1 g — geen giswerk over het gewicht." },
+      { title: "Precisie", text: "Microdoses voorgedoseerd op 1 g. Geen giswerk over het gewicht." },
       { title: "Eerlijkheid", text: "We delen wat onderzoek zegt, en ook wat het niet zegt." },
-      { title: "Zorg", text: "Screening en begeleiding komen eerst, vóór elke verkoop." },
+      { title: "Zorg", text: "We zeggen eerst wie beter niet kan microdoseren, en pas daarna hoe je het doet." },
     ],
   },
   faq: {
     title: "Veelgestelde",
     accent: "vragen.",
-    intro: "Staat je antwoord er niet bij? Stuur ons een bericht — een mens antwoordt.",
+    intro: "Staat je antwoord er niet bij? Stuur ons een bericht, meestal antwoorden we binnen één werkdag.",
     items: [
       {
         q: "Wat is microdoseren?",
-        a: "Microdoseren betekent dat je een heel kleine hoeveelheid van een psychedelische stof neemt — hier psilocybinetruffels — ruim onder de dosis die waarnemingseffecten geeft, volgens een vast schema en voor een beperkte periode. Het onderzoek naar de effecten loopt nog en de resultaten tot nu toe zijn wisselend; een deel van wat mensen beschrijven kan samenhangen met verwachtingen.",
+        a: "Microdoseren betekent dat je een heel kleine hoeveelheid van een psychedelische stof neemt (hier psilocybinetruffels), ruim onder de dosis die waarnemingseffecten geeft, volgens een vast schema en voor een beperkte periode. Het onderzoek naar de effecten loopt nog en de resultaten tot nu toe zijn wisselend; een deel van wat mensen beschrijven kan samenhangen met verwachtingen.",
       },
       {
         q: "Is het legaal?",
@@ -389,7 +473,7 @@ const nl: Dictionary = {
       },
       {
         q: "Wie kan beter niet microdoseren?",
-        a: "Onze producten zijn alleen voor volwassenen (18+). Microdoseren is niet geschikt tijdens zwangerschap of borstvoeding, als jij of een naaste een voorgeschiedenis van psychose of bipolaire stoornis hebt, bij een hartaandoening, of als je medicijnen gebruikt — vooral antidepressiva (SSRI’s, MAO-remmers) of lithium. Twijfel je? Overleg dan met je arts voordat je bestelt.",
+        a: "Onze producten zijn alleen voor volwassenen (18+). Microdoseren is niet geschikt tijdens zwangerschap of borstvoeding, als jij of een naaste een voorgeschiedenis van psychose of bipolaire stoornis hebt, bij een hartaandoening, of als je medicijnen gebruikt, vooral antidepressiva (SSRI’s, MAO-remmers) of lithium. Twijfel je? Overleg dan met je arts voordat je bestelt.",
       },
       {
         q: "Ik gebruik antidepressiva. Kan ik microdoseren?",
@@ -397,7 +481,7 @@ const nl: Dictionary = {
       },
       {
         q: "Hoe neem ik mijn eerste microdosis?",
-        a: "Kies een rustige dag zonder sociale of werkverplichtingen. Begin met een halve truffel (0,5 g), let op hoe je je voelt en schrijf het op. De app en de BIEN-hotline begeleiden je door de eerste dagen.",
+        a: "Kies een rustige dag zonder sociale of werkverplichtingen. Begin met een halve truffel (0,5 g), let op hoe je je voelt en schrijf het op in de app.",
       },
       {
         q: "Mag ik alcohol drinken tijdens het microdoseren?",
@@ -420,7 +504,7 @@ const nl: Dictionary = {
   contact: {
     title: "Praat met",
     accent: "een mens.",
-    intro: "Een vraag over een bestelling of het programma, of een persverzoek? Stuur ons een bericht — meestal antwoorden we binnen één werkdag.",
+    intro: "Een vraag over een bestelling of het programma, of een persverzoek? Stuur ons een bericht: meestal antwoorden we binnen één werkdag.",
     name: "Naam",
     email: "E-mail",
     phone: "Telefoon",
@@ -430,12 +514,12 @@ const nl: Dictionary = {
     message: "Bericht",
     send: "Versturen",
     sending: "Bezig met versturen…",
-    success: "Dank je — je bericht is verstuurd.",
+    success: "Dank je, je bericht is verstuurd.",
     error: "Het bericht kon niet worden verstuurd. Mail ons op info@bien.health.",
     direct: "Of mail ons direct",
   },
   footer: {
-    tagline: "Voorgedoseerde microdoses psilocybinetruffels, met begeleiding.",
+    tagline: "Voorgedoseerde microdoses psilocybinetruffels, gekweekt in Nederland.",
     shop: "Shop",
     help: "Hulp",
     company: "Bedrijf",
@@ -443,7 +527,7 @@ const nl: Dictionary = {
     terms: "Algemene voorwaarden",
     privacy: "Privacybeleid",
     shipping: "Verzending & retour",
-    rights: "Bien Health B.V. — Alle rechten voorbehouden.",
+    rights: "Bien Health B.V. Alle rechten voorbehouden.",
     disclaimer:
       "Alleen voor volwassenen (18+). Onze producten zijn geen geneesmiddelen en zijn niet bedoeld om een ziekte te diagnosticeren, te behandelen, te genezen of te voorkomen. De informatie op deze website vervangt geen medisch advies.",
   },

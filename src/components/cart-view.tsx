@@ -37,7 +37,7 @@ export default function CartView({ lang, t }: { lang: Locale; t: Dictionary }) {
               <div className="flex flex-1 flex-col">
                 <div className="flex justify-between gap-4">
                   <div>
-                    <p className="font-display text-lg font-bold">{c.name}</p>
+                    <p className="font-display text-lg font-medium">{c.name}</p>
                     <p className="text-sm text-muted">{c.tagline}</p>
                   </div>
                   <div className="text-right">
@@ -80,7 +80,7 @@ export default function CartView({ lang, t }: { lang: Locale; t: Dictionary }) {
             <dt>{t.cart.shipping}</dt>
             <dd>{t.cart.shippingCalc}</dd>
           </div>
-          <div className="flex justify-between border-t border-ink/10 pt-4 font-display text-xl font-bold">
+          <div className="flex justify-between border-t border-ink/10 pt-4 font-sans text-xl font-bold">
             <dt>{t.cart.total}</dt>
             <dd>{formatPrice(totals.subtotalCents, lang)}</dd>
           </div>

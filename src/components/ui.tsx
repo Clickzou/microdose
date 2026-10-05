@@ -62,12 +62,59 @@ export function Marquee({ items }: { items: string[] }) {
     <div className="overflow-hidden border-y border-ink/10 bg-paper py-4" aria-hidden="true">
       <div className="bm-marquee-track flex w-max gap-10 whitespace-nowrap">
         {row.map((item, i) => (
-          <span key={i} className="flex items-center gap-10 font-display text-lg font-semibold tracking-tight">
+          <span key={i} className="flex items-center gap-10 font-display text-lg font-medium tracking-tight">
             {item}
             <span className="size-1.5 rounded-full bg-earth" />
           </span>
         ))}
       </div>
+    </div>
+  );
+}
+
+/**
+ * Bienfaits qui défilent (« Macro-benefits » de l'ancien site) : même mécanique que
+ * le bandeau, en plus lent et en pause au survol. La seconde copie, qui sert à boucler,
+ * est masquée aux lecteurs d'écran ; sans animation (préférence système), une seule
+ * copie reste, à faire défiler à la main.
+ */
+export function BenefitsMarquee({ items }: { items: { title: string; text: string; image: string }[] }) {
+  const card = (b: (typeof items)[number], copy: boolean) => (
+    <li key={`${b.title}-${copy}`} aria-hidden={copy || undefined} className={`w-64 shrink-0 sm:w-72 ${copy ? "motion-reduce:hidden" : ""}`}>
+      <div className="relative aspect-square overflow-hidden rounded-[2rem]">
+        <Image src={b.image} alt="" fill sizes="288px" className="object-cover" />
+      </div>
+      <h3 className="mt-5 text-2xl">{b.title}</h3>
+      <p className="mt-2 leading-relaxed text-ink-soft">{b.text}</p>
+    </li>
+  );
+  return (
+    <div className="overflow-hidden motion-reduce:overflow-x-auto">
+      <ul className="bm-marquee-track bm-marquee-slow flex w-max gap-6 pr-6 sm:gap-8 sm:pr-8">
+        {items.map((b) => card(b, false))}
+        {items.map((b) => card(b, true))}
+      </ul>
+    </div>
+  );
+}
+
+/** Questions-réponses repliables ; les paragraphes d'une réponse sont séparés par une ligne vide. */
+export function FaqList({ items }: { items: { q: string; a: string }[] }) {
+  return (
+    <div className="divide-y divide-line border-y border-line">
+      {items.map((i) => (
+        <details key={i.q} className="group py-6">
+          <summary className="flex cursor-pointer list-none items-start justify-between gap-6 font-display text-xl font-medium sm:text-2xl">
+            {i.q}
+            <span className="mt-0.5 text-2xl font-normal transition group-open:rotate-45">+</span>
+          </summary>
+          <div className="mt-4 space-y-3 leading-relaxed text-ink-soft">
+            {i.a.split("\n\n").map((para) => (
+              <p key={para}>{para}</p>
+            ))}
+          </div>
+        </details>
+      ))}
     </div>
   );
 }
@@ -103,7 +150,7 @@ export function ProductCard({
           <p className="mt-1 text-ink-soft">{copy.tagline}</p>
         </div>
         <div className="text-right">
-          <p className="font-display text-xl font-bold">{formatPrice(p.priceCents, lang)}</p>
+          <p className="font-sans text-xl font-bold">{formatPrice(p.priceCents, lang)}</p>
           {p.doses ? (
             <p className="text-sm text-muted">
               {formatPrice(Math.round(p.priceCents / p.doses), lang)} {t.common.perDose}

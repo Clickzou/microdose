@@ -48,7 +48,7 @@ export default function SiteFooter({ lang, t }: { lang: Locale; t: Dictionary })
             <Image src="/brand/logo-bien.svg" alt="BIEN" width={488} height={155} className="h-9 w-auto invert" />
             <p className="mt-5 max-w-xs text-paper/70">{f.tagline}</p>
             <div className="mt-8 max-w-sm">
-              <p className="font-display text-xl font-bold">{t.home.newsletterTitle}</p>
+              <p className="font-display text-xl font-medium">{t.home.newsletterTitle}</p>
               <NewsletterForm lang={lang} t={t.newsletter} dark />
             </div>
           </div>

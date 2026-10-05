@@ -1,30 +1,23 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { defaultLocale, hasLocale, locales } from "@/lib/i18n";
+import { defaultLocale, locales } from "@/lib/i18n";
 
 /**
- * Toute URL sans préfixe de langue est redirigée vers la langue du navigateur
- * (en, fr, de, nl), anglais par défaut — l'ancien site servait l'anglais à la racine.
+ * Toute URL sans préfixe de langue est redirigée vers l'anglais, la version originale
+ * du site (demande de Carla du 05/10/2026). Les versions fr, de et nl restent
+ * accessibles par le sélecteur de langue, mais ne sont plus choisies d'après le
+ * navigateur.
  *
  * Les anciennes URL WordPress connues sont traitées AVANT, par les redirections 301
  * de next.config.ts : elles ne passent jamais par ici.
  */
-function preferredLocale(request: NextRequest): string {
-  const header = request.headers.get("accept-language") ?? "";
-  for (const part of header.split(",")) {
-    const code = part.split(";")[0]?.trim().slice(0, 2).toLowerCase();
-    if (code && hasLocale(code)) return code;
-  }
-  return defaultLocale;
-}
-
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const first = pathname.split("/")[1] ?? "";
   if ((locales as readonly string[]).includes(first)) return;
 
-  request.nextUrl.pathname = `/${preferredLocale(request)}${pathname === "/" ? "" : pathname}`;
-  // 307 : la cible dépend du navigateur, elle ne doit pas être mise en cache comme
-  // une redirection permanente.
+  request.nextUrl.pathname = `/${defaultLocale}${pathname === "/" ? "" : pathname}`;
+  // 307 : temporaire, la détection de la langue du navigateur pourra revenir quand
+  // les traductions seront mises en avant.
   return NextResponse.redirect(request.nextUrl, 307);
 }
 

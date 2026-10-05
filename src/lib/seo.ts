@@ -13,8 +13,8 @@ export const SITE_URL = (
   (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "https://bien-microdose.com")
 ).replace(/\/$/, "");
 
-/** Longueur du suffixe « — BIEN Microdose » ajouté par le modèle de titre du layout. */
-const TITLE_SUFFIX_LENGTH = " — BIEN Microdose".length;
+/** Longueur du suffixe « | BIEN Microdose » ajouté par le modèle de titre du layout. */
+const TITLE_SUFFIX_LENGTH = " | BIEN Microdose".length;
 
 /** Image d'aperçu par défaut : JPG au format recommandé par les réseaux (1200 × 630). */
 const DEFAULT_OG_IMAGE = { url: "/images/og-bien-microdose.jpg", width: 1200, height: 630 };
@@ -47,7 +47,7 @@ export function pageMetadata({
   type?: "website" | "article";
 }): Metadata {
   const languages = Object.fromEntries(locales.map((l) => [l, `${SITE_URL}/${l}${path}`]));
-  // Le layout ajoute « — BIEN Microdose » (17 caractères). Au-delà de 60 caractères au
+  // Le layout ajoute « | BIEN Microdose » (17 caractères). Au-delà de 60 caractères au
   // total, Google tronque la fin : on garde alors le titre seul, mot-clé intact.
   const fitsWithBrand = title.length + TITLE_SUFFIX_LENGTH <= 60;
   return {

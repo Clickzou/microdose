@@ -4,23 +4,27 @@ import type { Dictionary } from "./en";
  * Dictionnaire français. Vouvoiement, typographie française (espaces insécables
  * avant ; : ! ? et à l’intérieur des guillemets « »).
  * Conformité : aucune allégation thérapeutique (voir docs/brief-contenu-agents.md).
+ * Exception voulue par la cliente (05/10/2026) : les textes d’origine traduits fidèlement
+ * (bienfaits, FAQ de l’accueil, journée type), qu’elle a choisi de garder malgré le risque signalé.
+ *
+ * Pas de tiret long (— ou –) dans les textes : demande de la cliente, « ça fait trop IA ».
  */
 const fr: Dictionary = {
   meta: {
     siteName: "BIEN Microdose",
-    title: "Microdosing psilocybine : programme de 6 semaines — BIEN",
+    title: "Microdosing psilocybine : programme de 6 semaines | BIEN",
     description:
-      "Truffes à psilocybine prédosées à 1 g, cultivées aux Pays-Bas, avec un programme guidé de 6 semaines et une application compagnon. Réservé aux adultes.",
+      "Truffes à psilocybine prédosées à 1 g, cultivées aux Pays-Bas, avec un programme de 6 semaines et une application compagnon. Réservé aux adultes.",
   },
   seo: {
     shop: { title: "Truffes psilocybine pour le microdosing", description: "PEACE in the Chaos : six truffes Psilocybe mexicana prédosées à 1 g, un programme de 6 semaines et une application. Cultivées aux Pays-Bas, envoi discret." },
     howItWorks: { title: "Microdosing psilocybine : le protocole 2-6-2", description: "Microdoser avec BIEN : une demi-dose la première fois, puis deux microdoses par semaine pendant six semaines et deux semaines de pause, avec précautions." },
     faq: { title: "Truffes magiques et microdosing : FAQ", description: "Réponses sur les truffes magiques et le microdosing : légalité, dosage, rythme 2-6-2, conservation, contre-indications, livraison et paiement. Clair et honnête." },
-    about: { title: "À propos de BIEN, microdosing néerlandais", description: "BIEN propose des truffes Psilocybe mexicana prédosées, cultivées aux Pays-Bas, une routine claire de 6 semaines et un vrai accompagnement, sans promesse." },
-    contact: { title: "Nous contacter", description: "Une question sur une commande, le programme ou une demande presse ? Écrivez à l’équipe BIEN Microdose : nous répondons en général sous un jour ouvré." },
+    about: { title: "À propos de BIEN, microdosing néerlandais", description: "BIEN propose des truffes Psilocybe mexicana prédosées, cultivées aux Pays-Bas, une routine claire de 6 semaines et une application compagnon, sans promesse." },
+    contact: { title: "Nous contacter", description: "Une question sur une commande, le programme ou une demande presse ? Écrivez à l’équipe BIEN Microdose : nous répondons en général sous un jour ouvré." },
     learn: { title: "Microdosing : guides et articles", description: "" },
-    peace: { title: "Truffes magiques mexicana : PEACE in the Chaos", description: "PEACE in the Chaos : six truffes Psilocybe mexicana prédosées à 1 g, trois semaines de microdoses, avec le programme BIEN, l’application et la ligne d’écoute." },
-    tote: { title: "Tote bag BIEN en toile recyclée", description: "Le tote bag BIEN : toile 80 % coton recyclé et 20 % polyester recyclé, 39 × 37 cm, couleur naturelle, imprimé du logo BIEN. Solide, pour tous les jours." },
+    peace: { title: "Truffes magiques mexicana : PEACE in the Chaos", description: "PEACE in the Chaos : six truffes Psilocybe mexicana prédosées à 1 g, trois semaines de microdoses, avec le programme BIEN de 6 semaines et l’application compagnon." },
+    tote: { title: "Tote bag BIEN en toile recyclée", description: "Le tote bag BIEN : toile 80 % coton recyclé et 20 % polyester recyclé, 39 × 37 cm, couleur naturelle, imprimé du logo BIEN. Solide, pour tous les jours." },
   },
   nav: {
     shop: "Boutique",
@@ -55,11 +59,11 @@ const fr: Dictionary = {
     body: "Ce site présente des produits à base de truffes à psilocybine, réservés aux adultes. Merci de confirmer votre âge pour continuer.",
     yes: "Oui, j’ai 18 ans ou plus",
     no: "Non",
-    refused: "Désolés — ce site est réservé aux adultes.",
+    refused: "Désolés, ce site est réservé aux adultes.",
     legal: "En entrant, vous confirmez avoir l’âge légal dans votre pays de résidence.",
   },
   cookies: {
-    text: "Nous utilisons des cookies essentiels au fonctionnement de la boutique et — uniquement avec votre accord — des cookies de mesure d’audience pour améliorer le site.",
+    text: "Nous utilisons des cookies essentiels au fonctionnement de la boutique et, uniquement avec votre accord, des cookies de mesure d’audience pour améliorer le site.",
     accept: "Accepter",
     refuse: "Refuser",
     more: "Politique de confidentialité",
@@ -67,8 +71,8 @@ const fr: Dictionary = {
   marquee: [
     "Truffes prédosées à 1 g",
     "Cultivées aux Pays-Bas",
-    "Programme guidé de 6 semaines",
-    "Ligne d’écoute BIEN incluse",
+    "Programme de 6 semaines",
+    "Application compagnon BIEN",
     "Livraison discrète",
     "Réservé aux adultes",
   ],
@@ -77,13 +81,13 @@ const fr: Dictionary = {
     heroTitleA: "La paix",
     heroTitleB: "dans le chaos.",
     heroText:
-      "Des microdoses prédosées de truffes Psilocybe mexicana, cultivées aux Pays-Bas et livrées avec un programme de 6 semaines, une application compagnon et une vraie personne à qui parler.",
+      "Des microdoses prédosées de truffes Psilocybe mexicana, cultivées aux Pays-Bas et livrées avec un programme de 6 semaines et une application compagnon.",
     heroCta: "Découvrir le pack",
     heroCta2: "Comment ça marche",
     introTitle: "Trop de pensées. Trop de stimulations. Trop d’exigences.",
     introAccent: "Ça vous parle ?",
     introText:
-      "La vie moderne fait du bruit. Nous avons créé BIEN pour les personnes qui veulent explorer le microdosage avec soin : une routine claire, des doses précises et un accompagnement à chaque étape, plutôt que l’improvisation.",
+      "La vie moderne fait du bruit. Nous avons créé BIEN pour les personnes qui veulent explorer le microdosage avec soin : une routine claire et des doses précises, plutôt que l’improvisation.",
     introText2:
       "Le microdosage n’est pas une solution miracle, et il ne convient pas à tout le monde. C’est une pratique que certains adultes choisissent d’explorer, avec intention et de manière responsable. Nous sommes là pour vous aider à le faire, précisément de cette façon.",
     productKicker: "Le pack",
@@ -95,7 +99,7 @@ const fr: Dictionary = {
     steps: [
       {
         title: "Commencer en douceur",
-        text: "Lisez les précautions, puis commencez par une demi-microdose (0,5 g) un jour calme. La ligne d’écoute BIEN répond à vos questions avant votre première dose.",
+        text: "Lisez les précautions, puis commencez par une demi-microdose (0,5 g) un jour calme, sans obligations.",
       },
       {
         title: "Suivre un cycle de 6 semaines",
@@ -103,7 +107,7 @@ const fr: Dictionary = {
       },
       {
         title: "Observer, ajuster, faire une pause",
-        text: "Notez ce que vous remarquez. La ligne d’écoute BIEN répond à vos questions tout au long du cycle. Puis faites une pause : un cycle est fait pour se terminer.",
+        text: "Notez dans l’application ce que vous remarquez. Puis faites une pause : un cycle est fait pour se terminer.",
       },
     ],
     qualityKicker: "Qualité",
@@ -112,7 +116,7 @@ const fr: Dictionary = {
     quality: [
       { title: "Prédosées à 1 g", text: "Ni balance, ni approximation. Chaque microdose est pesée et emballée individuellement." },
       { title: "Cultivées aux Pays-Bas", text: "Des sclérotes de Psilocybe mexicana cultivés à Alphen aan den Rijn, où leur vente est légale." },
-      { title: "Truffes entières", text: "Livrées sous leur forme naturelle — rien d’ajouté, rien d’extrait." },
+      { title: "Truffes entières", text: "Livrées sous leur forme naturelle. Rien d’ajouté, rien d’extrait." },
       { title: "Livraison discrète", text: "Emballage extérieur neutre, envoi suivi." },
       { title: "Certifiées bio", text: "Culture biologique, avec une certification officielle." },
       { title: "Certifiées vegan", text: "Aucun ingrédient d’origine animale, certification vegan." },
@@ -142,26 +146,82 @@ const fr: Dictionary = {
     videosTitle: "Ce que nos Shroomies disent de BIEN.",
     videosCta: "Suivez-nous sur Instagram",
     videosLabel: "Vidéo client {n}",
-    videosNote: "Vidéos en anglais. Ressentis individuels et subjectifs : ils varient d’une personne à l’autre et ne constituent pas une promesse de résultat.",
-    expertKicker: "Accompagnement",
-    expertTitle: "Vous n’êtes pas livrés à vous-même.",
-    expertText:
-      "Notre consultant médical, le Dr David Garcia Padron, et l’équipe BIEN veillent à ce que vous commenciez avec les bonnes informations : votre contexte de santé, les interactions possibles, et les situations où le microdosage n’est tout simplement pas une bonne idée.",
-    expertCta: "Comment ça marche",
+    videosNote: "Vidéos en anglais. Ressentis individuels et subjectifs : ils varient d’une personne à l’autre et ne constituent pas une promesse de résultat.",
+    // Textes de l’ancien site, traduits fidèlement à la demande de la cliente (05/10/2026).
+    benefitsTitle: "Des macro-bienfaits dans chaque dose.",
+    benefitsText: "Notre équipe de recherche a sélectionné avec soin les meilleures souches de champignons pour en tirer les plus grands bienfaits.",
+    benefits: [
+      { title: "Calme", text: "Favorise un sentiment de calme, réduit le stress et l’anxiété en général." },
+      { title: "Concentration", text: "Des distractions apprivoisées et une concentration plus aiguisée pour plonger dans un flow profond." },
+      { title: "Résilience", text: "Change votre regard pour affronter les difficultés avec force et capacité d’adaptation." },
+      { title: "Performance", text: "Libère tout votre potentiel de créativité et de résolution de problèmes." },
+      { title: "Clarté mentale", text: "Réduit le brouillard mental, affine la prise de décision et améliore les fonctions cognitives." },
+      { title: "Créativité", text: "Renforce la capacité à résoudre les problèmes et encourage à sortir des sentiers battus." },
+    ],
+    faqTitle: "Questions fréquentes.",
+    faqCta: "Voir plus",
+    // FAQ de l’ancien site, traduite fidèlement, sans les renvois au médecin consultant, à
+    // l’appel d’accueil et au guide alcool (services retirés). Paragraphes séparés par \n\n.
+    faq: [
+      {
+        q: "Le microdosage est-il légal ?",
+        a: "La reconnaissance mutuelle des marchandises\n\nLes truffes à psilocybine sont 100 % légales aux Pays-Bas, où BIEN est établi, et peuvent être expédiées dans tous les pays de l’UE en vertu du règlement sur la reconnaissance mutuelle des marchandises.\n\nCe texte européen permet l’importation légale d’un État membre à un autre, quelle que soit la législation du pays d’importation.",
+      },
+      {
+        q: "Vais-je me sentir « perché·e » avec une microdose ?",
+        a: "Non, la quantité de psilocybine dans une microdose est minime, ce qui la rend adaptée à un usage quotidien.\n\nToutes nos microdoses sont prédosées (1 g) pour éviter les erreurs de dosage. Il est toujours plus sûr de commencer par une faible dose, puis de l’augmenter progressivement à mesure que votre confiance grandit.",
+      },
+      {
+        q: "Le microdosage de champignons rend-il dépendant ?",
+        a: "Non, c’est même l’inverse.\n\nLe risque de dépendance à la psilocybine, le principe actif de nos microdoses, est minime : 0,2 %. À titre de comparaison, il est de 44 % pour les ISRS.\n\nDes recherches en cours étudient la psilocybine comme traitement potentiel des troubles liés à l’usage de substances. Il reste néanmoins important de garder un œil sur votre rapport à elle.",
+      },
+      {
+        q: "Puis-je travailler sous microdose ?",
+        a: "Oui, au travail, une microdose prise à la dose recommandée peut être un vrai atout.\n\nElle peut améliorer la gestion du stress, la concentration et la capacité à résoudre les problèmes.",
+      },
+      {
+        q: "Comment aborder ma première microdose ?",
+        a: "Il est généralement recommandé de commencer un jour sans obligations sociales. Mieux vaut débuter par une dose réduite de 0,5 g (une demi-dose prédosée), puis l’augmenter progressivement au cours de la semaine suivante pour voir comment votre corps réagit.",
+      },
+      {
+        q: "Je prends des antidépresseurs, puis-je aussi microdoser ?",
+        a: "Nous déconseillons d’associer les deux.\n\nSi vous envisagez de réduire progressivement votre traitement ou si vous craignez des interactions avec vos médicaments, parlez-en à votre médecin.",
+      },
+      {
+        q: "Le microdosage est-il bénéfique en cas de TDAH ?",
+        a: "Oui, plusieurs experts estiment qu’il peut être bénéfique aux personnes atteintes de TDAH ou de TDA, car le microdosage améliore la concentration et l’état de flow.\n\nParlez-en à votre médecin, surtout si vous suivez déjà un traitement.",
+      },
+      {
+        q: "Quel est le meilleur moment pour commencer le microdosage ?",
+        a: "Il n’y a pas de moment idéal pour commencer : presque chaque moment peut être le bon.\n\nL’essentiel est d’être dans un bon état d’esprit et prêt à changer au moment de démarrer un cycle.",
+      },
+      {
+        q: "Puis-je microdoser et boire de l’alcool ?",
+        a: "Même s’il est possible de microdoser et de boire de l’alcool, nous ne le recommandons pas.\n\nL’alcool peut atténuer les effets bénéfiques du microdosage, et la microdose peut agir comme un « accélérateur d’alcool » : l’ivresse arrive plus vite.",
+      },
+      {
+        q: "Comment conserver les truffes fraîches pour préserver leur puissance ?",
+        a: "Pour préserver la puissance des truffes fraîches, conservez-les au réfrigérateur.\n\nFermées, elles se gardent jusqu’à deux mois ; une fois ouvertes, une semaine.\n\nGardez-les dans un endroit frais, sec et à l’abri de la lumière pour limiter le risque de pourriture ou de perte en psilocybine.\n\nÉvitez de les congeler et laissez les plaquettes dans leur emballage pour qu’elles ne prennent pas l’humidité.",
+      },
+      {
+        q: "Garantie de livraison",
+        a: "Nous expédions dans l’Union européenne avec un taux de réussite élevé.\n\nPour nos clients de l’UE, nous offrons une garantie de livraison : si votre commande n’arrive pas à destination, nous vous en renvoyons une nouvelle.",
+      },
+    ],
     learnKicker: "Comprendre",
     learnTitle: "Comprendre avant de commencer.",
     learnCta: "Tous les articles",
     safetyTitle: "Le microdosage ne convient pas à tout le monde.",
     safetyText:
-      "Nos produits sont réservés aux adultes. Ils sont déconseillés pendant la grossesse ou l’allaitement, si vous ou un proche avez des antécédents de troubles psychotiques ou bipolaires, en cas de problème cardiaque ou si vous prenez un traitement médicamenteux — en particulier des antidépresseurs ou du lithium. Ne conduisez jamais après avoir pris une microdose. En cas de doute, parlez-en à votre médecin.",
+      "Nos produits sont réservés aux adultes. Ils sont déconseillés pendant la grossesse ou l’allaitement, si vous ou un proche avez des antécédents de troubles psychotiques ou bipolaires, en cas de problème cardiaque ou si vous prenez un traitement médicamenteux, en particulier des antidépresseurs ou du lithium. Ne conduisez jamais après avoir pris une microdose. En cas de doute, parlez-en à votre médecin.",
     safetyCta: "Lire toutes les informations de sécurité",
     newsletterTitle: "La lettre BIEN",
-    newsletterText: "Actualité de la recherche, guides pratiques et invitations à nos événements. Un e-mail par mois, sans spam.",
+    newsletterText: "Actualité de la recherche et guides pratiques. Un e-mail par mois, sans spam.",
   },
   newsletter: {
     placeholder: "Votre adresse e-mail",
     submit: "S’inscrire",
-    success: "Merci, c’est noté : à très vite dans votre boîte mail.",
+    success: "Merci, c’est noté : à très vite dans votre boîte mail.",
     error: "Un problème est survenu. Merci de réessayer.",
     consent: "En vous inscrivant, vous acceptez de recevoir nos e-mails. Désinscription possible à tout moment.",
   },
@@ -173,12 +233,10 @@ const fr: Dictionary = {
       includes: [
         "6 × 1 g de truffes Psilocybe mexicana prédosées (3 semaines)",
         "Application compagnon BIEN",
-        "Ligne d’écoute BIEN",
-        "Invitations aux événements de la communauté BIEN",
       ],
       descriptionTitle: "À propos des truffes",
       description:
-        "Les sclérotes de Psilocybe mexicana — souvent appelés « truffes magiques » — sont la forme souterraine du champignon. Nous les livrons entiers et prédosés à 1 g, pour que chaque microdose ait le même poids dès le premier jour — la teneur naturelle en psilocybine d’une truffe peut, elle, légèrement varier. Ils sont cultivés à Alphen aan den Rijn, aux Pays-Bas, où leur vente est légale.",
+        "Les sclérotes de Psilocybe mexicana, souvent appelés « truffes magiques », sont la forme souterraine du champignon. Nous les livrons entiers et prédosés à 1 g, pour que chaque microdose ait le même poids dès le premier jour (la teneur naturelle en psilocybine d’une truffe peut, elle, légèrement varier). Ils sont cultivés à Alphen aan den Rijn, aux Pays-Bas, où leur vente est légale.",
       howToTitle: "Mode d’emploi",
       howTo: [
         "Commencez par une demi-dose (0,5 g), un jour calme et sans obligations.",
@@ -219,18 +277,50 @@ const fr: Dictionary = {
   },
   shop: {
     title: "Boutique",
-    intro: "Tout ce qu’il faut pour un cycle de microdosage accompagné — et un sac pour l’emporter.",
+    intro: "Tout ce qu’il faut pour un cycle de microdosage, et un sac pour l’emporter.",
     shippingNote: "Livraison offerte dès 100 € · Envoi suivi",
   },
   product: {
     quantity: "Quantité",
     packs: "packs",
     total: "Total",
-    reassurance: ["Envoi suivi et discret", "Livraison offerte dès 100 €", "Ligne d’écoute BIEN incluse"],
-    badges: ["Certifié bio", "Certifié vegan", "Prédosé à 1 g", "Cultivé aux Pays-Bas", "100 % truffe, sans additif", "Envoi discret"],
+    reassurance: ["Envoi suivi et discret", "Livraison offerte dès 100 €", "Application compagnon BIEN incluse"],
+    badges: ["Certifié bio", "Certifié vegan", "Prédosé à 1 g", "Cultivé aux Pays-Bas", "100 % truffe, sans additif", "Envoi discret"],
     ageNotice: "En ajoutant ce produit à votre panier, vous confirmez avoir 18 ans ou plus.",
     related: "Vous aimerez aussi",
     reviewsTitle: "Expériences clients",
+  },
+  // Sections de la fiche PEACE in the Chaos reprises de l’ancien site, traduites fidèlement
+  // (demande de la cliente du 05/10/2026).
+  protocol: {
+    benefitsTitle: "Un appui face aux défis de la vie moderne.",
+    benefitsText: "Profitez des bienfaits du microdosage sans aucun état de conscience modifié. Vous restez vous-même, mais dans un très bon jour.",
+    benefits: [
+      { title: "Calme", text: "Favorise un sentiment de calme, réduit le stress et l’anxiété en général." },
+      { title: "Résilience", text: "Change votre regard pour affronter les difficultés avec force et capacité d’adaptation." },
+      { title: "Clarté mentale", text: "Réduit le brouillard mental, affine la prise de décision et améliore les fonctions cognitives." },
+      { title: "Créativité", text: "Renforce la capacité à résoudre les problèmes et encourage à sortir des sentiers battus." },
+    ],
+    fadimanTitle: "Nous suivons le protocole du Dr Fadiman.",
+    fadimanText: "Le protocole de microdosage le plus étudié à ce jour.",
+    fadimanRemember: "Retenez simplement 2-6-2 : une microdose 2 fois par semaine pendant 6 semaines.",
+    fadimanRemember2: "Puis 2 semaines de pause. Ensuite, vous pouvez recommencer.",
+    day: "Jour {n}",
+    dose: "Dose",
+    off: "pause",
+    weeksOn: "6 semaines de prise",
+    weeksOff: "2 semaines de pause",
+    dayTitle: "24 heures avec BIEN.",
+    dayText: "Voici une journée type de microdosage avec BIEN.",
+    timeline: [
+      { time: "8 h", title: "Commencez la journée", text: "en prenant BIEN à jeun. Posez votre intention avec l’application compagnon BIEN." },
+      { time: "8 h 30 à 9 h", title: "Premiers effets", text: "Légère hausse d’énergie." },
+      { time: "9 h à 12 h", title: "Flow énergique", text: "Comme une tasse de café, mais sans l’anxiété qui va avec. Clarté mentale. Concentration." },
+      { time: "12 h à 14 h", title: "Pic de clarté", text: "Un bon moment pour méditer et revenir sur l’intention posée le matin." },
+      { time: "14 h à 20 h", title: "Flow apaisé", text: "Proche du flow énergique du matin, mais plus doux. Créativité accrue. Pensée hors des sentiers battus." },
+      { time: "20 h à minuit", title: "Intégration", text: "Tenez votre journal dans l’application compagnon BIEN pour faire le point sur la journée et l’intégrer. Calme et sérénité, pour une bonne nuit de sommeil." },
+      { time: "Jour +1", title: "Effet rémanent", text: "Des effets plus subtils. Humeur équilibrée et pensée créative." },
+    ],
   },
   cart: {
     title: "Votre panier",
@@ -266,7 +356,7 @@ const fr: Dictionary = {
     newsletterOptIn: "Je souhaite recevoir la lettre BIEN (facultatif).",
     pay: "Continuer vers le paiement sécurisé",
     paying: "Redirection vers le paiement…",
-    secure: "Paiement sécurisé par CardGate — iDEAL, Bancontact, cartes bancaires et plus encore.",
+    secure: "Paiement sécurisé par CardGate : iDEAL, Bancontact, cartes bancaires et plus encore.",
     couponLabel: "Code promo",
     couponApply: "Appliquer",
     couponApplied: "Code {code} appliqué",
@@ -303,12 +393,12 @@ const fr: Dictionary = {
     free: "Offerte",
     total: "Total payé",
     address: "Adresse de livraison",
-    nextTitle: "Et maintenant ?",
+    nextTitle: "Et maintenant ?",
     next: [
       "Nous expédions votre colis en envoi discret et suivi.",
       "Commencez en douceur : une demi-microdose (0,5 g) un jour calme, puis suivez le rythme indiqué sur la fiche produit.",
     ],
-    questions: "Une question ? Répondez simplement à cet e-mail ou écrivez à info@bien.health.",
+    questions: "Une question ? Répondez simplement à cet e-mail ou écrivez à info@bien.health.",
     signature: "L’équipe BIEN",
   },
   learn: {
@@ -317,7 +407,7 @@ const fr: Dictionary = {
     intro: "Des guides clairs et honnêtes sur la psilocybine et le microdosage : ce que l’on sait, ce que l’on ignore encore, et comment l’aborder de façon responsable.",
     categories: { basics: "Les bases", protocols: "Protocoles", truffles: "Truffes & psilocybine", safety: "Sécurité", research: "Recherche & vécu" },
     categoryMeta: {
-      basics: { title: "Microdosing : les bases pour débuter", description: "Vous découvrez le microdosing de truffes ? Des guides clairs et honnêtes pour comprendre la pratique, le programme et commencer de façon responsable." },
+      basics: { title: "Microdosing : les bases pour débuter", description: "Vous découvrez le microdosing de truffes ? Des guides clairs et honnêtes pour comprendre la pratique, le programme et commencer de façon responsable." },
       protocols: { title: "Protocoles de microdosing et rythmes", description: "Fadiman, protocole BIEN 2-6-2, fréquence, moment de la prise, journal : des guides pratiques sur les rythmes, les doses et les pauses, sans promesse." },
       truffles: { title: "Truffes magiques et psilocybine", description: "Ce que sont les truffes magiques, comment pousse Psilocybe mexicana, comment la conserver, les variétés et la légalité : les faits, sources à l’appui." },
       safety: { title: "Microdosing : sécurité et précautions", description: "Effets secondaires, alcool, médicaments, grossesse, dépistage, malaise : tout ce qu’il faut vérifier avant et pendant un cycle de microdosing." },
@@ -336,49 +426,41 @@ const fr: Dictionary = {
   howItWorks: {
     title: "Comment ça",
     accent: "marche.",
-    intro: "Un cycle structuré et accompagné — de la première dose à la pause finale.",
+    intro: "Un cycle structuré, de la première dose à la pause finale.",
     timelineTitle: "Vos 6 semaines",
     timeline: [
-      { when: "Avant", title: "Vérifier les précautions", text: "Lisez les contre-indications avant de commencer. En cas de doute, posez la question à la ligne d’écoute BIEN ou à votre médecin." },
+      { when: "Avant", title: "Vérifier les précautions", text: "Lisez les contre-indications avant de commencer. En cas de doute, posez la question à votre médecin." },
       { when: "Jour 1", title: "Une première dose en douceur", text: "Une demi-microdose (0,5 g), un jour calme. Vous observez, vous notez ce que vous remarquez." },
-      { when: "Semaines 1–6", title: "Deux doses par semaine", text: "Par exemple le lundi et le jeudi, sans prise les autres jours. L’application vous le rappelle et vous propose une courte intention et une question pour votre journal." },
-      { when: "Après", title: "Pause et bilan", text: "2 semaines sans prise. Relisez vos notes, puis décidez tranquillement si — et quand — recommencer." },
+      { when: "Semaines 1 à 6", title: "Deux doses par semaine", text: "Par exemple le lundi et le jeudi, sans prise les autres jours. L’application vous le rappelle et vous propose une courte intention et une question pour votre journal." },
+      { when: "Après", title: "Pause et bilan", text: "2 semaines sans prise. Relisez vos notes, puis décidez tranquillement si vous recommencez, et quand." },
     ],
-    supportTitle: "Accompagnement inclus",
-    support: [
-      { title: "Application compagnon", text: "Rappels, audios pour poser votre intention, questions pour votre journal et calendrier de prises." },
-      { title: "Ligne d’écoute BIEN", text: "Une ligne directe pour poser vos questions pendant tout le cycle." },
-      { title: "Communauté", text: "Conférences, ateliers et événements avec la communauté BIEN." },
-    ],
-    doctorTitle: "Dr David Garcia Padron",
-    doctorRole: "Consultant médical",
-    doctorText:
-      "Le Dr Garcia Padron conseille BIEN sur les questions de sécurité : questionnaire préalable, contre-indications et interactions médicamenteuses. Notre accompagnement ne remplace pas votre propre médecin, qui connaît vos antécédents.",
+    appTitle: "L’application compagnon BIEN",
+    appText: "Rappels, audios pour poser votre intention, questions pour votre journal et calendrier de prises, dans votre poche pendant tout le cycle.",
   },
   about: {
     title: "Derrière",
     accent: "BIEN.",
     intro: "BIEN est né d’une frustration toute simple : autour de nous, les gens étaient fatigués, surstimulés, et les options proposées sonnaient rarement juste.",
     body: [
-      "Nous avons lancé BIEN pour proposer une autre approche du microdosage : des doses précises, une routine claire et de vraies personnes à qui parler. Pas de mysticisme, pas de promesses miraculeuses.",
-      "Nous pensons que le microdosage s’aborde avec intention et avec soin. C’est pourquoi chaque pack comprend une application compagnon et une ligne d’écoute, et pourquoi nous sommes aussi clairs sur les personnes qui ne devraient pas microdoser que sur la bonne façon de le faire.",
+      "Nous avons lancé BIEN pour proposer une autre approche du microdosage : des doses précises et une routine claire. Pas de mysticisme, pas de promesses miraculeuses.",
+      "Nous pensons que le microdosage s’aborde avec intention et avec soin. C’est pourquoi chaque pack comprend une application compagnon, et pourquoi nous sommes aussi clairs sur les personnes qui ne devraient pas microdoser que sur la bonne façon de le faire.",
       "BIEN Microdose est exploité par Bien Health B.V., société immatriculée aux Pays-Bas.",
     ],
     valuesTitle: "Ce qui nous guide",
     values: [
-      { title: "Précision", text: "Des microdoses prédosées à 1 g — sans approximation sur le poids." },
+      { title: "Précision", text: "Des microdoses prédosées à 1 g. Aucune approximation sur le poids." },
       { title: "Honnêteté", text: "Nous partageons ce que dit la recherche, y compris ce qu’elle ne dit pas." },
-      { title: "Soin", text: "La vérification et l’accompagnement passent avant toute vente." },
+      { title: "Soin", text: "Nous disons qui ne devrait pas microdoser avant d’expliquer comment le faire." },
     ],
   },
   faq: {
     title: "Questions",
     accent: "fréquentes.",
-    intro: "Vous ne trouvez pas votre réponse ? Écrivez-nous : un humain vous répondra.",
+    intro: "Vous ne trouvez pas votre réponse ? Écrivez-nous : nous répondons généralement sous un jour ouvré.",
     items: [
       {
         q: "Qu’est-ce que le microdosage ?",
-        a: "Microdoser, c’est prendre une très petite quantité d’une substance psychédélique — ici, des truffes à psilocybine —, bien en dessous de la dose qui produit des effets perceptifs, à intervalles réguliers et sur une période limitée. La recherche sur ses effets se poursuit et les résultats restent à ce jour contrastés ; une partie des effets décrits pourrait être liée aux attentes.",
+        a: "Microdoser, c’est prendre une très petite quantité d’une substance psychédélique (ici, des truffes à psilocybine), bien en dessous de la dose qui produit des effets perceptifs, à intervalles réguliers et sur une période limitée. La recherche sur ses effets se poursuit et les résultats restent à ce jour contrastés ; une partie des effets décrits pourrait être liée aux attentes.",
       },
       {
         q: "Est-ce légal ?",
@@ -390,7 +472,7 @@ const fr: Dictionary = {
       },
       {
         q: "Qui ne devrait pas microdoser ?",
-        a: "Nos produits sont réservés aux adultes (18+). Le microdosage est déconseillé pendant la grossesse ou l’allaitement, si vous ou un proche avez des antécédents de troubles psychotiques ou bipolaires, en cas de problème cardiaque ou si vous prenez un traitement médicamenteux — en particulier des antidépresseurs (ISRS, IMAO) ou du lithium. En cas de doute, parlez-en à votre médecin avant de commander.",
+        a: "Nos produits sont réservés aux adultes (18+). Le microdosage est déconseillé pendant la grossesse ou l’allaitement, si vous ou un proche avez des antécédents de troubles psychotiques ou bipolaires, en cas de problème cardiaque ou si vous prenez un traitement médicamenteux, en particulier des antidépresseurs (ISRS, IMAO) ou du lithium. En cas de doute, parlez-en à votre médecin avant de commander.",
       },
       {
         q: "Je prends des antidépresseurs. Puis-je microdoser ?",
@@ -398,7 +480,7 @@ const fr: Dictionary = {
       },
       {
         q: "Comment prendre ma première microdose ?",
-        a: "Choisissez un jour calme, sans obligations sociales ou professionnelles. Commencez par une demi-truffe (0,5 g), observez ce que vous ressentez et notez-le. L’application et la ligne d’écoute BIEN vous accompagnent pendant les premiers jours.",
+        a: "Choisissez un jour calme, sans obligations sociales ou professionnelles. Commencez par une demi-truffe (0,5 g), observez ce que vous ressentez et notez-le dans l’application.",
       },
       {
         q: "Puis-je boire de l’alcool pendant un cycle ?",
@@ -431,12 +513,12 @@ const fr: Dictionary = {
     message: "Message",
     send: "Envoyer",
     sending: "Envoi…",
-    success: "Merci — votre message a bien été envoyé.",
+    success: "Merci, votre message a bien été envoyé.",
     error: "Le message n’a pas pu être envoyé. Écrivez-nous à info@bien.health.",
     direct: "Ou écrivez-nous directement",
   },
   footer: {
-    tagline: "Microdoses de truffes à psilocybine prédosées, avec accompagnement.",
+    tagline: "Microdoses de truffes à psilocybine prédosées, cultivées aux Pays-Bas.",
     shop: "Boutique",
     help: "Aide",
     company: "Entreprise",
@@ -444,7 +526,7 @@ const fr: Dictionary = {
     terms: "Conditions générales de vente",
     privacy: "Politique de confidentialité",
     shipping: "Livraison et retours",
-    rights: "Bien Health B.V. — Tous droits réservés.",
+    rights: "Bien Health B.V. Tous droits réservés.",
     disclaimer:
       "Réservé aux adultes (18+). Nos produits ne sont pas des médicaments et ne sont pas destinés à diagnostiquer, traiter, guérir ou prévenir une quelconque maladie. Les informations de ce site ne remplacent pas un avis médical.",
   },

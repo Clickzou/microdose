@@ -93,7 +93,7 @@ async function customerEmail(o: PaidOrder) {
     "",
     t.intro,
     "",
-    `${t.summary} — ${ref}`,
+    `${t.summary} · ${ref}`,
     ...rows.map(([a, b]) => `${a}${colon}${b}`),
     `${t.total}${colon}${money(o.total_cents, lang)}`,
     "",
@@ -114,7 +114,7 @@ async function customerEmail(o: PaidOrder) {
 <p style="font-size:22px;font-weight:bold;letter-spacing:1px;margin:0 0 24px">BIEN</p>
 <p>${esc(hello)}</p>
 <p>${esc(t.intro)}</p>
-<h2 style="font-size:16px;margin:28px 0 8px">${esc(t.summary)} — ${ref}</h2>
+<h2 style="font-size:16px;margin:28px 0 8px">${esc(t.summary)} · ${ref}</h2>
 <table style="width:100%;border-collapse:collapse;font-size:14px">
 ${rows.map(([a, b]) => `<tr><td ${td}>${esc(a)}</td><td ${td} align="right">${esc(b)}</td></tr>`).join("\n")}
 <tr><td style="padding:10px 0;font-weight:bold">${esc(t.total)}</td><td style="padding:10px 0;font-weight:bold" align="right">${esc(money(o.total_cents, lang))}</td></tr>

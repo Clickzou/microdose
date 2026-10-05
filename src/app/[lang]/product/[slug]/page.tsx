@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Check } from "lucide-react";
 import { getDictionary } from "@/dictionaries";
@@ -9,6 +10,7 @@ import { Kicker, ProductCard, TrustBadges } from "@/components/ui";
 import AddToCart from "@/components/add-to-cart";
 import ProductGallery from "@/components/product-gallery";
 import JsonLd from "@/components/json-ld";
+import type { Dictionary } from "@/dictionaries/en";
 
 export function generateStaticParams() {
   return locales.flatMap((lang) => productList.map((p) => ({ lang, slug: p.slug })));
@@ -77,7 +79,7 @@ export default async function ProductPage({ params }: PageProps<"/[lang]/product
           <Kicker>{c.tagline}</Kicker>
           <h1 className="mt-3 text-5xl sm:text-6xl">{c.name}</h1>
           <p className="mt-5 text-lg leading-relaxed text-ink-soft">{c.short}</p>
-          <p className="mt-4 font-display text-2xl font-bold">
+          <p className="mt-4 font-sans text-2xl font-bold">
             {formatPrice(p.priceCents, lang)}
             {p.doses ? (
               <span className="ml-3 font-sans text-base font-normal text-muted">
@@ -124,6 +126,8 @@ export default async function ProductPage({ params }: PageProps<"/[lang]/product
         </div>
       </section>
 
+      {slug === "peace-in-the-chaos" ? <PeaceSections t={t.protocol} /> : null}
+
       {slug === "peace-in-the-chaos" ? (
         <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <h2 className="text-3xl sm:text-4xl">{t.product.reviewsTitle}</h2>
@@ -145,6 +149,89 @@ export default async function ProductPage({ params }: PageProps<"/[lang]/product
           {other.map((o) => (
             <ProductCard key={o.slug} lang={lang} slug={o.slug} t={t} />
           ))}
+        </div>
+      </section>
+    </>
+  );
+}
+
+/** Rythme d'une semaine du protocole 2-6-2 : prise les jours 1 et 4. */
+const WEEK = [true, false, false, true, false, false, false];
+
+/** Visuels d'origine, dans l'ordre de `protocol.benefits` (Calm, Resiliency, Mental Clarity, Creativity). */
+const PROTOCOL_BENEFIT_IMAGES = ["/images/benefit-calm.webp", "/images/benefit-resiliency.webp", "/images/benefit-clarity.webp", "/images/benefit-creativity.webp"];
+
+/**
+ * Sections de l'ancienne fiche PEACE in the Chaos, remises à la demande de la cliente
+ * (05/10/2026), textes mot pour mot : bienfaits, protocole 2-6-2, journée type.
+ */
+function PeaceSections({ t }: { t: Dictionary["protocol"] }) {
+  return (
+    <>
+      {/* ---------------------------------------------------------- Bienfaits */}
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+        <h2 className="max-w-3xl text-4xl sm:text-5xl">{t.benefitsTitle}</h2>
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">{t.benefitsText}</p>
+        <ul className="-mx-4 mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto px-4 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-4">
+          {t.benefits.map((b, i) => (
+            <li key={b.title} className="w-64 shrink-0 snap-start sm:w-auto">
+              <div className="relative aspect-square overflow-hidden rounded-[2rem]">
+                <Image src={PROTOCOL_BENEFIT_IMAGES[i]} alt="" fill sizes="(min-width: 1024px) 22vw, (min-width: 640px) 45vw, 256px" className="object-cover" />
+              </div>
+              <h3 className="mt-5 text-2xl">{b.title}</h3>
+              <p className="mt-2 leading-relaxed text-ink-soft">{b.text}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* ---------------------------------------------------------- Protocole 2-6-2 */}
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+        <div className="rounded-[2.5rem] bg-coffret-soft p-6 sm:p-10 lg:p-16">
+          <h2 className="max-w-3xl text-4xl sm:text-5xl">{t.fadimanTitle}</h2>
+          <p className="mt-4 text-lg text-ink-soft">{t.fadimanText}</p>
+          <p className="mt-8 max-w-2xl text-lg font-bold leading-relaxed">
+            {t.fadimanRemember}
+            <br />
+            {t.fadimanRemember2}
+          </p>
+          <ol className="mt-10 grid grid-cols-7 gap-1.5 sm:gap-3">
+            {WEEK.map((dose, i) => (
+              <li
+                key={i}
+                className={`flex flex-col items-center gap-1 rounded-xl px-0.5 py-3 text-center sm:gap-2 sm:rounded-2xl sm:px-1 sm:py-6 ${dose ? "bg-ink text-paper" : "bg-paper/70 text-ink-soft"}`}
+              >
+                {/* Mobile : le numéro seul, le libellé complet ne tient pas sur 7 colonnes. */}
+                <span className="text-sm font-bold sm:hidden">{i + 1}</span>
+                <span className="hidden text-xs uppercase tracking-[0.1em] sm:inline">{t.day.replace("{n}", String(i + 1))}</span>
+                <span className={`text-[0.6rem] leading-tight sm:text-base ${dose ? "font-bold" : ""}`}>{dose ? t.dose : t.off}</span>
+              </li>
+            ))}
+          </ol>
+          <div className="mt-6 flex overflow-hidden rounded-3xl text-center text-xs font-bold leading-tight sm:rounded-full sm:text-sm sm:uppercase sm:tracking-[0.1em]">
+            <p className="flex w-3/4 items-center justify-center bg-ink px-2 py-3 text-paper">{t.weeksOn}</p>
+            <p className="flex w-1/4 items-center justify-center bg-paper/70 px-2 py-3 text-ink">{t.weeksOff}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------------------------------------------------- Journée type */}
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
+          <div>
+            <h2 className="text-4xl sm:text-5xl">{t.dayTitle}</h2>
+            <p className="mt-4 text-lg text-ink-soft">{t.dayText}</p>
+          </div>
+          <ol className="border-l border-ink/15">
+            {t.timeline.map((s) => (
+              <li key={s.time} className="relative pb-8 pl-8 last:pb-0">
+                <span className="absolute -left-[5px] top-1.5 size-2.5 rounded-full bg-ink" />
+                <p className="text-xs font-bold uppercase tracking-[0.1em] text-ink-soft">{s.time}</p>
+                <h3 className="mt-2 text-2xl">{s.title}</h3>
+                <p className="mt-1 leading-relaxed text-ink-soft">{s.text}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
     </>

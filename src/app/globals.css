@@ -33,9 +33,31 @@
   --color-line: #e3dfd8;
   --color-muted: #6b6672;
 
-  --font-sans: var(--font-inter), system-ui, sans-serif;
-  --font-display: var(--font-bricolage), var(--font-inter), system-ui, sans-serif;
-  --font-serif: var(--font-instrument), Georgia, serif;
+  /* Charte d'origine : Moderat (texte), EB Garamond (titres, accents en italique). */
+  --font-sans: "Moderat", system-ui, sans-serif;
+  --font-display: var(--font-garamond), Georgia, serif;
+  --font-serif: var(--font-garamond), Georgia, serif;
+}
+
+/*
+  Moderat (Tightype) : police payante de l'ancien site. Ses fichiers restent HORS du dépôt
+  GitHub, qui est public, tant que la licence web n'est pas confirmée (public/fonts/ est
+  dans .gitignore). Sans eux, le texte s'affiche en police système. Licence confirmée :
+  retirer la ligne du .gitignore et commiter public/fonts/.
+*/
+@font-face {
+  font-family: "Moderat";
+  src: url("/fonts/Moderat-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Moderat";
+  src: url("/fonts/Moderat-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 @layer base {
@@ -51,9 +73,9 @@
   }
   h1, h2, h3 {
     font-family: var(--font-display);
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    line-height: 1.02;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
   }
   h4 {
     font-family: var(--font-sans);
@@ -76,7 +98,7 @@
   background: linear-gradient(180deg, color-mix(in oklab, var(--color-sky) 55%, var(--color-paper)) 0%, color-mix(in oklab, var(--color-blush) 45%, var(--color-paper)) 100%);
 }
 
-/* Mot accentué dans un titre : italique serif, contraste avec la grotesque. */
+/* Mot accentué dans un titre : le même Garamond, en italique. */
 @utility accent {
   font-family: var(--font-serif);
   font-style: italic;
@@ -91,6 +113,10 @@
 /* Bandeau défilant */
 @keyframes bm-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .bm-marquee-track { animation: bm-marquee 38s linear infinite; }
+/* Bienfaits : plus lent, en pause au survol pour laisser lire. La marge droite de la
+   piste vaut l'écart entre cartes, pour que -50 % tombe pile sur le début de la copie. */
+.bm-marquee-slow { animation-duration: 60s; }
+.bm-marquee-slow:hover { animation-play-state: paused; }
 
 @keyframes bm-up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 .bm-up { animation: bm-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }

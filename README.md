@@ -15,7 +15,7 @@ npm run dev
 
 | Élément | Où | Remarque |
 |---|---|---|
-| Pages | `src/app/[lang]/` | tout est préfixé par la langue ; `/` redirige selon le navigateur |
+| Pages | `src/app/[lang]/` | tout est préfixé par la langue ; `/` redirige vers `/en` (version originale, demande de la cliente du 05/10/2026) |
 | Textes d'interface | `src/dictionaries/{en,fr,de,nl}.ts` | `en.ts` fait référence, les autres sont typés dessus |
 | Articles, pages légales | `src/content/blog/*.json`, `src/content/legal/*.json` | quadrilingues, versionnés dans Git |
 | Catalogue, prix, livraison | `src/lib/catalog.ts` | source unique, le serveur recalcule tout |

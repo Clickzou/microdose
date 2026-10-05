@@ -112,7 +112,7 @@ export default async function ArticlePage({ params }: PageProps<"/[lang]/learn/[
         <p className="mt-10 text-sm text-muted">{t.learn.disclaimer}</p>
         {showCta ? (
           <div className="mt-12 rounded-[2rem] bg-ink p-8 text-paper sm:flex sm:items-center sm:justify-between sm:gap-8">
-            <p className="font-display text-2xl font-bold">{t.home.stepsTitle} <span className="accent">{t.home.stepsAccent}</span></p>
+            <p className="font-display text-2xl font-medium">{t.home.stepsTitle} <span className="accent">{t.home.stepsAccent}</span></p>
             <div className="mt-5 shrink-0 sm:mt-0">
               <ButtonLink href={href(lang, "/how-it-works")} variant="light">
                 {t.nav.howItWorks}

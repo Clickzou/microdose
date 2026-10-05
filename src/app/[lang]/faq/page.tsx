@@ -31,7 +31,7 @@ export default async function Faq({ params }: PageProps<"/[lang]/faq">) {
         <div className="divide-y divide-line border-y border-line">
           {t.faq.items.map((i) => (
             <details key={i.q} className="group py-6">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-6 font-display text-xl font-bold">
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-6 font-display text-xl font-medium">
                 {i.q}
                 <span className="mt-0.5 text-2xl font-normal transition group-open:rotate-45">+</span>
               </summary>

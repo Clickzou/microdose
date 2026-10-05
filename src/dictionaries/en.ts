@@ -4,23 +4,27 @@
  *
  * Conformité (audit du 18/09/2026, points 06 et 07) : aucun texte ne doit prêter au
  * produit un effet de traitement, de guérison ou de prévention d'une maladie.
- * On décrit un cadre d'usage, un accompagnement et des ressentis rapportés.
+ * On décrit un cadre d'usage et des ressentis rapportés. Exception voulue par la cliente
+ * (05/10/2026) : les textes d'origine repris mot pour mot (bienfaits, FAQ de l'accueil,
+ * journée type), qu'elle a choisi de garder malgré le risque signalé.
+ *
+ * Pas de tiret long (— ou –) dans les textes : demande de la cliente, « ça fait trop IA ».
  */
 const en = {
   meta: {
     siteName: "BIEN Microdose",
-    title: "Microdosing truffles: 6-week programme — BIEN Microdose",
+    title: "Microdosing truffles: 6-week programme | BIEN Microdose",
     description:
-      "Pre-dosed 1 g psilocybin truffles grown in the Netherlands, with a guided 6-week programme and a companion app. Adults only.",
+      "Pre-dosed 1 g psilocybin truffles grown in the Netherlands, with a 6-week programme and a companion app. Adults only.",
   },
   seo: {
     shop: { title: "Microdosing truffles shop, Netherlands", description: "PEACE in the Chaos: six pre-dosed 1 g Psilocybe mexicana truffles with a 6-week programme and app. Grown in the Netherlands, shipped discreetly." },
     howItWorks: { title: "How to microdose truffles: the 2-6-2 plan", description: "How to microdose truffles with BIEN: a gentle first half dose, then two microdoses a week for six weeks and a two-week break, with precautions." },
     faq: { title: "Microdosing truffles: questions answered", description: "Answers about microdosing truffles: legality, doses, the 2-6-2 schedule, storage, contraindications, delivery and payment. Clear and honest." },
-    about: { title: "About BIEN, microdosing from the Netherlands", description: "BIEN offers pre-dosed Psilocybe mexicana truffles grown in the Netherlands, a clear 6-week routine and real support. No mysticism, no miracle promises." },
+    about: { title: "About BIEN, microdosing from the Netherlands", description: "BIEN offers pre-dosed Psilocybe mexicana truffles grown in the Netherlands, a clear 6-week routine and a companion app. No mysticism, no miracle promises." },
     contact: { title: "Contact us", description: "A question about an order, the programme or a press request? Write to the BIEN Microdose team: we usually reply within one working day, in English." },
     learn: { title: "Microdosing guide and truffle articles", description: "" },
-    peace: { title: "Microdosing truffles kit: PEACE in the Chaos", description: "PEACE in the Chaos: six pre-dosed 1 g Psilocybe mexicana truffles, a 3-week supply, with BIEN's 6-week programme, companion app and hotline. Adults only." },
+    peace: { title: "Microdosing truffles kit: PEACE in the Chaos", description: "PEACE in the Chaos: six pre-dosed 1 g Psilocybe mexicana truffles, a 3-week supply, with BIEN's 6-week programme and companion app. Adults only." },
     tote: { title: "BIEN tote bag in recycled canvas", description: "The BIEN tote bag: 80% recycled cotton and 20% recycled polyester canvas, 39 × 37 cm, natural colour, printed with the BIEN logo. Sturdy and everyday." },
   },
   nav: {
@@ -56,11 +60,11 @@ const en = {
     body: "This website presents psilocybin truffle products, reserved for adults. Please confirm your age to continue.",
     yes: "Yes, I am 18 or older",
     no: "No",
-    refused: "Sorry — this website is only accessible to adults.",
+    refused: "Sorry, this website is only accessible to adults.",
     legal: "By entering, you confirm that you are of legal age in your country of residence.",
   },
   cookies: {
-    text: "We use essential cookies to run the shop, and — only with your consent — audience measurement cookies to improve the site.",
+    text: "We use essential cookies to run the shop and, only with your consent, audience measurement cookies to improve the site.",
     accept: "Accept",
     refuse: "Refuse",
     more: "Privacy policy",
@@ -68,8 +72,8 @@ const en = {
   marquee: [
     "1 g pre-dosed truffles",
     "Grown in the Netherlands",
-    "6-week guided programme",
-    "BIEN hotline included",
+    "6-week programme",
+    "BIEN companion app",
     "Discreet shipping",
     "Adults only",
   ],
@@ -78,13 +82,13 @@ const en = {
     heroTitleA: "Peace in",
     heroTitleB: "the chaos.",
     heroText:
-      "Pre-dosed microdoses of Psilocybe mexicana truffles, grown in the Netherlands and delivered with a 6-week programme, a companion app and a real human to talk to.",
+      "Pre-dosed microdoses of Psilocybe mexicana truffles, grown in the Netherlands and delivered with a 6-week programme and a companion app.",
     heroCta: "Discover the pack",
     heroCta2: "How it works",
     introTitle: "Overthinking. Overstimulated. Overachieving.",
     introAccent: "Sound familiar?",
     introText:
-      "Modern life is loud. We created BIEN for people who want to explore microdosing with care — with a clear routine, precise doses and support at every step, instead of guesswork.",
+      "Modern life is loud. We created BIEN for people who want to explore microdosing with care: a clear routine and precise doses, instead of guesswork.",
     introText2:
       "Microdosing is not a quick fix, and it is not for everyone. It is a practice some adults choose to explore, intentionally and responsibly. We are here to help you do exactly that.",
     productKicker: "The pack",
@@ -96,7 +100,7 @@ const en = {
     steps: [
       {
         title: "Start gently",
-        text: "Read the precautions, then begin with half a microdose (0.5 g) on a quiet day. The BIEN hotline answers your questions before your first dose.",
+        text: "Read the precautions, then begin with half a microdose (0.5 g) on a quiet day, without obligations.",
       },
       {
         title: "Follow a 6-week cycle",
@@ -104,7 +108,7 @@ const en = {
       },
       {
         title: "Reflect, adjust, pause",
-        text: "Write down what you notice. The BIEN hotline answers your questions throughout the cycle. Then take a break — cycles are meant to end.",
+        text: "Write down what you notice in the app. Then take a break: cycles are meant to end.",
       },
     ],
     qualityKicker: "Quality",
@@ -113,7 +117,7 @@ const en = {
     quality: [
       { title: "Pre-dosed at 1 g", text: "No scales, no guessing. Each microdose is weighed and packed individually." },
       { title: "Grown in the Netherlands", text: "Psilocybe mexicana sclerotia, grown in Alphen aan den Rijn where their sale is legal." },
-      { title: "Whole truffles", text: "Delivered in their natural form — nothing added, nothing extracted." },
+      { title: "Whole truffles", text: "Delivered in their natural form. Nothing added, nothing extracted." },
       { title: "Discreet delivery", text: "Neutral outer packaging, tracked shipping." },
       { title: "Certified organic", text: "Grown organically, with official organic certification." },
       { title: "Certified vegan", text: "No animal-derived ingredients, certified vegan." },
@@ -144,25 +148,81 @@ const en = {
     videosCta: "Follow us on Instagram",
     videosLabel: "Customer video {n}",
     videosNote: "Videos in English. Individual, subjective experiences: they vary from person to person and are not a promise of results.",
-    expertKicker: "Guidance",
-    expertTitle: "You are not doing this alone.",
-    expertText:
-      "Our medical consultant, Dr. David Garcia Padron, and the BIEN team make sure you start with the right information: your health context, possible interactions, and when microdosing is simply not a good idea.",
-    expertCta: "How it works",
+    // Textes de l'ancien site, repris mot pour mot à la demande de la cliente (05/10/2026).
+    benefitsTitle: "Macro-benefits in every dose.",
+    benefitsText: "Our research team carefully curated the best mushroom strains for the biggest benefits.",
+    benefits: [
+      { title: "Calm", text: "Promote a sense of calm, reduce stress, and overall anxiety." },
+      { title: "Focus", text: "Tamed distractions and sharper focus to dive into deep flow." },
+      { title: "Resiliency", text: "Shift perspective to navigate challenges with strength and adaptability." },
+      { title: "Performance", text: "Unlocking peak potential for creativity and problem-solving." },
+      { title: "Mental Clarity", text: "Reduce brain fog, sharpen decision-making, and improve cognitive function." },
+      { title: "Creativity", text: "Enhance problem-solving abilities and foster outside-the-box thinking." },
+    ],
+    faqTitle: "Frequently Asked Questions.",
+    faqCta: "View more",
+    // FAQ de l'ancien site, mot pour mot, sans les renvois au médecin consultant, à
+    // l'appel d'accueil et au guide alcool (services retirés). Paragraphes séparés par \n\n.
+    faq: [
+      {
+        q: "Is microdosing legal?",
+        a: "The Mutual Recognition of Goods Act\n\nPsilocybin truffles are 100% legal in the Netherlands where BIEN is based and can be shipped to any EU country under the Mutual Recognition of Goods Act.\n\nThis EU law allows legal importation from one member state to another, regardless of legality in the importing country.",
+      },
+      {
+        q: "Will I be high on a microdose?",
+        a: "No, the level of psilocybin in a microdose is minimal, making it suitable for daily use.\n\nAll of our microdoses are pre-measured (1g) to avoid dosage errors. It’s always safer to start with a low dose and gradually increase it over time as your confidence grows.",
+      },
+      {
+        q: "Is microdosing mushroom addictive?",
+        a: "No, it’s actually the opposite.\n\nThe risk of addiction to psilocybin, the active ingredient in our microdose, is minimal at 0.2%. For comparison, the risk for SSRIs is 44%.\n\nOngoing research is currently exploring psilocybin as a potential treatment for substance use disorders. Nevertheless, it’s always important to monitor your relationship with it.",
+      },
+      {
+        q: "Can I work on microdose?",
+        a: "Yes, microdosing at work, when done at the recommended dose, can be a great asset.\n\nIt can enhance stress management, focus, and problem-solving abilities.",
+      },
+      {
+        q: "How should I manage my first microdose?",
+        a: "It’s generally recommended to start on a day without social obligations. It’s advisable to begin with a smaller dose of 0.5 grams (half a pre-dose) and gradually increase it over the next week to see how your body reacts.",
+      },
+      {
+        q: "I take antidepressant, can I microdose as well?",
+        a: "We advise against combining the two.\n\nIf you’re considering tapering off or are concerned about potential interactions with your medication, please consult your own doctor.",
+      },
+      {
+        q: "Is microdosing beneficial to ADHD?",
+        a: "Yes, multiple experts suggest it can be beneficial for people with ADHD or ADD, as microdosing improves focus and flow state.\n\nPlease speak with your own doctor, especially if you are already undergoing treatment.",
+      },
+      {
+        q: "When is the best time to start microdosing?",
+        a: "There’s no perfect time to start as almost every moment can be the right time.\n\nThe key is to be in a good mental state and open to change when starting a cycle.",
+      },
+      {
+        q: "Can I microdose and drink alcohol?",
+        a: "While it’s possible to microdose and drink alcohol, we don’t recommend it.\n\nAlcohol can diminish the beneficial effects of microdosing and act as an “alcohol-booster”, making you feel tipsy faster.",
+      },
+      {
+        q: "How should I store fresh truffles to maintain their potency?",
+        a: "To maintain the potency of fresh truffles, store them in the refrigerator.\n\nSealed, they will remain good for up to two months, and once opened, for one week.\n\nKeep them in a cool, dry, and dark place to minimize the risk of rot or reduction in their psilocybin content.\n\nAvoid freezing and keep the strips in their packaging to prevent moisture absorption.",
+      },
+      {
+        q: "Delivery guarantee",
+        a: "We ship within the European Union with a high success rate.\n\nFor our EU customers, we offer a delivery guarantee: if your order does not reach its destination, we will send you a new one.",
+      },
+    ],
     learnKicker: "Learn",
     learnTitle: "Understand before you start.",
     learnCta: "All articles",
     safetyTitle: "Microdosing is not for everyone.",
     safetyText:
-      "Our products are reserved for adults. They are not suitable during pregnancy or breastfeeding, if you or a close relative have a history of psychosis or bipolar disorder, if you have a heart condition, or if you take medication — especially antidepressants or lithium. Never drive after taking a microdose. When in doubt, talk to your doctor.",
+      "Our products are reserved for adults. They are not suitable during pregnancy or breastfeeding, if you or a close relative have a history of psychosis or bipolar disorder, if you have a heart condition, or if you take medication, especially antidepressants or lithium. Never drive after taking a microdose. When in doubt, talk to your doctor.",
     safetyCta: "Read the full safety information",
     newsletterTitle: "The BIEN letter",
-    newsletterText: "Research news, practical guides and invitations to our events. One email a month, no spam.",
+    newsletterText: "Research news and practical guides. One email a month, no spam.",
   },
   newsletter: {
     placeholder: "Your email address",
     submit: "Subscribe",
-    success: "Thank you — you're on the list.",
+    success: "Thank you, you're on the list.",
     error: "Something went wrong. Please try again.",
     consent: "By subscribing you agree to receive our emails. Unsubscribe at any time.",
   },
@@ -174,12 +234,10 @@ const en = {
       includes: [
         "6 × 1 g pre-dosed Psilocybe mexicana truffles (3-week supply)",
         "BIEN companion app",
-        "BIEN hotline",
-        "Invitations to BIEN community events",
       ],
       descriptionTitle: "About the truffles",
       description:
-        "Psilocybe mexicana sclerotia — often called “magic truffles” — are the underground form of the mushroom. We deliver them whole and pre-dosed at 1 g, so every microdose weighs the same from day one — the natural psilocybin content of a truffle can still vary slightly. They are grown in Alphen aan den Rijn, in the Netherlands, where their sale is legal.",
+        "Psilocybe mexicana sclerotia, often called “magic truffles”, are the underground form of the mushroom. We deliver them whole and pre-dosed at 1 g, so every microdose weighs the same from day one (the natural psilocybin content of a truffle can still vary slightly). They are grown in Alphen aan den Rijn, in the Netherlands, where their sale is legal.",
       howToTitle: "How to use",
       howTo: [
         "Start with half a dose (0.5 g) on a quiet day, without obligations.",
@@ -193,7 +251,7 @@ const en = {
       storage: "Keep refrigerated, in the original packaging, out of reach of children.",
       warningTitle: "Precautions",
       warning:
-        "Adults only (18+). Not suitable during pregnancy or breastfeeding, for people with a personal or family history of psychosis or bipolar disorder, heart conditions, or for people taking medication (especially antidepressants or lithium). Do not combine with alcohol or other substances. Do not drive or operate machinery. Psilocybin truffles are sold legally in the Netherlands; their status varies by country — check the law where you live.",
+        "Adults only (18+). Not suitable during pregnancy or breastfeeding, for people with a personal or family history of psychosis or bipolar disorder, heart conditions, or for people taking medication (especially antidepressants or lithium). Do not combine with alcohol or other substances. Do not drive or operate machinery. Psilocybin truffles are sold legally in the Netherlands; their status varies by country, so check the law where you live.",
       qtyNote: "Save 10% from 2 packs",
     },
     "bien-totebag": {
@@ -220,18 +278,50 @@ const en = {
   },
   shop: {
     title: "Shop",
-    intro: "Everything you need for a guided microdosing cycle — and a bag to carry it.",
+    intro: "Everything you need for a microdosing cycle, and a bag to carry it.",
     shippingNote: "Free shipping from €100 · Tracked delivery",
   },
   product: {
     quantity: "Quantity",
     packs: "packs",
     total: "Total",
-    reassurance: ["Tracked, discreet shipping", "Free shipping from €100", "BIEN hotline included"],
+    reassurance: ["Tracked, discreet shipping", "Free shipping from €100", "BIEN companion app included"],
     badges: ["Certified organic", "Certified vegan", "Pre-dosed at 1 g", "Grown in the Netherlands", "100% truffle, no additives", "Discreet shipping"],
     ageNotice: "By adding this product to your cart, you confirm that you are 18 or older.",
     related: "You might also like",
     reviewsTitle: "Customer experiences",
+  },
+  // Sections de la fiche PEACE in the Chaos reprises de l'ancien site, mot pour mot
+  // (demande de la cliente du 05/10/2026).
+  protocol: {
+    benefitsTitle: "Support for modern struggles.",
+    benefitsText: "Enjoy the benefits of microdosing without experiencing any altered conscious state. Feel like yourself, but on a very good day.",
+    benefits: [
+      { title: "Calm", text: "Promote a sense of calm, reduce stress, and overall anxiety." },
+      { title: "Resiliency", text: "Shift perspective to navigate challenges with strength and adaptability." },
+      { title: "Mental Clarity", text: "Reduce brain fog, sharpen decision-making, and improve cognitive function." },
+      { title: "Creativity", text: "Enhance problem-solving abilities and foster outside-the-box thinking." },
+    ],
+    fadimanTitle: "We follow Dr Fadiman's Protocol.",
+    fadimanText: "The most researched existing protocol on microdosing.",
+    fadimanRemember: "Just remember 2-6-2: take one microdose 2 times a week for 6 weeks.",
+    fadimanRemember2: "Then 2 weeks off. Then you can start again.",
+    day: "Day {n}",
+    dose: "Dose",
+    off: "off",
+    weeksOn: "6 weeks on",
+    weeksOff: "2 weeks off",
+    dayTitle: "24 hours on BIEN.",
+    dayText: "Here’s a typical microdosing day with BIEN.",
+    timeline: [
+      { time: "8 A.M.", title: "Start the day", text: "by taking BIEN on an empty stomach. Set an intention with the BIEN companion app." },
+      { time: "8.30-9.00 A.M.", title: "First effects", text: "Slight energy increase." },
+      { time: "9.00-12.00 A.M.", title: "Energized flow", text: "Like a cup of coffee but without the anxious downsides. Mental clarity. Focus." },
+      { time: "12.00-2.00 P.M.", title: "Clarity peak", text: "A good opportunity to meditate and reflect on the intention set in the morning." },
+      { time: "2.00-8.00 P.M.", title: "Peace flow", text: "Similar to the morning energized flow, but smoother. Enhanced creativity. Out-of-the-box thinking." },
+      { time: "8.00-12.00 A.M.", title: "Integration", text: "Journal with BIEN companion app for daily reflection and integration. Calm and serene, ready for a good night's sleep." },
+      { time: "Day +1", title: "After glow", text: "More subtle effects. Balanced mood and creative thinking." },
+    ],
   },
   cart: {
     title: "Your cart",
@@ -267,7 +357,7 @@ const en = {
     newsletterOptIn: "Send me the BIEN letter (optional).",
     pay: "Continue to secure payment",
     paying: "Redirecting to payment…",
-    secure: "Secure payment by CardGate — iDEAL, Bancontact, cards and more.",
+    secure: "Secure payment by CardGate: iDEAL, Bancontact, cards and more.",
     couponLabel: "Promo code",
     couponApply: "Apply",
     couponApplied: "Code {code} applied",
@@ -289,7 +379,7 @@ const en = {
     pendingTitle: "Payment pending",
     pendingText: "Your payment is being processed. You'll receive an email as soon as it is confirmed.",
     failureTitle: "Payment not completed",
-    failureText: "The payment was cancelled or declined. Your cart has been kept — you can try again.",
+    failureText: "The payment was cancelled or declined. Your cart has been kept, you can try again.",
     reference: "Order reference",
     retry: "Back to cart",
   },
@@ -322,7 +412,7 @@ const en = {
       protocols: { title: "Microdosing protocols and schedules", description: "Fadiman, BIEN 2-6-2, daily use, timing and journaling: practical guides to microdosing schedules, doses and rest breaks, explained without hype." },
       truffles: { title: "Magic truffles and psilocybin explained", description: "What magic truffles are, how Psilocybe mexicana grows, how to store it, how varieties differ and where it is legal: the facts, clearly sourced." },
       safety: { title: "Microdosing safety and precautions", description: "Side effects, alcohol, medication, pregnancy, tests and what to do if you feel unwell: everything to check before and during a microdosing cycle." },
-      research: { title: "Microdosing research and experiences", description: "What studies actually show about microdosing, the role of placebo, and what people report — including nothing at all. A careful, sourced reading." },
+      research: { title: "Microdosing research and experiences", description: "What studies actually show about microdosing, the role of placebo, and what people report, including nothing at all. A careful, sourced reading." },
     },
     featured: "Latest article",
     previous: "Previous",
@@ -337,49 +427,41 @@ const en = {
   howItWorks: {
     title: "How it",
     accent: "works.",
-    intro: "A structured, supported cycle — from the first dose to the final break.",
+    intro: "A structured cycle, from the first dose to the final break.",
     timelineTitle: "Your 6 weeks",
     timeline: [
-      { when: "Before", title: "Check the precautions", text: "Read the contraindications before you start. If in doubt, ask the BIEN hotline or your own doctor." },
+      { when: "Before", title: "Check the precautions", text: "Read the contraindications before you start. If in doubt, ask your own doctor." },
       { when: "Day 1", title: "A gentle first dose", text: "Half a microdose (0.5 g) on a quiet day. You observe, you write down what you notice." },
-      { when: "Weeks 1–6", title: "Two doses a week", text: "For example on Monday and Thursday, with no dose on the other days. The app reminds you and suggests a short intention and a journaling prompt." },
+      { when: "Weeks 1 to 6", title: "Two doses a week", text: "For example on Monday and Thursday, with no dose on the other days. The app reminds you and suggests a short intention and a journaling prompt." },
       { when: "After", title: "Pause and reflect", text: "2 weeks off. Look back at your notes, and decide calmly whether and when to start again." },
     ],
-    supportTitle: "Support included",
-    support: [
-      { title: "Companion app", text: "Reminders, intention-setting audios, journaling prompts and your dosing calendar." },
-      { title: "BIEN hotline", text: "A direct line to ask your questions during the whole cycle." },
-      { title: "Community", text: "Talks, workshops and events with the BIEN community." },
-    ],
-    doctorTitle: "Dr. David Garcia Padron",
-    doctorRole: "Medical consultant",
-    doctorText:
-      "Dr. Garcia Padron advises BIEN on safety: screening questions, contraindications and medication interactions. Our guidance does not replace your own doctor, who knows your medical history.",
+    appTitle: "The BIEN companion app",
+    appText: "Reminders, intention-setting audios, journaling prompts and your dosing calendar, in your pocket for the whole cycle.",
   },
   about: {
     title: "Behind",
     accent: "BIEN.",
     intro: "BIEN was born from a simple frustration: the people around us were tired, overstimulated, and the options on offer rarely felt right.",
     body: [
-      "We started BIEN to offer a different approach to microdosing: precise doses, a clear routine, and real people to talk to. No mysticism, no miracle promises.",
-      "We believe microdosing should be approached with intention and care — which is why every pack comes with a companion app and a hotline, and why we are just as clear about who should not microdose as about how to do it well.",
+      "We started BIEN to offer a different approach to microdosing: precise doses and a clear routine. No mysticism, no miracle promises.",
+      "We believe microdosing should be approached with intention and care. That is why every pack comes with a companion app, and why we are just as clear about who should not microdose as about how to do it well.",
       "BIEN Microdose is operated by Bien Health B.V., a company registered in the Netherlands.",
     ],
     valuesTitle: "What we stand for",
     values: [
-      { title: "Precision", text: "Microdoses pre-dosed at 1 g — no guesswork on the weight." },
+      { title: "Precision", text: "Microdoses pre-dosed at 1 g. No guesswork on the weight." },
       { title: "Honesty", text: "We share what research says, including what it doesn't." },
-      { title: "Care", text: "Screening and support come first, before any sale." },
+      { title: "Care", text: "We say who should not microdose before we talk about how to do it." },
     ],
   },
   faq: {
     title: "Frequently asked",
     accent: "questions.",
-    intro: "Can't find your answer? Write to us — a human will reply.",
+    intro: "Can't find your answer? Write to us, we usually reply within one working day.",
     items: [
       {
         q: "What is microdosing?",
-        a: "Microdosing means taking a very small amount of a psychedelic substance — here, psilocybin truffles — well below the dose that produces perceptual effects, on a regular schedule over a limited period. Research on its effects is ongoing and results so far are mixed; part of the effects people describe may be linked to expectations.",
+        a: "Microdosing means taking a very small amount of a psychedelic substance (here, psilocybin truffles) well below the dose that produces perceptual effects, on a regular schedule over a limited period. Research on its effects is ongoing and results so far are mixed; part of the effects people describe may be linked to expectations.",
       },
       {
         q: "Is it legal?",
@@ -391,7 +473,7 @@ const en = {
       },
       {
         q: "Who should not microdose?",
-        a: "Our products are reserved for adults (18+). Microdosing is not suitable during pregnancy or breastfeeding, if you or a close relative have a history of psychosis or bipolar disorder, if you have a heart condition, or if you take medication — especially antidepressants (SSRIs, MAOIs) or lithium. If in doubt, talk to your doctor before ordering.",
+        a: "Our products are reserved for adults (18+). Microdosing is not suitable during pregnancy or breastfeeding, if you or a close relative have a history of psychosis or bipolar disorder, if you have a heart condition, or if you take medication, especially antidepressants (SSRIs, MAOIs) or lithium. If in doubt, talk to your doctor before ordering.",
       },
       {
         q: "I take antidepressants. Can I microdose?",
@@ -399,7 +481,7 @@ const en = {
       },
       {
         q: "How should I take my first microdose?",
-        a: "Choose a quiet day without social or professional obligations. Start with half a truffle (0.5 g), observe how you feel and write it down. The app and the BIEN hotline guide you through your first days.",
+        a: "Choose a quiet day without social or professional obligations. Start with half a truffle (0.5 g), observe how you feel and write it down in the app.",
       },
       {
         q: "Can I drink alcohol while microdosing?",
@@ -432,12 +514,12 @@ const en = {
     message: "Message",
     send: "Send",
     sending: "Sending…",
-    success: "Thank you — your message has been sent.",
+    success: "Thank you, your message has been sent.",
     error: "The message could not be sent. Please write to info@bien.health.",
     direct: "Or email us directly",
   },
   footer: {
-    tagline: "Pre-dosed psilocybin truffle microdoses, with guidance.",
+    tagline: "Pre-dosed psilocybin truffle microdoses, grown in the Netherlands.",
     shop: "Shop",
     help: "Help",
     company: "Company",
@@ -445,7 +527,7 @@ const en = {
     terms: "Terms & conditions",
     privacy: "Privacy policy",
     shipping: "Shipping & returns",
-    rights: "Bien Health B.V. — All rights reserved.",
+    rights: "Bien Health B.V. All rights reserved.",
     disclaimer:
       "Adults only (18+). Our products are not medicines and are not intended to diagnose, treat, cure or prevent any disease. Information on this website does not replace medical advice.",
   },

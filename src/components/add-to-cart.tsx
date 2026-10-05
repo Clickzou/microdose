@@ -20,7 +20,7 @@ export default function AddToCart({ lang, slug, t }: { lang: Locale; slug: Produ
       <div className="flex items-end justify-between gap-4">
         <div>
           <p className="text-sm text-muted">{t.product.total}</p>
-          <p className="font-display text-4xl font-bold">{formatPrice(line.totalCents, lang)}</p>
+          <p className="font-sans text-4xl font-bold">{formatPrice(line.totalCents, lang)}</p>
           {line.discountCents > 0 ? (
             <p className="mt-1 text-sm text-signal">
               <s className="text-muted">{formatPrice(line.unitCents * qty, lang)}</s> · −{p.volumeDiscount?.percent}%

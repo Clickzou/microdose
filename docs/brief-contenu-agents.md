@@ -37,6 +37,15 @@ et l'art. 7 du règlement 1169/2011 : aucune allégation thérapeutique.
 Tutoiement interdit en FR : vouvoiement. DE : « Sie ». NL : « je/jij » (usage courant des
 marques néerlandaises).
 
+Demandes de la cliente du 05/10/2026, à respecter dans tout nouveau texte :
+- **Aucun tiret long** (— ou –) ni tiret entre espaces utilisé comme ponctuation : « ça fait
+  trop IA ». Virgule, deux-points, point ou parenthèses. Les plages s'écrivent « 1 to 6 »,
+  « 1 à 6 », « 1 bis 6 », « 1 tot 6 ».
+- **Aucun accompagnement** : pas de hotline, de consultation, d'appel d'accueil, de médecin
+  consultant (Dr Garcia Padron), de communauté ni d'événements, pas de « programme guidé ».
+  L'application compagnon BIEN, elle, existe toujours.
+- L'anglais est la langue d'arrivée par défaut ; fr, de, nl restent accessibles.
+
 Chaque langue est **rédigée**, pas traduite mot à mot : tournures naturelles, typographie
 locale (FR : espaces insécables avant ; : ! ? et guillemets « », séparateur décimal virgule).
 

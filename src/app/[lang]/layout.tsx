@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Inter, Instrument_Serif } from "next/font/google";
+import { EB_Garamond } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { getDictionary } from "@/dictionaries";
@@ -11,11 +11,10 @@ import AgeGate from "@/components/age-gate";
 import Consent from "@/components/consent";
 import JsonLd from "@/components/json-ld";
 
-// Polices auto-hébergées par next/font (téléchargées au build, servies depuis le
-// domaine du site) : aucune requête vers Google au chargement de la page.
-const display = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-bricolage", display: "swap", weight: ["600", "700", "800"] });
-const body = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const serif = Instrument_Serif({ subsets: ["latin"], variable: "--font-instrument", display: "swap", weight: "400", style: ["italic"] });
+// Polices de la charte d'origine (ancien site, demande de Carla du 05/10/2026) :
+// EB Garamond pour les titres et les accents en italique, servie depuis le domaine du
+// site par next/font. Moderat (texte) est déclarée dans globals.css, voir là-bas.
+const display = EB_Garamond({ subsets: ["latin", "latin-ext"], variable: "--font-garamond", display: "swap", style: ["normal", "italic"] });
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -33,7 +32,7 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
     ...pageMetadata({ lang, path: "", title: t.meta.title, description: t.meta.description }),
     // Après l’étalement : sinon le titre brut de pageMetadata écrasait le modèle et les
     // pages s’intitulaient « Shop », « About »… sans marque (audit 29/09, P1).
-    title: { default: t.meta.title, template: `%s — ${t.meta.siteName}` },
+    title: { default: t.meta.title, template: `%s | ${t.meta.siteName}` },
   };
 }
 
@@ -43,7 +42,7 @@ export default async function LangLayout({ children, params }: LayoutProps<"/[la
   const t = await getDictionary(lang);
 
   return (
-    <html lang={lang} className={`${display.variable} ${body.variable} ${serif.variable}`}>
+    <html lang={lang} className={display.variable}>
       <body className="flex min-h-dvh flex-col">
         <JsonLd
           data={{

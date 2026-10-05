@@ -53,3 +53,7 @@ next-env.d.ts
 # — des sorties d'outils, pas du code : elles n'ont pas à vivre dans le dépôt.
 *.pdf
 
+
+# Police Moderat (Tightype, sous licence) : hors du dépôt public tant que la licence
+# web n'est pas confirmée. Fichiers à placer à la main dans public/fonts/.
+/public/fonts/
